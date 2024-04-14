@@ -1,0 +1,33 @@
+<footer class="site-footer wrapper" role="contentinfo">
+	<div class="grid wrapper">
+        <div class="grid-item small--one-whole medium--one-half large--three-tenths">
+            {% unless settings.footer_about_shop == ""%}
+			<p>
+			    {{ settings.footer_about_shop }}
+			</p>
+		    {% endunless %}
+		</div>
+		{% if settings.footer_quicklinks_enable %}
+            {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
+                <div class="grid-item small--one-whole medium--one-quarter large--two-tenths">
+				   <ul>
+				      {% for link in navigation[linkList.id].links %}
+					    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+				      {% endfor %}
+				   </ul>
+		        </div>
+            {% endfor %}
+		{% endif %}
+        {% if settings.footer_social_enable %}
+            <div class="grid-item small--one-whole medium--one-half large--two-tenths">
+    			{% include 'social-links' %}
+            </div>
+            <hr class="hr--clear">
+        {% endif %}
+	</div>
+    <div class="wrapper grid small--text-center">
+        <div class="grid-item small--one-whole one-half">
+            <small>&copy; {{ site.createdAt | date:'%Y' }} {{ site.name }}</small>
+        </div>
+    </div>
+</footer>

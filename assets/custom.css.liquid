@@ -1,0 +1,8 @@
+{% if settings.border_radius != blank%}
+body {
+  --rounded-box: {{settings.border_radius}}rem;
+  --rounded-btn: calc( var(--rounded-box) * 0.5);
+  --rounded-badge: var(--rounded-box);
+  --tab-radius: calc( var(--rounded-box) * 0.25);
+}
+{% endif %}

@@ -1,0 +1,64 @@
+{% let pos = pos | def:"under" %}
+{% let number_of_products = 5 %}
+{% let number_of_products_to_fetch = number_of_products | plus: 1 %}
+
+{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+  {% assign found_a_collection = false %}
+  {% for c in product.collections %}
+    {% if found_a_collection == false and c != 'frontpage' and c != 'all' and collections[c].all_products_count > 1 %}
+      {% assign found_a_collection = true %}
+      {% assign collection = collections[c] %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if collection and collection.products_count > 1 and pos == "under" %}
+    <div class="wrapper related-products">
+        <span class="h4">{{ lang.related_products | def:'Related Products' }}</span>
+        <div class="grid">
+        {% assign current_product = product %}
+        {% assign current_product_found = false %}
+        {% for product in collection.products limit: number_of_products_to_fetch %}
+          {% if product.handle == current_product.handle %}
+            {% assign current_product_found = true %}
+          {% else %}
+            {% unless current_product_found == false and forloop.last %}
+              {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+              {% include 'product-card' %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+{% elseif collection and collection.products_count > 1 and pos == "side" %}
+    <div class="grid-item medium--one-half large--two-fifths">
+        <div class="h4">{{ lang.related_products | def:'Related Products' }}</div>
+            <div class="relative margin-more">
+            <button type="button" class="slick-prev"><svg role="img" title="arrow left" class="arrow small left"><use xlink:href="#arrow"/></svg></button>
+            <div class="related-products-slider">
+            {% assign current_product = product %}
+            {% assign current_product_found = false %}
+            {% for product in collection.products limit: number_of_products_to_fetch %}
+              {% if product.handle == current_product.handle %}
+                {% assign current_product_found = true %}
+              {% else %}
+                {% unless current_product_found == false and forloop.last %}
+                  {% assign grid_item_width = 'large--one-half medium--one-half small--one-half' %}
+                  {% include 'product-card' %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+            </div>
+            <button type="button" class="slick-next"><svg role="img" title="arrow right" class="arrow small right"><use xlink:href="#arrow"/></svg></button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+          $(".related-products-slider").slick({
+                slidesToShow: 2,
+                infinite: true,
+                prevArrow: ".slick-prev",
+                nextArrow: ".slick-next"
+            });
+        });
+    </script>
+{% endif %}

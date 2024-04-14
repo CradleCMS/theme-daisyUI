@@ -1,0 +1,28 @@
+<div class="card bg-base-100 shadow-xl">
+  {% assign article_image = article.html | get_images | first %}
+   {% unless article_image == empty %}
+  <figure><img src="{{ article_image.src | replace: ".png", "_0_500.png"  | replace: ".jpeg", "_0_500.jpeg" }}" alt="{{ article_image.alt }}" /></figure>
+  {% endunless %}
+  <div class="card-body">
+    <div class="text-right">{% if article.tags.size > 0 %}
+            {% for tag in article.tags %}
+                <div class="mr-1 mb-1 badge badge-accent">
+                    <a href="/{{blog.url}}?tags={{ tag }}">{{ tag }}</a>
+                </div>
+            {% endfor %}
+    {% endif %}</div>
+    <h2 class="card-title">
+      {{ article.title }}
+    </h2>
+    <div class="text-sm">{% if article.author != blank %}{{ article.author }} on {% endif %}<time pubdate datetime="{{ article.publishAt | date }}">{{ article.publishAt | date }}</time></div>
+    {% let excerpt_text = article.excerpt | strip_html %}
+		{% unless excerpt_text == "" %}
+			<p class="mt-4">{{ article.excerpt | strip_html }}</p>
+		{% else %}
+			<p class="mt-4">{{ article.content | strip_html | truncatewords: 100 }}</p>
+		{% endunless %}
+    <div class="card-actions justify-end">
+      <a class="btn" href="{{ article.url }}">{{ lang.read_more | def:'Read' }}</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{% include 'daisy-breadcrumbs' %} 
+<section>
+    <header>
+        <h1 class="mt-2 text-2xl">{{ lang.our_collections | def: 'Our collections'}}</h1>
+    </header>
+    {% for collection in collections %}
+        {% unless collection.handle == 'frontpage' %}
+            {% include 'collection-list-item' %}
+        {% endunless %}
+    {% endfor %}
+</section>
