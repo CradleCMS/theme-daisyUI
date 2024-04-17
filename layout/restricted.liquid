@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html data-theme="{{ settings.daisy-theme }}">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+        	{{ site.name }} {% if meta.title != blank and meta.title != site.name %} | {{meta.title}}{% endif %}
+        </title>	
+        {% if metaDescription %}
+        <meta name="description" content="{{ metaDescription | escape }}" />
+        {% endif %}
+        {% if metaKeywords %}
+        <meta name="keywords" content="{{ metaKeywords | escape }}" />
+        {% endif %}
+        <link rel="canonical" href="{{ canonicalUrl }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {% if settings.favicon_enable %}
+            <link rel="icon" href="{{ 'favicon.ico' | asset_img_url }}" sizes="any">
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_img_url:'16','16' }}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon.png' | asset_img_url:'32','32' }}">
+            <link rel="icon" href="{{ 'icon.svg' | asset_img_url }}" type="image/svg+xml">
+            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+            <link rel="manifest" href="{{ 'manifest.json' | asset_url }}">
+            <meta name="msapplication-TileColor" content="#da532c">
+            <meta name="theme-color" content="#ffffff">
+        {% endif %}
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" type="text/css" href="{{ 'typography.css' | asset_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'daisy-full.css' | asset_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'custom.css' | asset_url }}">
+
+    </head>
+    <body id="{{ meta.title | handle }}" class="bg-{{ settings.body_colors }} text-{{ settings.body_colors }}-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
+        <div>
+            <p>The site is not open for the moment, please check in later!</p>
+        </div>
+    </body>
+</html>
