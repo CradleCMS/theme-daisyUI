@@ -8,38 +8,6 @@
       "type": "section",
       "settings": [
         {
-          "key": "favicon",
-          "caption": "Favicons",
-          "type": "header"
-        },
-        {
-          "key": "favicon_enable",
-          "caption": "Enable custom favicon",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "favicon_image",
-          "caption": "Favicon png-type",
-          "type": "asset",
-          "filename": "favicon.png",
-          "description": "Format: png-file, minimum 512px x 512p"
-        },
-        {
-          "key": "favicon_svg",
-          "caption": "Favicon svg-type",
-          "type": "asset",
-          "filename": "icon.svg",
-          "description": "Format: An SVG-file with light and dark version for modern browsers"
-        },
-        {
-          "key": "favicon_ico",
-          "caption": "Favicon ico-type, for legacy browsers",
-          "type": "asset",
-          "filename": "favicon.ico",
-          "description": "A 32px × 32px favicon.ico file used by legacy browsers, ico format is a special format for favicon"
-        },
-        {
           "key": "general",
           "caption": "General",
           "type": "header"
@@ -588,8 +556,8 @@
       ]
     },
     {
-      "key": "header",
-      "caption": "Header",
+      "key": "logo",
+      "caption": "Logo",
       "type": "section",
       "settings": [
         {
@@ -612,6 +580,189 @@
           "max-height": 1200,
           "description": "Recommend the optimal width and height for your logo here."
         },
+        {
+          "key": "favicon",
+          "caption": "Favicons",
+          "type": "header"
+        },
+        {
+          "key": "favicon_enable",
+          "caption": "Enable custom favicon",
+          "type": "checkbox",
+          "default": false
+        },
+        {
+          "key": "favicon_image",
+          "caption": "Favicon png-type",
+          "type": "asset",
+          "filename": "favicon.png",
+          "description": "Format: png-file, minimum 512px x 512p"
+        },
+        {
+          "key": "favicon_svg",
+          "caption": "Favicon svg-type",
+          "type": "asset",
+          "filename": "icon.svg",
+          "description": "Format: An SVG-file with light and dark version for modern browsers"
+        },
+        {
+          "key": "favicon_ico",
+          "caption": "Favicon ico-type, for legacy browsers",
+          "type": "asset",
+          "filename": "favicon.ico",
+          "description": "A 32px × 32px favicon.ico file used by legacy browsers, ico format is a special format for favicon"
+        }
+      ]
+    },
+    {
+      "key": "social_media",
+      "caption": "Social Media",
+      "type": "section",
+      "settings": [
+        {
+          "key": "share_links",
+          "caption": "Share links",
+          "type": "header"
+        },
+        {
+          "key": "social_sharing_count",
+          "caption": "Display sharing count",
+          "type": "checkbox",
+          "default": false
+        },
+        {
+          "key": "share_facebook",
+          "caption": "Share on Facebook",
+          "type": "checkbox",
+          "default": true
+        },
+        {
+          "key": "share_twitter",
+          "caption": "Share on Twitter",
+          "type": "checkbox",
+          "default": true
+        },
+        {
+          "key": "share_pinterest",
+          "caption": "Share on Pinterest",
+          "type": "checkbox",
+          "default": true
+        },
+        {
+          "key": "social_links",
+          "caption": "Social links",
+          "type": "header",
+          "description": "All links, except the email one, must begin with <i>http://</i>, <i>https://</i> or <i>//</i>. The email must be your email address with no <i>mailto:</i> prefix. Leave the text box blank if you don't want to use the corresponding icon."
+        },
+        {
+          "key": "facebook_url",
+          "caption": "Facebook URL",
+          "type": "text"
+        },
+        {
+          "key": "twitter_url",
+          "caption": "Twitter URL",
+          "type": "text"
+        },
+        {
+          "key": "youtube_url",
+          "caption": "YouTube URL",
+          "type": "text"
+        },
+        {
+          "key": "display_email_icon",
+          "caption": "Display e-mail icon",
+          "type": "checkbox",
+          "default": true
+        }
+      ]
+    },
+    {
+      "key": "cookie_consent",
+      "caption": "Cookie consent",
+      "type": "section",
+      "settings": [
+        {
+          "key": "cookie_consent_enabled",
+          "caption": "Show Cookie consent",
+          "type": "checkbox",
+          "default": false
+        },
+        {
+          "key": "cookieConsentText",
+          "type": "text",
+          "default": "This website uses cookies to ensure you get the best experience on our website",
+          "caption": "Consent message text"
+        },
+        {
+          "key": "cookieConsentButton",
+          "type": "text",
+          "default": "Got it!",
+          "caption": "Dismiss text"
+        },
+        {
+          "key": "cookieConsentPolicy",
+          "type": "text",
+          "default": "More info",
+          "caption": "Read more text"
+        },
+        {
+          "key": "cookieConsentLink",
+          "type": "link",
+          "default": "/pages/about",
+          "caption": "Link to terms"
+        },
+        {
+          "key": "cookie_consent_popup",
+          "type": "color",
+          "default": "#fff",
+          "caption": "Background color"
+        },
+        {
+          "key": "cookie_consent_popup_color",
+          "type": "color",
+          "default": "#222",
+          "caption": "Text color"
+        },
+        {
+          "key": "cookie_consent_button_background",
+          "default": "#222",
+          "type": "color",
+          "caption": "Button background color"
+        },
+        {
+          "key": "cookie_consent_button_color",
+          "type": "color",
+          "default": "#FFF",
+          "caption": "Button text color"
+        },
+        {
+          "key": "cookie_consent_theme",
+          "caption": "Theme",
+          "type": "select",
+          "default": "top",
+          "options": [
+            {
+              "value": "dark-top",
+              "caption": "Top"
+            },
+            {
+              "value": "dark-bottom",
+              "caption": "Bottom"
+            },
+            {
+              "value": "dark-floating",
+              "caption": "floating"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "header",
+      "caption": "Header",
+      "type": "section",
+      "settings": [
         {
           "key": "main_nav_options",
           "caption": "Menu options",
@@ -688,16 +839,16 @@
           "type": "header"
         },
         {
+          "key": "homepage_page",
+          "caption": "Page",
+          "type": "page",
+          "default": "choose page"
+        },
+        {
           "key": "homepage_page_show",
           "caption": "Show page",
           "type": "checkbox",
           "default": "false"
-        },
-        {
-          "key": "homepage_page",
-          "caption": "Choose page",
-          "type": "page",
-          "default": "welcome"
         },
         {
           "key": "section_banner_header",
@@ -884,62 +1035,21 @@
         },
         {
           "key": "homepage_blog",
-          "caption": "Display news from blog on homepage",
+          "caption": "Blog",
           "type": "blog",
-          "default": "news"
-        }
-      ]
-    },
-    {
-      "key": "homepage-slideshow",
-      "caption": "Homepage Slideshow",
-      "type": "section",
-      "settings": [
+          "default": "choose blog",
+          "description": "Display posts from blog on homepage"
+        },
         {
           "key": "slideshow",
           "caption": "Slideshow",
           "type": "header"
         },
         {
-          "key": "slideshow_full_width",
-          "caption": "Show Slideshow banner in full width",
-          "type": "checkbox",
-          "default": false
-        },
-        {
           "key": "show_slideshow",
           "caption": "Show Slideshow",
           "type": "checkbox",
           "default": true
-        },
-        {
-          "key": "slideshow_autoplay",
-          "caption": "Auto play slideshow",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "slideshow_autoplay_seconds",
-          "caption": "Seconds between slides",
-          "type": "select",
-          "options": [
-            {
-              "value": "3000",
-              "caption": "3"
-            },
-            {
-              "value": "5000",
-              "caption": "5"
-            },
-            {
-              "value": "7000",
-              "caption": "7"
-            },
-            {
-              "value": "10000",
-              "caption": "10"
-            }
-          ]
         },
         {
           "key": "slideshow_headings_color",
@@ -1052,250 +1162,6 @@
       ]
     },
     {
-      "key": "products",
-      "caption": "Products",
-      "type": "section",
-      "settings": [
-        {
-          "key": "products_compare_price_hide",
-          "caption": "Hide compare price",
-          "type": "checkbox",
-          "default": "false"
-        },
-        {
-          "key": "product_page_header",
-          "caption": "Product page",
-          "type": "header"
-        },
-        {
-          "key": "product_variant_table",
-          "caption": "Show table for variants",
-          "type": "checkbox"
-        },
-        {
-          "key": "product_variant_table_image",
-          "caption": "Show image",
-          "type": "checkbox"
-        },
-        {
-          "key": "product_variant_table_sku",
-          "caption": "Show SKU",
-          "type": "checkbox"
-        },
-        {
-          "key": "product_variant_table_price",
-          "caption": "Show price",
-          "type": "checkbox"
-        }
-      ]
-    },
-    {
-      "key": "product_card_settings",
-      "caption": "Product card",
-      "type": "section",
-      "settings": [
-        {
-          "key": "general_colors",
-          "caption": "Colors",
-          "type": "header"
-        },
-        {
-          "key": "product_card_background_color_enabled",
-          "caption": "Show product background color",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "product_card_background_color",
-          "caption": "Product card background color",
-          "type": "color",
-          "default": "",
-          "description": ""
-        },
-        {
-          "key": "product_card_shadow_enabled",
-          "caption": "Show product card shadow",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "product_card_image_background_color_enabled",
-          "caption": "Show product image background color",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "product_card_image_background_color",
-          "caption": "Product image background color",
-          "type": "color",
-          "default": "",
-          "description": ""
-        },
-        {
-          "key": "product_card_image",
-          "caption": "Product images",
-          "type": "header",
-          "description": ""
-        },
-        {
-          "key": "product_card_image_height_ratio",
-          "caption": "Image ratio, default: 1:1, square, 100% height of the image",
-          "type": "text",
-          "default": "100%"
-        },
-        {
-          "key": "product_card_image_padding",
-          "caption": "Padding around the product card image",
-          "type": "text",
-          "default": "10%"
-        },
-        {
-          "key": "product_card_image_height",
-          "caption": "Product card image max height",
-          "type": "text",
-          "default": "320"
-        },
-        {
-          "key": "product_card_secondary_image_on_hover",
-          "caption": "Show secondary image on hover",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "product_card_footer",
-          "caption": "Product card footer",
-          "type": "header"
-        },
-        {
-          "key": "product_card_footer_padding",
-          "caption": "Footer padding",
-          "type": "text",
-          "default": "0",
-          "description": "exemple: 9px = 9px all around. 0 9px = top and bottom no padding right and left 9px padding. 6px 9px 6px 9px = top and bottom 6px right left 9px."
-        },
-        {
-          "key": "product_card_info_pos",
-          "caption": "Product card information position",
-          "type": "select",
-          "options": [
-            {
-              "value": "left",
-              "caption": "left"
-            },
-            {
-              "value": "center",
-              "caption": "center"
-            },
-            {
-              "value": "price-right",
-              "caption": "price right"
-            }
-          ]
-        },
-        {
-          "key": "product_card_show_vendor",
-          "caption": "Show vendor above title",
-          "type": "checkbox",
-          "default": "false"
-        },
-        {
-          "key": "product_card_title_lines",
-          "caption": "Max Title lines",
-          "type": "text",
-          "default": "1"
-        },
-        {
-          "key": "product_card_advanced",
-          "caption": "Advanced settings",
-          "type": "header"
-        },
-        {
-          "key": "product_card_image_random_background_color_enabled",
-          "caption": "Enable random background color",
-          "type": "checkbox",
-          "default": false,
-          "description": ""
-        },
-        {
-          "key": "product_card_image_mix_mode_enabled",
-          "caption": "Enable transparent jpeg images",
-          "type": "checkbox",
-          "default": false,
-          "description": "Makes JPEG images with white product background transparent. Warning! Works only in new browsers."
-        },
-        {
-          "key": "product_card_hide_vendor_in_title",
-          "caption": "hide vendor in title",
-          "type": "checkbox",
-          "default": "false"
-        },
-        {
-          "key": "product_card_show_review_stars",
-          "caption": "Show review stars",
-          "type": "checkbox",
-          "default": "false"
-        }
-      ]
-    },
-    {
-      "key": "collections",
-      "caption": "Collections",
-      "type": "section",
-      "settings": [
-        {
-          "key": "general_collections_settings",
-          "caption": "General",
-          "type": "header"
-        },
-        {
-          "key": "enable_collection_filters",
-          "caption": "Show collection filters",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "enable_collection_sort_order",
-          "caption": "Show collection sort and order",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "collection_products_count",
-          "caption": "Number of products on a desktop row",
-          "type": "select",
-          "options": [
-            {
-              "value": "fifth",
-              "caption": "5"
-            },
-            {
-              "value": "quarter",
-              "caption": "4"
-            },
-            {
-              "value": "third",
-              "caption": "3"
-            },
-            {
-              "value": "half",
-              "caption": "2"
-            }
-          ]
-        },
-        {
-          "key": "collections_page_settings",
-          "caption": "Collections page",
-          "type": "header"
-        },
-        {
-          "key": "collection-page-image-full-width",
-          "caption": "Collection image full width",
-          "type": "checkbox",
-          "default": true
-        }
-      ]
-    },
-    {
       "key": "pages",
       "caption": "Pages",
       "type": "section",
@@ -1328,142 +1194,6 @@
       "settings": []
     },
     {
-      "key": "terms",
-      "caption": "Terms and Conditions",
-      "type": "section",
-      "settings": [
-        {
-          "key": "accept_terms",
-          "caption": "Accept Terms in Checkout",
-          "type": "header",
-          "description": "By enabling this option your customers need to accept terms and conditions in the Checkout before placing an order"
-        },
-        {
-          "key": "terms_consent",
-          "caption": "Enable Accept Terms",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "terms_pos",
-          "caption": "Enable Accept Terms page",
-          "type": "select",
-          "options": [
-            {
-              "value": "cart",
-              "caption": "cart"
-            },
-            {
-              "value": "internal",
-              "caption": "Internal checkout"
-            }
-          ]
-        },
-        {
-          "key": "terms_text",
-          "caption": "Text",
-          "type": "text",
-          "default": "I agree with the"
-        },
-        {
-          "key": "terms_link_text",
-          "caption": "Link text",
-          "type": "text",
-          "default": "terms and conditions"
-        },
-        {
-          "key": "terms_type",
-          "caption": "Terms and Condition type",
-          "type": "select",
-          "options": [
-            {
-              "value": "settings",
-              "caption": "Via settings"
-            },
-            {
-              "value": "page",
-              "caption": "Page"
-            }
-          ]
-        },
-        {
-          "key": "terms_page",
-          "caption": "Terms and Conditions page",
-          "type": "page",
-          "default": "about"
-        },
-        {
-          "key": "terms_error_text",
-          "caption": "Error message",
-          "type": "text",
-          "default": "You must agree with the terms and conditions to place an order."
-        }
-      ]
-    },
-    {
-      "key": "social_media",
-      "caption": "Social Media",
-      "type": "section",
-      "settings": [
-        {
-          "key": "share_links",
-          "caption": "Share links",
-          "type": "header"
-        },
-        {
-          "key": "social_sharing_count",
-          "caption": "Display sharing count",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "share_facebook",
-          "caption": "Share on Facebook",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "share_twitter",
-          "caption": "Share on Twitter",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "share_pinterest",
-          "caption": "Share on Pinterest",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "social_links",
-          "caption": "Social links",
-          "type": "header",
-          "description": "All links, except the email one, must begin with <i>http://</i>, <i>https://</i> or <i>//</i>. The email must be your email address with no <i>mailto:</i> prefix. Leave the text box blank if you don't want to use the corresponding icon."
-        },
-        {
-          "key": "facebook_url",
-          "caption": "Facebook URL",
-          "type": "text"
-        },
-        {
-          "key": "twitter_url",
-          "caption": "Twitter URL",
-          "type": "text"
-        },
-        {
-          "key": "youtube_url",
-          "caption": "YouTube URL",
-          "type": "text"
-        },
-        {
-          "key": "display_email_icon",
-          "caption": "Display e-mail icon",
-          "type": "checkbox",
-          "default": true
-        }
-      ]
-    },
-    {
       "key": "footer",
       "caption": "Footer",
       "type": "section",
@@ -1493,7 +1223,7 @@
         {
           "key": "footer_linklists",
           "caption": "Choose link lists",
-          "description": "Create link-lista under Navigation",
+          "description": "Create link-lists under Navigation",
           "type": "struct",
           "settings": [
             {
@@ -1501,87 +1231,6 @@
               "caption": "Link list",
               "type": "linklist",
               "default": "footer"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "key": "cookie_consent",
-      "caption": "Cookie consent",
-      "type": "section",
-      "settings": [
-        {
-          "key": "cookie_consent_enabled",
-          "caption": "Show Cookie consent",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "cookieConsentText",
-          "type": "text",
-          "default": "This website uses cookies to ensure you get the best experience on our website",
-          "caption": "Consent message text"
-        },
-        {
-          "key": "cookieConsentButton",
-          "type": "text",
-          "default": "Got it!",
-          "caption": "Dismiss text"
-        },
-        {
-          "key": "cookieConsentPolicy",
-          "type": "text",
-          "default": "More info",
-          "caption": "Read more text"
-        },
-        {
-          "key": "cookieConsentLink",
-          "type": "link",
-          "default": "/pages/about",
-          "caption": "Link to terms"
-        },
-        {
-          "key": "cookie_consent_popup",
-          "type": "color",
-          "default": "#fff",
-          "caption": "Background color"
-        },
-        {
-          "key": "cookie_consent_popup_color",
-          "type": "color",
-          "default": "#222",
-          "caption": "Text color"
-        },
-        {
-          "key": "cookie_consent_button_background",
-          "default": "#222",
-          "type": "color",
-          "caption": "Button background color"
-        },
-        {
-          "key": "cookie_consent_button_color",
-          "type": "color",
-          "default": "#FFF",
-          "caption": "Button text color"
-        },
-        {
-          "key": "cookie_consent_theme",
-          "caption": "Theme",
-          "type": "select",
-          "default": "top",
-          "options": [
-            {
-              "value": "dark-top",
-              "caption": "Top"
-            },
-            {
-              "value": "dark-bottom",
-              "caption": "Bottom"
-            },
-            {
-              "value": "dark-floating",
-              "caption": "floating"
             }
           ]
         }
