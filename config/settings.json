@@ -293,269 +293,6 @@
       ]
     },
     {
-      "key": "typography",
-      "caption": "Typography",
-      "type": "section",
-      "settings": [
-        {
-          "key": "base_font_use_system_fonts",
-          "caption": "Use system font for all text",
-          "type": "checkbox",
-          "description": "For speed and wide browser support",
-          "default": false
-        },
-        {
-          "key": "base_styles",
-          "caption": "Base Styles",
-          "type": "header"
-        },
-        {
-          "key": "base_font_size",
-          "caption": "Base font size",
-          "type": "select",
-          "options": [
-            {
-              "value": "14px",
-              "caption": "14px"
-            },
-            {
-              "value": "15px",
-              "caption": "15px"
-            },
-            {
-              "value": "16px",
-              "caption": "16px"
-            },
-            {
-              "value": "18px",
-              "caption": "18px"
-            }
-          ],
-          "default": "14px"
-        },
-        {
-          "key": "base_font_family",
-          "caption": "Typeface",
-          "type": "font"
-        },
-        {
-          "key": "base_font_weight",
-          "caption": "Font weight",
-          "type": "select",
-          "options": [
-            {
-              "value": "300",
-              "caption": "300"
-            },
-            {
-              "value": "400",
-              "caption": "400"
-            },
-            {
-              "value": "500",
-              "caption": "500"
-            },
-            {
-              "value": "600",
-              "caption": "600"
-            },
-            {
-              "value": "700",
-              "caption": "700"
-            },
-            {
-              "value": "800",
-              "caption": "800"
-            }
-          ],
-          "default": "400"
-        },
-        {
-          "key": "base_font_use_google_fonts",
-          "caption": "Use google font for body text",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "base_font_google",
-          "caption": "Google Font",
-          "type": "select",
-          "options": [
-            {
-              "value": "Source+Sans+Pro",
-              "caption": "Source Sans Pro"
-            },
-            {
-              "value": "Open+Sans",
-              "caption": "Open Sans"
-            },
-            {
-              "value": "Rubik",
-              "caption": "Rubik"
-            },
-            {
-              "value": "Lato",
-              "caption": "Lato"
-            },
-            {
-              "value": "Muli",
-              "caption": "Muli"
-            },
-            {
-              "value": "Noto Sans SC",
-              "caption": "Noto"
-            }
-          ]
-        },
-        {
-          "key": "headings_styles",
-          "caption": "Headings Styles",
-          "type": "header"
-        },
-        {
-          "key": "header_font_family",
-          "caption": "Typeface",
-          "type": "font"
-        },
-        {
-          "key": "headings_font_weight",
-          "caption": "Font weight",
-          "type": "select",
-          "options": [
-            {
-              "value": "300",
-              "caption": "300"
-            },
-            {
-              "value": "400",
-              "caption": "400"
-            },
-            {
-              "value": "500",
-              "caption": "500"
-            },
-            {
-              "value": "600",
-              "caption": "600"
-            },
-            {
-              "value": "700",
-              "caption": "700"
-            },
-            {
-              "value": "800",
-              "caption": "800"
-            }
-          ],
-          "default": "500"
-        },
-        {
-          "key": "headings_use_google_fonts",
-          "caption": "Use google font for headings",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "headings_google_fonts",
-          "type": "select",
-          "caption": "Google Font",
-          "options": [
-            {
-              "value": "Source+Sans+Pro",
-              "caption": "Source Sans Pro"
-            },
-            {
-              "value": "Open+Sans",
-              "caption": "Open Sans"
-            },
-            {
-              "value": "Rubik",
-              "caption": "Rubik"
-            },
-            {
-              "value": "Lato",
-              "caption": "Lato"
-            },
-            {
-              "value": "Muli",
-              "caption": "Muli"
-            },
-            {
-              "value": "Noto+Sans+SC",
-              "caption": "Noto"
-            }
-          ]
-        },
-        {
-          "key": "header_styles",
-          "caption": "Header Styles",
-          "type": "header"
-        },
-        {
-          "key": "main_nav_font_size",
-          "caption": "Font size",
-          "type": "text",
-          "default": "15px"
-        },
-        {
-          "key": "main_nav_font_weight",
-          "caption": "Font weight",
-          "type": "select",
-          "options": [
-            {
-              "value": "normal",
-              "caption": "normal"
-            },
-            {
-              "value": "300",
-              "caption": "300"
-            },
-            {
-              "value": "400",
-              "caption": "400"
-            },
-            {
-              "value": "500",
-              "caption": "500"
-            },
-            {
-              "value": "600",
-              "caption": "600"
-            },
-            {
-              "value": "800",
-              "caption": "800"
-            }
-          ],
-          "default": "none"
-        },
-        {
-          "key": "main_nav_text_transform",
-          "caption": "Text transform",
-          "type": "select",
-          "options": [
-            {
-              "value": "none",
-              "caption": "none"
-            },
-            {
-              "value": "lowercase",
-              "caption": "lowercase"
-            },
-            {
-              "value": "capitalize",
-              "caption": "Capitalize"
-            },
-            {
-              "value": "uppercase",
-              "caption": "UPPERCASE"
-            }
-          ],
-          "default": "none"
-        }
-      ]
-    },
-    {
       "key": "logo",
       "caption": "Logo",
       "type": "section",
@@ -620,39 +357,10 @@
       "type": "section",
       "settings": [
         {
-          "key": "share_links",
-          "caption": "Share links",
-          "type": "header"
-        },
-        {
-          "key": "social_sharing_count",
-          "caption": "Display sharing count",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "share_facebook",
-          "caption": "Share on Facebook",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "share_twitter",
-          "caption": "Share on Twitter",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "share_pinterest",
-          "caption": "Share on Pinterest",
-          "type": "checkbox",
-          "default": true
-        },
-        {
           "key": "social_links",
           "caption": "Social links",
           "type": "header",
-          "description": "All links, except the email one, must begin with <i>http://</i>, <i>https://</i> or <i>//</i>. The email must be your email address with no <i>mailto:</i> prefix. Leave the text box blank if you don't want to use the corresponding icon."
+          "description": "All links must begin with <i>http://</i> or <i>https://</i>"
         },
         {
           "key": "facebook_url",
@@ -668,12 +376,6 @@
           "key": "youtube_url",
           "caption": "YouTube URL",
           "type": "text"
-        },
-        {
-          "key": "display_email_icon",
-          "caption": "Display e-mail icon",
-          "type": "checkbox",
-          "default": true
         }
       ]
     },
@@ -770,8 +472,9 @@
         },
         {
           "key": "main_nav_linklist",
-          "caption": "Linklist for main nav",
-          "type": "linklist"
+          "caption": "Main navigation",
+          "type": "linklist",
+          "default": "Choose linklist" ,
         },
         {
           "key": "header_link",
