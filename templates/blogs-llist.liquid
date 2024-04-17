@@ -1,9 +1,0 @@
-{% include 'daisy-breadcrumbs' %} 
-<section>
-    <header>
-        <h1 class="mt-2 text-2xl">{{ lang.our_collections | def: 'Our blogs'}}</h1>
-    </header>
-    {% for blog in blogs %}
-        {% include 'collection-list-item' %}
-    {% endfor %}
-</section>
