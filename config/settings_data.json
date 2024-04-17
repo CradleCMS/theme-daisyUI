@@ -28,7 +28,7 @@
       "cookie_consent_dismiss": "I Accept it!",
       "cookie_consent_theme": "dark-bottom",
       "custom_fonts_enabled": false,
-      "daisy-theme": "black",
+      "daisy-theme": "bumblebee",
       "display_email_icon": true,
       "enable_type_filter": true,
       "enable_vendor_filter": true,
@@ -37,19 +37,11 @@
       "featured_blog": "",
       "flickr_url": "",
       "footer_about_shop": "This is a testsite. The products on this page are from BigBuy go to the \u003ca href=\"https://cradlecms.com\"\u003eCradle CMS\u003c/a\u003e to read more.",
-      "footer_colors": "secondary",
+      "footer_colors": "neutral",
       "footer_fullwidth": true,
-      "footer_linklists": [
-        {
-          "footer_linklist": {
-            "id": "175f9377-5e33-4b2b-b204-d4891d015849",
-            "navigation": "footer"
-          },
-          "id": 0
-        }
-      ],
+      "footer_linklists": [],
       "footer_newsletter_enable": true,
-      "footer_quicklinks_enable": true,
+      "footer_quicklinks_enable": false,
       "footer_quicklinks_linklist": "footer",
       "footer_second_quicklinks_enable": true,
       "footer_second_quicklinks_linklist": {
@@ -58,7 +50,7 @@
       },
       "footer_social_enable": true,
       "header_bg_color": "#ffffff",
-      "header_colors": "neutral",
+      "header_colors": "primary",
       "header_cta_link": "/",
       "header_cta_link_text": "Sign up",
       "header_icons_text_labels_enabled": false,
@@ -70,8 +62,8 @@
       "header_position": false,
       "header_text_color": "#444444",
       "homepage_blog": {
-        "blog": "reference",
-        "id": "175f4052-c5e5-46bf-a58c-c6ffa1c378f8"
+        "blog": "my-blog",
+        "id": "17a23b08-9687-4ce4-8fe0-dbb3e1ec616e"
       },
       "homepage_blog_enabled": true,
       "homepage_collection": {
@@ -106,8 +98,8 @@
       "homepage_featured_collections_enabled": true,
       "homepage_featured_collections_image_size": "96",
       "homepage_page": {
-        "id": "175c3233-46ce-41b6-aafd-92759181d11b",
-        "page": "womens-clothing"
+        "id": "179e8f32-2f7a-4117-a052-d36cbcb28c8c",
+        "page": "my-page"
       },
       "homepage_page_align": "center",
       "homepage_page_position": "top",
@@ -156,18 +148,6 @@
       "search_pos": "right",
       "section_banner1": [
         {
-          "id": 0,
-          "link_button_title": "Go to main page",
-          "link_image": "",
-          "link_text": "Just some text",
-          "link_title": "My title I guess",
-          "link_url": "/",
-          "undefined": {
-            "filename": "section_banner1_0_100_100.jpg?822",
-            "id": "0"
-          }
-        },
-        {
           "id": 1,
           "link_button_title": "Sign up",
           "link_image": "",
@@ -182,9 +162,9 @@
       ],
       "section_banner1_show": true,
       "section_banner2": [],
-      "section_banner2_show": true,
+      "section_banner2_show": false,
       "section_banner3": [],
-      "section_banner3_show": true,
+      "section_banner3_show": false,
       "section_banner_header_text_transform": "none",
       "section_banner_row_1": [],
       "section_banner_row_2": [],
@@ -193,7 +173,7 @@
       "share_facebook": true,
       "share_pinterest": true,
       "share_twitter": true,
-      "show_slideshow": false,
+      "show_slideshow": true,
       "slideshow_autoplay": true,
       "slideshow_autoplay_seconds": "3000",
       "slideshow_full_width": true,

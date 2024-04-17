@@ -872,92 +872,6 @@
           ]
         },
         {
-          "key": "show_collection",
-          "caption": "Show collection",
-          "type": "header"
-        },
-        {
-          "key": "homepage_collection_slider_enabled",
-          "caption": "Show collection",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "homepage_collection",
-          "caption": "Feature products from this collection",
-          "type": "collection",
-          "default": "frontpage"
-        },
-        {
-          "key": "homepage_collection_amount",
-          "caption": "Amount of products",
-          "type": "select",
-          "options": [
-            {
-              "value": "5",
-              "caption": "5"
-            },
-            {
-              "value": "10",
-              "caption": "10"
-            },
-            {
-              "value": "15",
-              "caption": "15"
-            },
-            {
-              "value": "20",
-              "caption": "20"
-            }
-          ]
-        },
-        {
-          "key": "show_featured_collection",
-          "caption": "Featured collections",
-          "type": "header"
-        },
-        {
-          "key": "homepage_featured_collections_enabled",
-          "caption": "Show collections",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "homepage_featured_collections_image_size",
-          "caption": "Image max height ",
-          "type": "select",
-          "options": [
-            {
-              "value": "48",
-              "caption": "48px"
-            },
-            {
-              "value": "64",
-              "caption": "64px"
-            },
-            {
-              "value": "96",
-              "caption": "96px"
-            },
-            {
-              "value": "144",
-              "caption": "144px"
-            }
-          ]
-        },
-        {
-          "key": "homepage_featured_collections",
-          "caption": "Featured collection",
-          "type": "struct",
-          "settings": [
-            {
-              "key": "featured_collection",
-              "caption": "Featured collection",
-              "type": "collection"
-            }
-          ]
-        },
-        {
           "key": "blog",
           "caption": "Blog",
           "type": "header"
@@ -1537,38 +1451,8 @@
           "type": "text"
         },
         {
-          "key": "pinterest_url",
-          "caption": "Pinterest URL",
-          "type": "text"
-        },
-        {
-          "key": "flickr_url",
-          "caption": "Flickr URL",
-          "type": "text"
-        },
-        {
-          "key": "instagram_url",
-          "caption": "Instagram URL",
-          "type": "text"
-        },
-        {
-          "key": "linkedin_url",
-          "caption": "LinkedIn URL",
-          "type": "text"
-        },
-        {
-          "key": "vimeo_url",
-          "caption": "Vimeo URL",
-          "type": "text"
-        },
-        {
           "key": "youtube_url",
           "caption": "YouTube URL",
-          "type": "text"
-        },
-        {
-          "key": "tumblr_url",
-          "caption": "Tumblr URL",
           "type": "text"
         },
         {
@@ -1576,35 +1460,6 @@
           "caption": "Display e-mail icon",
           "type": "checkbox",
           "default": true
-        },
-        {
-          "key": "social_icons_style",
-          "caption": "Social icons style",
-          "type": "select",
-          "options": [
-            {
-              "value": "",
-              "caption": "Silhouette"
-            },
-            {
-              "value": "-circle",
-              "caption": "Circle"
-            },
-            {
-              "value": "-rounded",
-              "caption": "Rounded corners"
-            },
-            {
-              "value": "-square",
-              "caption": "Square"
-            }
-          ]
-        },
-        {
-          "key": "social_icons_color",
-          "caption": "Color social icons",
-          "type": "checkbox",
-          "default": false
         }
       ]
     },
@@ -1614,27 +1469,15 @@
       "type": "section",
       "settings": [
         {
-          "key": "footer_fullwidth",
-          "caption": "Fullwidth footer",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "footer_newsletter_enable",
-          "caption": "Show Newsletter Field",
-          "type": "checkbox",
-          "default": false
+          "key": "footer_about_shop",
+          "caption": "About us text",
+          "type": "textarea"
         },
         {
           "key": "footer_social_enable",
           "caption": "Show social media links",
           "type": "checkbox",
           "default": false
-        },
-        {
-          "key": "footer_about_shop",
-          "caption": "About us text",
-          "type": "textarea"
         },
         {
           "key": "quick_links",
@@ -1650,6 +1493,7 @@
         {
           "key": "footer_linklists",
           "caption": "Choose link lists",
+          "description": "Create link-lista under Navigation",
           "type": "struct",
           "settings": [
             {
