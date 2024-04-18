@@ -474,7 +474,7 @@
           "key": "main_nav_linklist",
           "caption": "Main navigation",
           "type": "linklist",
-          "default": "Choose linklist" ,
+          "default": "Choose linklist"
         },
         {
           "key": "header_link",
