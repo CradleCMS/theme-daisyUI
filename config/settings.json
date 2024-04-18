@@ -38,29 +38,6 @@
               "caption": "Maximum"
             }
           ]
-        },
-        {
-          "key": "breakpoints",
-          "caption": "Breakpoints",
-          "type": "header"
-        },
-        {
-          "key": "breakpoint_small",
-          "caption": "Phone maximum",
-          "type": "text",
-          "default": 480
-        },
-        {
-          "key": "breakpoint_medium_ending",
-          "caption": "Tablet maximum",
-          "type": "text",
-          "default": 768
-        },
-        {
-          "key": "breakpoint_xl_starting",
-          "caption": "Wide desktop starting",
-          "type": "text",
-          "default": 2000
         }
       ]
     },
@@ -474,7 +451,7 @@
           "key": "main_nav_linklist",
           "caption": "Main navigation",
           "type": "linklist",
-          "default": "Choose linklist"
+          "default": "Select linklist"
         },
         {
           "key": "header_link",
@@ -545,13 +522,12 @@
           "key": "homepage_page",
           "caption": "Page",
           "type": "page",
-          "default": "choose page"
+          "default": "Select page"
         },
         {
           "key": "homepage_page_show",
           "caption": "Show page",
-          "type": "checkbox",
-          "default": "false"
+          "type": "checkbox"
         },
         {
           "key": "section_banner_header",
@@ -560,64 +536,14 @@
           "description": ""
         },
         {
-          "key": "section_banner_title_position",
-          "caption": "Title position",
-          "type": "select",
-          "options": [
-            {
-              "value": "left",
-              "caption": "Left"
-            },
-            {
-              "value": "center",
-              "caption": "Center"
-            },
-            {
-              "value": "right",
-              "caption": "Right"
-            }
-          ]
-        },
-        {
-          "key": "section_banner_header_text_transform",
-          "caption": "Text transform",
-          "type": "select",
-          "options": [
-            {
-              "value": "none",
-              "caption": "none"
-            },
-            {
-              "value": "lowercase",
-              "caption": "lowercase"
-            },
-            {
-              "value": "capitalize",
-              "caption": "Capitalize"
-            },
-            {
-              "value": "uppercase",
-              "caption": "UPPERCASE"
-            }
-          ],
-          "default": "none"
-        },
-        {
-          "key": "section_banner_image_max_width",
-          "caption": "Image max width",
-          "type": "text",
-          "default": "100%",
-          "description": "Can be a width in px, %, em or any css unit"
-        },
-        {
           "key": "section_banner1_show",
-          "caption": "Show banner row 1",
+          "caption": "Show banners",
           "type": "checkbox",
           "default": false
         },
         {
           "key": "section_banner1",
-          "caption": "Banner image row 1",
+          "caption": "Image banners",
           "type": "struct",
           "settings": [
             {
@@ -630,13 +556,18 @@
               "description": ""
             },
             {
+              "key": "link_image_alt",
+              "caption": "Image alt",
+              "type": "text"
+            },
+            {
               "key": "link_title",
-              "caption": "Link description",
-              "type": "textarea"
+              "caption": "Title",
+              "type": "text"
             },
             {
               "key": "link_text",
-              "caption": "Link description",
+              "caption": "Text",
               "type": "textarea"
             },
             {
@@ -646,82 +577,8 @@
             },
             {
               "key": "link_button_title",
-              "caption": "Link Title",
+              "caption": "Button text",
               "type": "text"
-            }
-          ]
-        },
-        {
-          "key": "section_banner2_show",
-          "caption": "Show banner row 2",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "section_banner2",
-          "caption": "Banner row 2",
-          "type": "struct",
-          "settings": [
-            {
-              "key": "link_image",
-              "caption": "Image for slide",
-              "type": "asset",
-              "filename": "section_banner2.jpg",
-              "max-width": 1400,
-              "max-height": 500,
-              "description": ""
-            },
-            {
-              "key": "link_url",
-              "caption": "Link URL",
-              "type": "text"
-            },
-            {
-              "key": "link_title",
-              "caption": "Link Title",
-              "type": "text"
-            },
-            {
-              "key": "link_text",
-              "caption": "Link description",
-              "type": "textarea"
-            }
-          ]
-        },
-        {
-          "key": "section_banner3_show",
-          "caption": "Show banner row 3",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "section_banner3",
-          "caption": "Banner row 3",
-          "type": "struct",
-          "settings": [
-            {
-              "key": "link_image",
-              "caption": "Image for slide",
-              "type": "asset",
-              "filename": "section_banner3.jpg",
-              "max-width": 1400,
-              "max-height": 500,
-              "description": ""
-            },
-            {
-              "key": "link_url",
-              "caption": "Link URL",
-              "type": "text"
-            },
-            {
-              "key": "link_title",
-              "caption": "Link Title",
-              "type": "text"
-            },
-            {
-              "key": "link_text",
-              "caption": "Link description",
-              "type": "textarea"
             }
           ]
         },
@@ -733,14 +590,13 @@
         {
           "key": "homepage_blog_enabled",
           "caption": "Show blog",
-          "type": "checkbox",
-          "default": true
+          "type": "checkbox"
         },
         {
           "key": "homepage_blog",
           "caption": "Blog",
           "type": "blog",
-          "default": "choose blog",
+          "default": "Select blog",
           "description": "Display posts from blog on homepage"
         },
         {
@@ -751,20 +607,7 @@
         {
           "key": "show_slideshow",
           "caption": "Show Slideshow",
-          "type": "checkbox",
-          "default": true
-        },
-        {
-          "key": "slideshow_headings_color",
-          "caption": "Textcolor on headings",
-          "type": "color",
-          "default": "#ffffff"
-        },
-        {
-          "key": "slideshow_headings_bgcolor",
-          "caption": "Backgroundcolor on headings",
-          "type": "color",
-          "default": "#000000"
+          "type": "checkbox"
         },
         {
           "key": "slideshow_slides",
@@ -781,84 +624,9 @@
               "description": "Recommended size 1132x500"
             },
             {
-              "key": "slide_heading",
-              "caption": "Heading",
+              "key": "slide_image_alt",
+              "caption": "Image alt",
               "type": "text"
-            },
-            {
-              "key": "slide_text",
-              "caption": "Slide text",
-              "type": "text"
-            },
-            {
-              "key": "slide_content_vertical_pos",
-              "caption": "Content vertical position",
-              "type": "select",
-              "default": "center",
-              "options": [
-                {
-                  "value": "center",
-                  "caption": "Center"
-                },
-                {
-                  "value": "top",
-                  "caption": "Top"
-                },
-                {
-                  "value": "bottom",
-                  "caption": "Bottom"
-                }
-              ]
-            },
-            {
-              "key": "slide_content_horizontal_pos",
-              "caption": "Content horizontal position",
-              "type": "select",
-              "default": "center",
-              "options": [
-                {
-                  "value": "center",
-                  "caption": "Center"
-                },
-                {
-                  "value": "left",
-                  "caption": "Left"
-                },
-                {
-                  "value": "right",
-                  "caption": "Right"
-                }
-              ]
-            },
-            {
-              "key": "slide_button_caption",
-              "caption": "Button Caption",
-              "type": "text"
-            },
-            {
-              "key": "slide_link_url",
-              "caption": "Link URL",
-              "type": "text"
-            },
-            {
-              "key": "slide_button_alignment",
-              "caption": "Text alignment",
-              "type": "select",
-              "default": "center",
-              "options": [
-                {
-                  "value": "left",
-                  "caption": "Left"
-                },
-                {
-                  "value": "center",
-                  "caption": "Center"
-                },
-                {
-                  "value": "right",
-                  "caption": "Right"
-                }
-              ]
             }
           ]
         }
@@ -925,7 +693,7 @@
         },
         {
           "key": "footer_linklists",
-          "caption": "Choose link lists",
+          "caption": "Select link lists",
           "description": "Create link-lists under Navigation",
           "type": "struct",
           "settings": [

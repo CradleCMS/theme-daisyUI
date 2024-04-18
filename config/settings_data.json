@@ -9,14 +9,65 @@
       "breakpoint_medium_ending": "768",
       "breakpoint_small": "480",
       "breakpoint_xl_starting": "2000",
-      "daisy-theme": "cyberpunk",
-      "footer_colors": "neutral",
-      "header_colors": "primary",
+      "daisy-theme": "emerald",
+      "footer_colors": "",
+      "header_colors": "neutral",
       "header_otf_button_link": "/",
       "header_otf_button_text": "Were to go next",
       "header_otf_section": true,
       "header_otf_text": "A longer text for explanation",
-      "header_otf_title": "Main message goes here"
+      "header_otf_title": "Main message goes here",
+      "homepage_blog": {
+        "blog": "my-blog",
+        "id": "17a23b08-9687-4ce4-8fe0-dbb3e1ec616e"
+      },
+      "homepage_blog_enabled": true,
+      "homepage_page": {
+        "id": "179e8f32-2f7a-4117-a052-d36cbcb28c8c",
+        "page": "my-page"
+      },
+      "homepage_page_show": true,
+      "main_nav_linklist": {
+        "id": "17a23e31-117e-4cfe-bb2e-8cfd3f488dc2",
+        "navigation": "main-navigation"
+      },
+      "section_banner1": [
+        {
+          "id": 0,
+          "link_button_title": "",
+          "link_image": "",
+          "link_image_alt": "",
+          "link_text": "My test",
+          "link_title": "",
+          "link_url": "",
+          "undefined": {
+            "filename": "section_banner1_0_100_100.jpg?7",
+            "id": "0"
+          }
+        }
+      ],
+      "section_banner1_show": true,
+      "section_banner_header_text_transform": "uppercase",
+      "section_banner_title_position": "center",
+      "show_slideshow": true,
+      "slideshow_slides": [
+        {
+          "id": 0,
+          "slide_button_alignment": "",
+          "slide_button_caption": "",
+          "slide_content_horizontal_pos": "",
+          "slide_content_vertical_pos": "",
+          "slide_heading": "",
+          "slide_image": "",
+          "slide_image_alt": "a mountain view",
+          "slide_link_url": "",
+          "slide_text": "Ji",
+          "undefined": {
+            "filename": "slide_0_100_100_whitefit.jpg?307",
+            "id": "0"
+          }
+        }
+      ]
     },
     "Initial": {}
   }

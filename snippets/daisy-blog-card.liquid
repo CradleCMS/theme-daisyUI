@@ -1,4 +1,4 @@
-<div class="card bg-base-100 shadow-xl">
+<div class="card shadow-xl bg-neutral text-neutral-content">
   {% assign article_image = article.html | get_images | first %}
    {% unless article_image == empty %}
   <figure><img src="{{ article_image.src | replace: ".png", "_0_500.png"  | replace: ".jpeg", "_0_500.jpeg" }}" alt="{{ article_image.alt }}" /></figure>
@@ -22,7 +22,7 @@
 			<p class="mt-4">{{ article.content | strip_html | truncatewords: 100 }}</p>
 		{% endunless %}
     <div class="card-actions justify-end">
-      <a class="btn" href="{{ article.url }}">{{ lang.read_more | def:'Read' }}</a>
+      <a class="btn bg-primary text-primary-content" href="{{ article.url }}">{{ lang.read_more | def:'Read' }}</a>
     </div>
   </div>
 </div>

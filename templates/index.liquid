@@ -17,25 +17,26 @@
     {% if settings.section_banner1.size > 0 %}
         {% for links in settings.section_banner1 %}
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-            <section class="card bg-neutral text-neutral-content max-w-[80rem] mx-auto lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} shadow-xl mt-10 index-{{ forloop.index }}">
+            <section class="card bg-neutral text-neutral-content w-96 md:w-auto lg:w-auto max-w-[65rem] mx-auto lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} shadow-xl mt-10 index-{{ forloop.index }}">
               {% capture link_img %}section_banner1_{{ forloop.index0 }}.jpg{% endcapture %}
-              <figure class="lg:w-2/6 md:w-2/5"><img loading="lazy" src="{{ link_img | asset_img_url:'500','500', "cropped" }}" alt="Album"/></figure>
+              <figure class="lg:w-2/6 md:w-2/5"><img loading="lazy" src="{{ link_img | asset_img_url:'400','400', "cropped" }}" alt="{{ links.link_image_alt }}"/></figure>
               <div class="card-body justify-center">
-                <h2 class="card-title text-3xl lg:text-5xl mb-4 font-bold justify-center">{{ links.link_title }}</h2>
-                {% if links.link_text != blank %}
-                <p class="text-center grow-0 mb-4">{{ links.link_text }}</p>
+                {% if links.link_title != blank %}
+                    <h2 class="card-title text-3xl lg:text-5xl mb-4 font-bold justify-center">{{ links.link_title }}</h2>
                 {% endif %}
+                {% if links.link_text != blank %}
+                    <p class="text-center grow-0 mb-4">{{ links.link_text }}</p>
+                {% endif %}
+                {% if links.link_url != blank %}
                 <div class="card-actions justify-center">
                   <a href="{{ links.link_url }}" class="btn btn-primary">{{ links.link_button_title }}</a>
                 </div>
+                {% endif %}
               </div>
             </section>
         {% endfor %}
-    {% else %}
-        {% include 'placeholder-section-banner' %}
     {% endif %}
 {% endif %}
-
 
 {% if settings.show_slideshow %}
 {% let slides = settings.slideshow_slides %}
@@ -43,7 +44,7 @@
         {% for slide in settings.slideshow_slides %}
             {% capture slide_img %}slide_{{ forloop.index0 }}.jpg{% endcapture %}
             <div id="item{{ forloop.index0 }}" class="carousel-item w-full">
-                <img src="{{ slide_img | asset_img_url:'1024','250','cropped' }}" class="w-full" />
+                <img src="{{ slide_img | asset_img_url:'1024','250','cropped' }}" class="w-full" alt="slide.slide_img_alt" />
             </div> 
         {% endfor %}
     </section> 
@@ -57,7 +58,7 @@
 {% endif %}
 
 {% if settings.homepage_blog_enabled %}
-    <section class="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-4 ">
+    <section class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {% unless blogs[settings.homepage_blog.id] == empty %}
         	{% for article in blogs[settings.homepage_blog.id].articles limit:3 %}
                 {% include 'daisy-blog-card' %}
