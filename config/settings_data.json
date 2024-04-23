@@ -4,14 +4,16 @@
     "Default": {
       "base_font_google": "Noto Sans SC",
       "base_font_use_system_fonts": false,
-      "body_colors": "",
+      "body_colors": "base-200",
       "border_radius": "",
       "breakpoint_medium_ending": "768",
       "breakpoint_small": "480",
       "breakpoint_xl_starting": "2000",
-      "daisy-theme": "emerald",
-      "footer_colors": "",
-      "header_colors": "neutral",
+      "daisy-theme": "retro",
+      "footer_colors": "base-200",
+      "header_colors": "primary",
+      "header_cta_link": "/",
+      "header_cta_link_text": "Hi",
       "header_otf_button_link": "/",
       "header_otf_button_text": "Were to go next",
       "header_otf_section": true,
@@ -61,11 +63,7 @@
           "slide_image": "",
           "slide_image_alt": "a mountain view",
           "slide_link_url": "",
-          "slide_text": "Ji",
-          "undefined": {
-            "filename": "slide_0_100_100_whitefit.jpg?307",
-            "id": "0"
-          }
+          "slide_text": "Ji"
         }
       ]
     },

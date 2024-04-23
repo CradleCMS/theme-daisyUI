@@ -192,7 +192,7 @@
           "type": "select",
           "options": [
             {
-              "value": "",
+              "value": "base-100",
               "caption": "Default"
             },
             {
@@ -219,7 +219,7 @@
           "type": "select",
           "options": [
             {
-              "value": "",
+              "value": "base-200",
               "caption": "Default"
             },
             {
@@ -246,7 +246,7 @@
           "type": "select",
           "options": [
             {
-              "value": "",
+              "value": "base-200",
               "caption": "Default"
             },
             {
