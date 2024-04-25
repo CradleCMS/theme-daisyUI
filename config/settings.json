@@ -507,11 +507,55 @@
           "type": "text"
         },
         {
+          "key": "header_otf_fgimage",
+          "caption": "Foreground image",
+          "type": "asset",
+          "filename": "otf-fg.png",
+          "description": "Format: png-file, minimum 450px wide"
+        },
+        {
           "key": "header_otf_image",
           "caption": "Fullwidth image",
           "type": "asset",
           "filename": "otf.jpg",
           "description": "Format: jpg-file, minimum 1024px x 1024p"
+        },
+        {
+          "key": "grid",
+          "caption": "Image grid",
+          "type": "header",
+          "description": "Grid for images, showing multiple at the same time"
+        },
+        {
+          "key": "grid_show",
+          "caption": "Show grid",
+          "type": "checkbox"
+        },
+        {
+          "key": "grid_heading",
+          "caption": "Section heading",
+          "type": "text"
+        },
+        {
+          "key": "grid_items",
+          "caption": "Images",
+          "type": "struct",
+          "settings": [
+            {
+              "key": "image",
+              "caption": "Image for carousel",
+              "type": "asset",
+              "filename": "item.jpg",
+              "max-width": 1300,
+              "max-height": 1024,
+              "description": "Recommended size up to 500 px wide and jpg format."
+            },
+            {
+              "key": "image_alt",
+              "caption": "Image alt-text",
+              "type": "text"
+            }
+          ]
         },
         {
           "key": "content",
@@ -572,12 +616,22 @@
             },
             {
               "key": "link_url",
-              "caption": "Link URL",
+              "caption": "Button 1 Link URL",
               "type": "text"
             },
             {
               "key": "link_button_title",
-              "caption": "Button text",
+              "caption": "Button 1 text",
+              "type": "text"
+            },
+            {
+              "key": "link2_url",
+              "caption": "Button 2 Link URL",
+              "type": "text"
+            },
+            {
+              "key": "link2_button_title",
+              "caption": "Button 2 text",
               "type": "text"
             }
           ]
@@ -608,6 +662,33 @@
           "key": "show_slideshow",
           "caption": "Show Slideshow",
           "type": "checkbox"
+        },
+        {
+          "key": "slideshow_img_ratio",
+          "caption": "Slideshow image ratio",
+          "type": "select",
+          "options": [
+            {
+              "value": "resize",
+              "caption": "No crop, only resize"
+            },
+            {
+              "value": "video",
+              "caption": "16:9 Video"
+            },
+            {
+              "value": "landscape",
+              "caption": "3:2 Landscape"
+            },
+            {
+              "value": "square",
+              "caption": "1:1 Square"
+            },
+            {
+              "value": "tall",
+              "caption": "2:3 Tall"
+            }
+          ]
         },
         {
           "key": "slideshow_slides",
