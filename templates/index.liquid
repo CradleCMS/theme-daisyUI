@@ -1,30 +1,39 @@
-{% if settings.grid_show %}
-    <section class="p-4 mb-2 mt-2 bg-base-100 text-base-content rounded-box">
-        <h2 class="text-3xl lg:text-5xl mb-4 font-bold">{{ settings.grid_heading }}</h2>
-        <div class="grid grid-cols-2 gap-4">
-            {% for item in settings.grid_items %}
-                <div class="justify-self-center" id="item{{ forloop.index0 }}">
-                    {% capture img %}item_{{ forloop.index0 }}.jpg{% endcapture %}
-                    <img src="{{ img | asset_img_url:'800','0' }}" alt="{{ item.image_alt }}" class="shadow-xl" />
+
+{% if settings.homepage_page_show %}
+<section class="bg-base-100 text-base-content mt-10 rounded-box shadow-md md:w-auto lg:w-auto max-w-[65rem] mx-auto p-8">
+    <div class="">
+        {% let p = pages[settings.homepage_page.id] %}
+        <h2 class="text-3xl font-bold mb-8">{{ p.meta.h1 }}</h2>
+        <div class="text-xl">
+            {{ p.html }}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% if settings.link_grid_show %}
+    <section class="p-4 mb-2 bg-base-100 text-base-content rounded-box shadow-xl mt-10">
+        <h2 class="text-xl mb-4 font-bold">{{ settings.link_grid_heading }}</h2>
+        <div class="grid grid-cols-4 gap-4">
+            {% for item in settings.link_grid_items %}
+                <div class="card-body items-center text-center">
+                {% if item.link_heading != blank %}
+                    <h4 class="card-title text-xl mb-4 font-bold justify-center">{{ item.link_heading }}</h4>
+                {% endif %}
+                {% if item.link_description != blank %}
+                    <p class="text-center grow-0 mb-4">{{ item.link_description }}</p>
+                {% endif %}
+                {% unless item.link_url == blank %}
+                <div class="card-actions justify-center">
+                  <a href="{{ item.link_url }}" class="btn btn-primary">{{ item.link_text }}</a>
                 </div>
+                {% endunless %}
+              </div>
             {% endfor %}
         </div>        
     </section>
 {% endif %}
 
-{% if settings.homepage_page_show %}
-<section class="hero bg-base-100 text-base-content mt-10 rounded-box shadow-md md:w-auto lg:w-auto max-w-[65rem] mx-auto">
-  <div class="hero-content text-center">
-    <div class="">
-        {% let p = pages[settings.homepage_page.id] %}
-        <h1 class="text-5xl font-bold mt-8">{{ p.meta.h1 }}</h1>
-        <div class="m-4 text-xl">
-            {{ p.html }}
-        </div>
-    </div>
-  </div>
-</section>
-{% endif %}
 
 {% if settings.section_banner1_show %}
     {% if settings.section_banner1.size > 0 %}
@@ -77,6 +86,21 @@
     </section>   
     {% endif %}
 {% endif %}
+
+{% if settings.grid_show %}
+    <section class="p-4 mb-2 mt-2 bg-base-100 text-base-content rounded-box">
+        <h2 class="text-3xl lg:text-5xl mb-4 font-bold">{{ settings.grid_heading }}</h2>
+        <div class="grid grid-cols-2 gap-4">
+            {% for item in settings.grid_items %}
+                <div class="justify-self-center" id="item{{ forloop.index0 }}">
+                    {% capture img %}item_{{ forloop.index0 }}.jpg{% endcapture %}
+                    <img src="{{ img | asset_img_url:'800','0' }}" alt="{{ item.image_alt }}" class="shadow-xl" />
+                </div>
+            {% endfor %}
+        </div>        
+    </section>
+{% endif %}
+
 
 {% if settings.homepage_blog_enabled %}
     <section class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">

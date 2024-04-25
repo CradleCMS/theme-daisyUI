@@ -521,6 +521,49 @@
           "description": "Format: jpg-file, minimum 1024px x 1024p"
         },
         {
+          "key": "link_grid",
+          "caption": "Link grid",
+          "type": "header",
+          "description": "Grid for links"
+        },
+        {
+          "key": "link_grid_show",
+          "caption": "Show grid",
+          "type": "checkbox"
+        },
+        {
+          "key": "link_grid_heading",
+          "caption": "Section heading",
+          "type": "text"
+        },
+        {
+          "key": "link_grid_items",
+          "caption": "Link content",
+          "type": "struct",
+          "settings": [
+            {
+              "key": "link_heading",
+              "caption": "Caption",
+              "type": "text"
+            },
+            {
+              "key": "link_description",
+              "caption": "Description",
+              "type": "text"
+            },
+            {
+              "key": "link_text",
+              "caption": "Link text",
+              "type": "text"
+            },
+            {
+              "key": "link_url",
+              "caption": "Link URL",
+              "type": "text"
+            }
+          ]
+        },
+        {
           "key": "grid",
           "caption": "Image grid",
           "type": "header",
