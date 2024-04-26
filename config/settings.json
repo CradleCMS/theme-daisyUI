@@ -357,87 +357,6 @@
       ]
     },
     {
-      "key": "cookie_consent",
-      "caption": "Cookie consent",
-      "type": "section",
-      "settings": [
-        {
-          "key": "cookie_consent_enabled",
-          "caption": "Show Cookie consent",
-          "type": "checkbox",
-          "default": false
-        },
-        {
-          "key": "cookieConsentText",
-          "type": "text",
-          "default": "This website uses cookies to ensure you get the best experience on our website",
-          "caption": "Consent message text"
-        },
-        {
-          "key": "cookieConsentButton",
-          "type": "text",
-          "default": "Got it!",
-          "caption": "Dismiss text"
-        },
-        {
-          "key": "cookieConsentPolicy",
-          "type": "text",
-          "default": "More info",
-          "caption": "Read more text"
-        },
-        {
-          "key": "cookieConsentLink",
-          "type": "link",
-          "default": "/pages/about",
-          "caption": "Link to terms"
-        },
-        {
-          "key": "cookie_consent_popup",
-          "type": "color",
-          "default": "#fff",
-          "caption": "Background color"
-        },
-        {
-          "key": "cookie_consent_popup_color",
-          "type": "color",
-          "default": "#222",
-          "caption": "Text color"
-        },
-        {
-          "key": "cookie_consent_button_background",
-          "default": "#222",
-          "type": "color",
-          "caption": "Button background color"
-        },
-        {
-          "key": "cookie_consent_button_color",
-          "type": "color",
-          "default": "#FFF",
-          "caption": "Button text color"
-        },
-        {
-          "key": "cookie_consent_theme",
-          "caption": "Theme",
-          "type": "select",
-          "default": "top",
-          "options": [
-            {
-              "value": "dark-top",
-              "caption": "Top"
-            },
-            {
-              "value": "dark-bottom",
-              "caption": "Bottom"
-            },
-            {
-              "value": "dark-floating",
-              "caption": "floating"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "key": "header",
       "caption": "Header",
       "type": "section",
@@ -537,6 +456,68 @@
           "type": "text"
         },
         {
+          "key": "link_grid_column_amount_md",
+          "caption": "Columns on tablet",
+          "type": "select",
+          "options": [
+            {
+              "value": "1",
+              "caption": "1"
+            },
+            {
+              "value": "2",
+              "caption": "2"
+            },
+            {
+              "value": "3",
+              "caption": "3"
+            },
+            {
+              "value": "4",
+              "caption": "4"
+            },
+            {
+              "value": "5",
+              "caption": "5"
+            },
+            {
+              "value": "6",
+              "caption": "6"
+            }
+          ]
+        },
+        {
+          "key": "link_grid_column_amount_lg",
+          "caption": "Columns on desktop",
+          "type": "select",
+          "options": [
+            {
+              "value": "1",
+              "caption": "1"
+            },
+            {
+              "value": "2",
+              "caption": "2"
+            },
+            {
+              "value": "3",
+              "caption": "3"
+            },
+            {
+              "value": "4",
+              "caption": "4"
+            },
+            {
+              "value": "5",
+              "caption": "5"
+            },
+            {
+              "value": "6",
+              "caption": "6"
+            }
+          ]
+        },
+        {
           "key": "link_grid_items",
           "caption": "Link content",
           "type": "struct",
@@ -578,6 +559,68 @@
           "key": "grid_heading",
           "caption": "Section heading",
           "type": "text"
+        },
+        {
+          "key": "grid_column_amount_md",
+          "caption": "Columns on tablet",
+          "type": "select",
+          "options": [
+            {
+              "value": "1",
+              "caption": "1"
+            },
+            {
+              "value": "2",
+              "caption": "2"
+            },
+            {
+              "value": "3",
+              "caption": "3"
+            },
+            {
+              "value": "4",
+              "caption": "4"
+            },
+            {
+              "value": "5",
+              "caption": "5"
+            },
+            {
+              "value": "6",
+              "caption": "6"
+            }
+          ]
+        },
+        {
+          "key": "grid_column_amount_lg",
+          "caption": "Columns on desktop",
+          "type": "select",
+          "options": [
+            {
+              "value": "1",
+              "caption": "1"
+            },
+            {
+              "value": "2",
+              "caption": "2"
+            },
+            {
+              "value": "3",
+              "caption": "3"
+            },
+            {
+              "value": "4",
+              "caption": "4"
+            },
+            {
+              "value": "5",
+              "caption": "5"
+            },
+            {
+              "value": "6",
+              "caption": "6"
+            }
+          ]
         },
         {
           "key": "grid_items",
@@ -627,6 +670,11 @@
           "caption": "Show banners",
           "type": "checkbox",
           "default": false
+        },
+        {
+          "key": "section_banner1_image_padding",
+          "caption": "Padding on image",
+          "type": "checkbox"
         },
         {
           "key": "section_banner1",
@@ -797,6 +845,19 @@
           "key": "footer_about_shop",
           "caption": "About us text",
           "type": "textarea"
+        },
+        {
+          "key": "footer_image",
+          "caption": "Use image in footer",
+          "type": "checkbox",
+          "default": false
+        },
+        {
+          "key": "footer_image_src",
+          "caption": "Foreground image",
+          "type": "asset",
+          "filename": "footer-img.png",
+          "description": "Format: png-file, minimum 450px wide"
         },
         {
           "key": "footer_social_enable",
