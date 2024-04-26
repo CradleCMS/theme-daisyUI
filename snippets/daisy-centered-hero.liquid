@@ -8,7 +8,9 @@
       {% if settings.header_otf_text %}
         <p class="mb-5">{{ settings.header_otf_text }}</p>
       {% endif %}
-      <img class="mx-auto" src="{{ 'otf-fg.png' | asset_img_url:'450','0' }}">
+      {% if settings.header_otf_fgimage_use %}
+        <img class="mx-auto" src="{{ 'otf-fg.png' | asset_img_url:'450','0' }}">
+      {% endif %}
       {% if settings.header_otf_button_link and settings.header_otf_button_text %}
         <button class="btn btn-primary" href="{{ settings.header_otf_button_link }}">{{ settings.header_otf_button_text }}</button>
       {% endif %}

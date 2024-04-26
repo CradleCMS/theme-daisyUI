@@ -51,11 +51,12 @@
                 {% if links.link_text != blank %}
                     <p class="text-center grow-0 mb-4">{{ links.link_text }}</p>
                 {% endif %}
-                {% unless links.link_url == blank and links.link2_url == blank %}
+                {% if links.link_url != blank or links.link2_url != blank %}
                 <div class="card-actions justify-center">
-                  <a href="{{ links.link_url }}" class="btn btn-primary" target="_blank">{{ links.link_button_title }}</a><a href="{{ links.link2_url }}" class="btn btn-primary" target="_blank">{{ links.link2_button_title }}</a>
+                  {% if links.link_url != blank %}<a href="{{ links.link_url }}" class="btn btn-primary" target="_blank">{{ links.link_button_title }}</a>{% endif %}
+                  {% if links.link2_url != blank %}<a href="{{ links.link2_url }}" class="btn btn-primary" target="_blank">{{ links.link2_button_title }}</a>{% endif %}
                 </div>
-                {% endunless %}
+                {% endif %}
               </div>
             </section>
         {% endfor %}

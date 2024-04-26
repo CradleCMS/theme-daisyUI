@@ -55,6 +55,7 @@
           "key": "daisy-theme",
           "caption": "Select preset",
           "type": "select",
+          "description": "Go to <a href='https://daisyui.com/docs/themes/' target='_blank'>https://daisyui.com/docs/themes/</a> to learn more",
           "options": [
             {
               "value": "light",
@@ -426,6 +427,11 @@
           "type": "text"
         },
         {
+          "key": "header_otf_fgimage_use",
+          "caption": "Use foreground image",
+          "type": "checkbox"
+        },
+        {
           "key": "header_otf_fgimage",
           "caption": "Foreground image",
           "type": "asset",
@@ -434,7 +440,7 @@
         },
         {
           "key": "header_otf_image",
-          "caption": "Fullwidth image",
+          "caption": "Background image",
           "type": "asset",
           "filename": "otf.jpg",
           "description": "Format: jpg-file, minimum 1024px x 1024p"
@@ -829,12 +835,6 @@
           ]
         }
       ]
-    },
-    {
-      "key": "blogs",
-      "caption": "Blogs",
-      "type": "section",
-      "settings": []
     },
     {
       "key": "footer",
