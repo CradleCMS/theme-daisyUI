@@ -38,6 +38,26 @@
               "caption": "Maximum"
             }
           ]
+        },
+        {
+          "key": "development",
+          "caption": "Development",
+          "type": "header"
+        },
+        {
+          "key": "css_dev_mode",
+          "caption": "Theme CSS mode",
+          "type": "select",
+          "options": [
+            {
+              "value": "production",
+              "caption": "Production"
+            },
+            {
+              "value": "development",
+              "caption": "Development"
+            }
+          ]
         }
       ]
     },

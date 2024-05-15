@@ -57,6 +57,7 @@
     "Initial": {
       "body_colors": "base-200",
       "border_radius": "",
+      "css_dev_mode": "production",
       "daisy-theme": "corporate",
       "footer_about_shop": "Add a text about this site here, it is also possible to add in an image and  multiple link lists.",
       "footer_colors": "neutral",

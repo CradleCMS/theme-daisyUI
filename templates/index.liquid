@@ -1,4 +1,4 @@
-
+{% comment %}<!-- This is for Tailwind CSS class="grid-cols-1 grid-cols-2 grid-cols-3 grid-cols-4 grid-cols-5 grid-cols-6 md:grid-cols-1 md:grid-cols-2 md:grid-cols-3 md:grid-cols-4 md:grid-cols-5 md:grid-cols-6 lg:grid-cols-1 lg:grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5 lg:grid-cols-6" -->{%endcomment%}
 {% if settings.homepage_page_show %}
 <section class="bg-base-100 text-base-content mt-10 rounded-box shadow-md md:w-auto lg:w-auto max-w-[65rem] mx-auto p-4 md:p-8 lg:p-8">
     <div class="">
@@ -34,12 +34,12 @@
     </section>
 {% endif %}
 
-
 {% if settings.section_banner1_show %}
+    {% comment %}<p class="lg:flex-row-reverse md:flex-row-reverse" >For tailwind</p> {% endcomment %}
     {% if settings.section_banner1.size > 0 %}
         {% for links in settings.section_banner1 %}
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-            <section class="card bg-base-100 m-w-96 md:w-auto lg:w-auto max-w-[65rem] mx-auto lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} shadow-xl mt-10 index-{{ forloop.index }}">
+            <section class="card bg-base-100 lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} mx-auto m-w-96 md:w-auto lg:w-auto max-w-[65rem] md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} shadow-xl mt-10 index-{{ forloop.index }}">
               {% capture link_img %}section_banner1_{{ forloop.index0 }}.jpg{% endcapture %}
               <figure class="lg:w-2/6 md:w-2/5 {% if settings.section_banner1_image_padding %}p-8{% endif %}">
                   <img loading="lazy" src="{{ link_img | asset_img_url:'400','0', "cropped" }}" alt="{{ links.link_image_alt }}"/>

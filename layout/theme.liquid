@@ -23,11 +23,14 @@
             <meta name="msapplication-TileColor" content="#da532c">
             <meta name="theme-color" content="#ffffff">
         {% endif %}
-        <!--link rel="stylesheet" type="text/css" href="{{ 'theme.css' | asset_url }}"-->
 
+        {% if settings.css_dev_mode == "development" %}
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" type="text/css" href="{{ 'typography.css' | asset_url }}">
         <link rel="stylesheet" type="text/css" href="{{ 'daisy-full.css' | asset_url }}">
+        {% else %}
+        <link rel="stylesheet" type="text/css" href="{{ 'output.css' | asset_url }}">
+        {% endif %}
         <link rel="stylesheet" type="text/css" href="{{ 'custom.css' | asset_url }}">
 
     </head>
