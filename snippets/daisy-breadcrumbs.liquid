@@ -7,13 +7,13 @@
                 <li><a href="collection.url">{{ collection.title }}</a></li>
             {% endif %}
         {% elseif template contains 'collection' and template != 'collections-list' %}
-            {% unless current_tags or current_vendor or current_type %}
+            {% unless currentTags.size > 0  or currentVendor.size > 0 or currentType.size > 0 %}
                 <li><span>{{ collection.title }}</span></li>
             {% else %}
                 <li><a href="collection.url">{{ collection.title }}</a></li>
             {% endunless %}
         {% elseif template == 'blog' %}
-            {% if currentTags %}
+            {% if currentTags.size > 0 %}
                 <li><a href="/{{ blog.url }}">{{ blog.title }}</a></li>
                 <li><span>{{ currentTags | join: " + " }}</span></li>
             {% else %}
