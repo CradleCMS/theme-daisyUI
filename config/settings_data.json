@@ -16,8 +16,8 @@
       "header_otf_button_text": "Were to go next",
       "header_otf_fgimage_use": false,
       "header_otf_section": true,
-      "header_otf_text": "A longer text for explanation",
-      "header_otf_title": "Main message goes here",
+      "header_otf_text": "Theme for Cradle CMS built with daisyUI and Tailwind CSS",
+      "header_otf_title": "daisyUI theme",
       "homepage_blog_enabled": false,
       "homepage_page_show": false,
       "section_banner1": [
