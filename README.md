@@ -3,6 +3,7 @@ Tailwind component design from daisyUI made into a Cradle CMS theme.
 
 * Index page components
 * daisyUI color presets with theme settings support
+* Open graph tags
 * Production and Development mode
 
 ## Index page components
