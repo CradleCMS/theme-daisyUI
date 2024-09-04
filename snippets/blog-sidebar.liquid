@@ -8,13 +8,11 @@
             {% if current_article_id == article.id %}
                 <span class="text-lg">{{ article.title }}</span>
             {% else %}
-                <a class="link text-lg" href="{{ article.url }}">{{ article.title }}</a>
+                <a class="link text-lg" href="{{ article | url }}">{{ article.title }}</a>
             {% endif %}
         </p>
     {% endfor %}
 </div>
-
-
 {% if blog.tags.size > 0 %}
 <div class="w-1/2 lg:w-full">
     <h4 class="">{{ lang.categories | def:'Categories' }}</h4>

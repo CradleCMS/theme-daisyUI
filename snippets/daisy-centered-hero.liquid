@@ -9,7 +9,7 @@
         <p class="mb-5">{{ settings.header_otf_text }}</p>
       {% endif %}
       {% if settings.header_otf_fgimage_use %}
-        <img class="mx-auto" src="{{ 'otf-fg.png' | asset_img_url:'450','0' }}">
+        <img class="mx-auto mb-5" src="{{ 'otf-fg.png' | asset_img_url:'450','0' }}">
       {% endif %}
       {% if settings.header_otf_button_link and settings.header_otf_button_text %}
         <a class="btn btn-primary" href="{{ settings.header_otf_button_link }}">{{ settings.header_otf_button_text }}</a>
