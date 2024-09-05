@@ -6,6 +6,15 @@ Tailwind component design from daisyUI made into a Cradle CMS theme.
 * Open graph tags
 * Production and Development mode
 
+## Templates
+* Index
+* Page
+* Contact page
+* Blog
+* Article
+* 404-not found
+* Closed site
+
 ## Index page components
 * Over-the-fold hero section
 * Link Grid
