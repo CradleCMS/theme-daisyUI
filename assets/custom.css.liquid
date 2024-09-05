@@ -6,3 +6,27 @@ body {
   --tab-radius: calc( var(--rounded-box) * 0.25);
 }
 {% endif %}
+
+{% unless settings.closed_daisysignup_true %}
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+}
+form input, form label, form textarea {
+    width: 100%;
+}
+form label {
+    display:block;
+    font-size: 0.8em;
+    text-align: left;
+    padding: 0 0.5em
+}
+form input[type="submit"] {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; 
+    background-color: hsl(var(--a));
+    color: hsl(var(--ac));
+    padding: 0.5em;
+}
+{% endunless %}

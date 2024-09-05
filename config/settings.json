@@ -1,914 +1,1186 @@
 {
   "name": "Daisy UI",
+  "version": "",
   "developer": "Restful Design",
+  "description": "",
   "sections": [
     {
       "key": "global",
-      "caption": "Global settings",
       "type": "section",
+      "caption": "Global settings",
       "settings": [
         {
-          "key": "general",
           "caption": "General",
+          "key": "general",
           "type": "header"
         },
         {
-          "key": "border_radius",
           "caption": "Radius on menus, pop-ups, buttons and more",
-          "type": "select",
+          "key": "border_radius",
           "options": [
             {
-              "value": "",
-              "caption": "Default"
+              "caption": "Default",
+              "value": ""
             },
             {
-              "value": "0",
-              "caption": "None"
+              "caption": "None",
+              "value": "0"
             },
             {
-              "value": "0.25",
-              "caption": "Minmal"
+              "caption": "Minmal",
+              "value": "0.25"
             },
             {
-              "value": "0.5",
-              "caption": "Medium"
+              "caption": "Medium",
+              "value": "0.5"
             },
             {
-              "value": "1.5",
-              "caption": "Maximum"
+              "caption": "Maximum",
+              "value": "1.5"
             }
-          ]
+          ],
+          "type": "select"
         },
         {
-          "key": "development",
           "caption": "Development",
+          "key": "development",
           "type": "header"
         },
         {
-          "key": "css_dev_mode",
           "caption": "Theme CSS mode",
-          "type": "select",
+          "key": "css_dev_mode",
           "options": [
             {
-              "value": "production",
-              "caption": "Production"
+              "caption": "Production",
+              "value": "production"
             },
             {
-              "value": "development",
-              "caption": "Development"
+              "caption": "Development",
+              "value": "development"
             }
-          ]
+          ],
+          "type": "select"
         }
       ]
     },
     {
       "key": "colors",
-      "caption": "Colors",
       "type": "section",
+      "caption": "Colors",
       "settings": [
         {
-          "key": "color-themes",
           "caption": "Daisy UI Theme",
+          "key": "color-themes",
           "type": "header"
         },
         {
-          "key": "daisy-theme",
           "caption": "Select preset",
-          "type": "select",
-          "description": "Go to <a href='https://daisyui.com/docs/themes/' target='_blank'>https://daisyui.com/docs/themes/</a> to learn more",
+          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
+          "key": "daisy-theme",
           "options": [
             {
-              "value": "light",
-              "caption": "Light"
+              "caption": "Light",
+              "value": "light"
             },
             {
-              "value": "dark",
-              "caption": "Dark"
+              "caption": "Dark",
+              "value": "dark"
             },
             {
-              "value": "cupcake",
-              "caption": "Cupcake"
+              "caption": "Cupcake",
+              "value": "cupcake"
             },
             {
-              "value": "bumblebee",
-              "caption": "Bumblebee"
+              "caption": "Bumblebee",
+              "value": "bumblebee"
             },
             {
-              "value": "emerald",
-              "caption": "Emerald"
+              "caption": "Emerald",
+              "value": "emerald"
             },
             {
-              "value": "corporate",
-              "caption": "Corporate"
+              "caption": "Corporate",
+              "value": "corporate"
             },
             {
-              "value": "synthwave",
-              "caption": "Synthwave"
+              "caption": "Synthwave",
+              "value": "synthwave"
             },
             {
-              "value": "retro",
-              "caption": "Retro"
+              "caption": "Retro",
+              "value": "retro"
             },
             {
-              "value": "cyberpunk",
-              "caption": "Cyberpunk"
+              "caption": "Cyberpunk",
+              "value": "cyberpunk"
             },
             {
-              "value": "valentine",
-              "caption": "Valentine"
+              "caption": "Valentine",
+              "value": "valentine"
             },
             {
-              "value": "halloween",
-              "caption": "Halloween"
+              "caption": "Halloween",
+              "value": "halloween"
             },
             {
-              "value": "garden",
-              "caption": "Garden"
+              "caption": "Garden",
+              "value": "garden"
             },
             {
-              "value": "forest",
-              "caption": "Forest"
+              "caption": "Forest",
+              "value": "forest"
             },
             {
-              "value": "aqua",
-              "caption": "Aqua"
+              "caption": "Aqua",
+              "value": "aqua"
             },
             {
-              "value": "lofi",
-              "caption": "Lofi"
+              "caption": "Lofi",
+              "value": "lofi"
             },
             {
-              "value": "pastel",
-              "caption": "Pastel"
+              "caption": "Pastel",
+              "value": "pastel"
             },
             {
-              "value": "fantasy",
-              "caption": "Fantasy"
+              "caption": "Fantasy",
+              "value": "fantasy"
             },
             {
-              "value": "wireframe",
-              "caption": "Wireframe"
+              "caption": "Wireframe",
+              "value": "wireframe"
             },
             {
-              "value": "black",
-              "caption": "Black"
+              "caption": "Black",
+              "value": "black"
             },
             {
-              "value": "luxury",
-              "caption": "Luxury"
+              "caption": "Luxury",
+              "value": "luxury"
             },
             {
-              "value": "dracula",
-              "caption": "Dracula"
+              "caption": "Dracula",
+              "value": "dracula"
             },
             {
-              "value": "cmyk",
-              "caption": "cmyk"
+              "caption": "cmyk",
+              "value": "cmyk"
             },
             {
-              "value": "autumn",
-              "caption": "Autumn"
+              "caption": "Autumn",
+              "value": "autumn"
             },
             {
-              "value": "business",
-              "caption": "Business"
+              "caption": "Business",
+              "value": "business"
             },
             {
-              "value": "acid",
-              "caption": "Acid"
+              "caption": "Acid",
+              "value": "acid"
             },
             {
-              "value": "lemonade",
-              "caption": "Lemonade"
+              "caption": "Lemonade",
+              "value": "lemonade"
             },
             {
-              "value": "night",
-              "caption": "Night"
+              "caption": "Night",
+              "value": "night"
             },
             {
-              "value": "coffee",
-              "caption": "Coffee"
+              "caption": "Coffee",
+              "value": "coffee"
             },
             {
-              "value": "winter",
-              "caption": "Winter"
+              "caption": "Winter",
+              "value": "winter"
             },
             {
-              "value": "dim",
-              "caption": "Dim"
+              "caption": "Dim",
+              "value": "dim"
             },
             {
-              "value": "nord",
-              "caption": "Nord"
+              "caption": "Nord",
+              "value": "nord"
             },
             {
-              "value": "sunset",
-              "caption": "Sunset"
+              "caption": "Sunset",
+              "value": "sunset"
             }
-          ]
+          ],
+          "type": "select"
         },
         {
-          "key": "header_colors",
           "caption": "Header style",
-          "type": "select",
+          "key": "header_colors",
           "options": [
             {
-              "value": "base-100",
-              "caption": "Default"
+              "caption": "Default",
+              "value": "base-100"
             },
             {
-              "value": "primary",
-              "caption": "Primary"
+              "caption": "Primary",
+              "value": "primary"
             },
             {
-              "value": "secondary",
-              "caption": "Secondary"
+              "caption": "Secondary",
+              "value": "secondary"
             },
             {
-              "value": "accent",
-              "caption": "Accent"
+              "caption": "Accent",
+              "value": "accent"
             },
             {
-              "value": "neutral",
-              "caption": "Neutral"
+              "caption": "Neutral",
+              "value": "neutral"
             }
-          ]
+          ],
+          "type": "select"
         },
         {
-          "key": "body_colors",
           "caption": "Body style",
-          "type": "select",
+          "key": "body_colors",
           "options": [
             {
-              "value": "base-200",
-              "caption": "Default"
+              "caption": "Default",
+              "value": "base-200"
             },
             {
-              "value": "primary",
-              "caption": "Primary"
+              "caption": "Primary",
+              "value": "primary"
             },
             {
-              "value": "secondary",
-              "caption": "Secondary"
+              "caption": "Secondary",
+              "value": "secondary"
             },
             {
-              "value": "accent",
-              "caption": "Accent"
+              "caption": "Accent",
+              "value": "accent"
             },
             {
-              "value": "neutral",
-              "caption": "Neutral"
+              "caption": "Neutral",
+              "value": "neutral"
             }
-          ]
+          ],
+          "type": "select"
         },
         {
-          "key": "footer_colors",
           "caption": "Footer style",
-          "type": "select",
+          "key": "footer_colors",
           "options": [
             {
-              "value": "base-200",
-              "caption": "Default"
+              "caption": "Default",
+              "value": "base-200"
             },
             {
-              "value": "primary",
-              "caption": "Primary"
+              "caption": "Primary",
+              "value": "primary"
             },
             {
-              "value": "secondary",
-              "caption": "Secondary"
+              "caption": "Secondary",
+              "value": "secondary"
             },
             {
-              "value": "accent",
-              "caption": "Accent"
+              "caption": "Accent",
+              "value": "accent"
             },
             {
-              "value": "neutral",
-              "caption": "Neutral"
+              "caption": "Neutral",
+              "value": "neutral"
             }
-          ]
+          ],
+          "type": "select"
         }
       ]
     },
     {
       "key": "logo",
-      "caption": "Logo",
       "type": "section",
+      "caption": "Logo",
       "settings": [
         {
-          "key": "logo_options",
           "caption": "Logo Options",
+          "key": "logo_options",
           "type": "header"
         },
         {
-          "key": "logo_use_image",
           "caption": "Use Custom Logo",
-          "type": "checkbox",
-          "default": false
+          "default": false,
+          "key": "logo_use_image",
+          "type": "checkbox"
         },
         {
-          "key": "logo_image",
           "caption": "Custom Logo",
-          "type": "asset",
+          "description": "Recommend the optimal width and height for your logo here.",
           "filename": "logo.png",
-          "max-width": 1200,
+          "key": "logo_image",
           "max-height": 1200,
-          "description": "Recommend the optimal width and height for your logo here."
+          "max-width": 1200,
+          "type": "asset"
         },
         {
-          "key": "favicon",
           "caption": "Favicons",
+          "key": "favicon",
           "type": "header"
         },
         {
-          "key": "favicon_enable",
           "caption": "Enable custom favicon",
-          "type": "checkbox",
-          "default": false
+          "default": false,
+          "key": "favicon_enable",
+          "type": "checkbox"
         },
         {
-          "key": "favicon_image",
           "caption": "Favicon png-type",
-          "type": "asset",
+          "description": "Format: png-file, minimum 512px x 512p",
           "filename": "favicon.png",
-          "description": "Format: png-file, minimum 512px x 512p"
+          "key": "favicon_image",
+          "type": "asset"
         },
         {
-          "key": "favicon_svg",
           "caption": "Favicon svg-type",
-          "type": "asset",
+          "description": "Format: An SVG-file with light and dark version for modern browsers",
           "filename": "icon.svg",
-          "description": "Format: An SVG-file with light and dark version for modern browsers"
+          "key": "favicon_svg",
+          "type": "asset"
         },
         {
-          "key": "favicon_ico",
           "caption": "Favicon ico-type, for legacy browsers",
-          "type": "asset",
+          "description": "A 32px × 32px favicon.ico file used by legacy browsers, ico format is a special format for favicon",
           "filename": "favicon.ico",
-          "description": "A 32px × 32px favicon.ico file used by legacy browsers, ico format is a special format for favicon"
+          "key": "favicon_ico",
+          "type": "asset"
         }
       ]
     },
     {
       "key": "social_media",
-      "caption": "Social Media",
       "type": "section",
+      "caption": "Social Media",
       "settings": [
         {
-          "key": "social_links",
           "caption": "Social links",
-          "type": "header",
-          "description": "All links must begin with <i>http://</i> or <i>https://</i>"
+          "description": "All links must begin with \u003ci\u003ehttp://\u003c/i\u003e or \u003ci\u003ehttps://\u003c/i\u003e",
+          "key": "social_links",
+          "type": "header"
         },
         {
-          "key": "facebook_url",
           "caption": "Facebook URL",
+          "key": "facebook_url",
           "type": "text"
         },
         {
-          "key": "twitter_url",
           "caption": "Twitter URL",
+          "key": "twitter_url",
           "type": "text"
         },
         {
-          "key": "youtube_url",
           "caption": "YouTube URL",
+          "key": "youtube_url",
           "type": "text"
         }
       ]
     },
     {
       "key": "header",
-      "caption": "Header",
       "type": "section",
+      "caption": "Header",
       "settings": [
         {
-          "key": "main_nav_options",
           "caption": "Menu options",
+          "key": "main_nav_options",
           "type": "header"
         },
         {
-          "key": "main_nav_linklist",
           "caption": "Main navigation",
-          "type": "linklist",
-          "default": "Select linklist"
+          "default": "Select linklist",
+          "key": "main_nav_linklist",
+          "type": "linklist"
         },
         {
-          "key": "header_link",
           "caption": "Header button",
+          "key": "header_link",
           "type": "header"
         },
         {
-          "key": "header_cta_link_text",
           "caption": "Button text",
+          "key": "header_cta_link_text",
           "type": "text"
         },
         {
-          "key": "header_cta_link",
           "caption": "Add link",
+          "key": "header_cta_link",
           "type": "text"
         }
       ]
     },
     {
       "key": "homepage",
-      "caption": "Homepage",
       "type": "section",
+      "caption": "Homepage",
       "settings": [
         {
-          "key": "header_otf",
           "caption": "OTF hero",
-          "type": "header",
-          "description": "Over the fold hero section for index page"
-        },
-        {
-          "key": "header_otf_section",
-          "caption": "Use hero box",
-          "type": "checkbox"
-        },
-        {
-          "key": "header_otf_title",
-          "caption": "Title",
-          "type": "text"
-        },
-        {
-          "key": "header_otf_text",
-          "caption": "Text",
-          "type": "text"
-        },
-        {
-          "key": "header_otf_button_text",
-          "caption": "Button text",
-          "type": "text"
-        },
-        {
-          "key": "header_otf_button_link",
-          "caption": "Add link",
-          "type": "text"
-        },
-        {
-          "key": "header_otf_fgimage_use",
-          "caption": "Use foreground image",
-          "type": "checkbox"
-        },
-        {
-          "key": "header_otf_fgimage",
-          "caption": "Foreground image",
-          "type": "asset",
-          "filename": "otf-fg.png",
-          "description": "Format: png-file, minimum 450px wide"
-        },
-        {
-          "key": "header_otf_image",
-          "caption": "Background image",
-          "type": "asset",
-          "filename": "otf.jpg",
-          "description": "Format: jpg-file, minimum 1024px x 1024p"
-        },
-        {
-          "key": "link_grid",
-          "caption": "Link grid",
-          "type": "header",
-          "description": "Grid for links"
-        },
-        {
-          "key": "link_grid_show",
-          "caption": "Show grid",
-          "type": "checkbox"
-        },
-        {
-          "key": "link_grid_heading",
-          "caption": "Section heading",
-          "type": "text"
-        },
-        {
-          "key": "link_grid_column_amount_md",
-          "caption": "Columns on tablet",
-          "type": "select",
-          "options": [
-            {
-              "value": "1",
-              "caption": "1"
-            },
-            {
-              "value": "2",
-              "caption": "2"
-            },
-            {
-              "value": "3",
-              "caption": "3"
-            },
-            {
-              "value": "4",
-              "caption": "4"
-            },
-            {
-              "value": "5",
-              "caption": "5"
-            },
-            {
-              "value": "6",
-              "caption": "6"
-            }
-          ]
-        },
-        {
-          "key": "link_grid_column_amount_lg",
-          "caption": "Columns on desktop",
-          "type": "select",
-          "options": [
-            {
-              "value": "1",
-              "caption": "1"
-            },
-            {
-              "value": "2",
-              "caption": "2"
-            },
-            {
-              "value": "3",
-              "caption": "3"
-            },
-            {
-              "value": "4",
-              "caption": "4"
-            },
-            {
-              "value": "5",
-              "caption": "5"
-            },
-            {
-              "value": "6",
-              "caption": "6"
-            }
-          ]
-        },
-        {
-          "key": "link_grid_items",
-          "caption": "Link content",
-          "type": "struct",
-          "settings": [
-            {
-              "key": "link_heading",
-              "caption": "Caption",
-              "type": "text"
-            },
-            {
-              "key": "link_description",
-              "caption": "Description",
-              "type": "text"
-            },
-            {
-              "key": "link_text",
-              "caption": "Link text",
-              "type": "text"
-            },
-            {
-              "key": "link_url",
-              "caption": "Link URL",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "key": "grid",
-          "caption": "Image grid",
-          "type": "header",
-          "description": "Grid for images, showing multiple at the same time"
-        },
-        {
-          "key": "grid_show",
-          "caption": "Show grid",
-          "type": "checkbox"
-        },
-        {
-          "key": "grid_heading",
-          "caption": "Section heading",
-          "type": "text"
-        },
-        {
-          "key": "grid_column_amount_md",
-          "caption": "Columns on tablet",
-          "type": "select",
-          "options": [
-            {
-              "value": "1",
-              "caption": "1"
-            },
-            {
-              "value": "2",
-              "caption": "2"
-            },
-            {
-              "value": "3",
-              "caption": "3"
-            },
-            {
-              "value": "4",
-              "caption": "4"
-            },
-            {
-              "value": "5",
-              "caption": "5"
-            },
-            {
-              "value": "6",
-              "caption": "6"
-            }
-          ]
-        },
-        {
-          "key": "grid_column_amount_lg",
-          "caption": "Columns on desktop",
-          "type": "select",
-          "options": [
-            {
-              "value": "1",
-              "caption": "1"
-            },
-            {
-              "value": "2",
-              "caption": "2"
-            },
-            {
-              "value": "3",
-              "caption": "3"
-            },
-            {
-              "value": "4",
-              "caption": "4"
-            },
-            {
-              "value": "5",
-              "caption": "5"
-            },
-            {
-              "value": "6",
-              "caption": "6"
-            }
-          ]
-        },
-        {
-          "key": "grid_items",
-          "caption": "Images",
-          "type": "struct",
-          "settings": [
-            {
-              "key": "image",
-              "caption": "Image for carousel",
-              "type": "asset",
-              "filename": "item.jpg",
-              "max-width": 1300,
-              "max-height": 1024,
-              "description": "Recommended size up to 500 px wide and jpg format."
-            },
-            {
-              "key": "image_alt",
-              "caption": "Image alt-text",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "key": "content",
-          "caption": "Content",
+          "description": "Over the fold hero section for index page",
+          "key": "header_otf",
           "type": "header"
         },
         {
-          "key": "homepage_page",
-          "caption": "Page",
-          "type": "page",
-          "default": "Select page"
-        },
-        {
-          "key": "homepage_page_show",
-          "caption": "Show page",
+          "caption": "Use hero box",
+          "key": "header_otf_section",
           "type": "checkbox"
         },
         {
-          "key": "section_banner_header",
-          "caption": "Banner sections",
-          "type": "header",
-          "description": ""
+          "caption": "Title",
+          "key": "header_otf_title",
+          "type": "text"
         },
         {
-          "key": "section_banner1_show",
-          "caption": "Show banners",
-          "type": "checkbox",
-          "default": false
+          "caption": "Text",
+          "key": "header_otf_text",
+          "type": "text"
         },
         {
-          "key": "section_banner1_image_padding",
-          "caption": "Padding on image",
+          "caption": "Button text",
+          "key": "header_otf_button_text",
+          "type": "text"
+        },
+        {
+          "caption": "Add link",
+          "key": "header_otf_button_link",
+          "type": "text"
+        },
+        {
+          "caption": "Use foreground image",
+          "key": "header_otf_fgimage_use",
           "type": "checkbox"
         },
         {
-          "key": "section_banner1",
-          "caption": "Image banners",
-          "type": "struct",
+          "caption": "Foreground image",
+          "description": "Format: png-file, minimum 450px wide",
+          "filename": "otf-fg.png",
+          "key": "header_otf_fgimage",
+          "type": "asset"
+        },
+        {
+          "caption": "Background image",
+          "description": "Format: jpg-file, minimum 1024px x 1024p",
+          "filename": "otf.jpg",
+          "key": "header_otf_image",
+          "type": "asset"
+        },
+        {
+          "caption": "Link grid",
+          "description": "Grid for links",
+          "key": "link_grid",
+          "type": "header"
+        },
+        {
+          "caption": "Show grid",
+          "key": "link_grid_show",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Section heading",
+          "key": "link_grid_heading",
+          "type": "text"
+        },
+        {
+          "caption": "Columns on tablet",
+          "key": "link_grid_column_amount_md",
+          "options": [
+            {
+              "caption": "1",
+              "value": "1"
+            },
+            {
+              "caption": "2",
+              "value": "2"
+            },
+            {
+              "caption": "3",
+              "value": "3"
+            },
+            {
+              "caption": "4",
+              "value": "4"
+            },
+            {
+              "caption": "5",
+              "value": "5"
+            },
+            {
+              "caption": "6",
+              "value": "6"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Columns on desktop",
+          "key": "link_grid_column_amount_lg",
+          "options": [
+            {
+              "caption": "1",
+              "value": "1"
+            },
+            {
+              "caption": "2",
+              "value": "2"
+            },
+            {
+              "caption": "3",
+              "value": "3"
+            },
+            {
+              "caption": "4",
+              "value": "4"
+            },
+            {
+              "caption": "5",
+              "value": "5"
+            },
+            {
+              "caption": "6",
+              "value": "6"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Link content",
+          "key": "link_grid_items",
           "settings": [
             {
-              "key": "link_image",
-              "caption": "Image",
-              "type": "asset",
-              "filename": "section_banner1.jpg",
-              "max-width": 1400,
-              "max-height": 500,
-              "description": ""
-            },
-            {
-              "key": "link_image_alt",
-              "caption": "Image alt",
+              "caption": "Caption",
+              "key": "link_heading",
               "type": "text"
             },
             {
-              "key": "link_title",
-              "caption": "Title",
+              "caption": "Description",
+              "key": "link_description",
               "type": "text"
             },
             {
+              "caption": "Link text",
               "key": "link_text",
+              "type": "text"
+            },
+            {
+              "caption": "Link URL",
+              "key": "link_url",
+              "type": "text"
+            }
+          ],
+          "type": "struct"
+        },
+        {
+          "caption": "Image grid",
+          "description": "Grid for images, showing multiple at the same time",
+          "key": "grid",
+          "type": "header"
+        },
+        {
+          "caption": "Show grid",
+          "key": "grid_show",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Section heading",
+          "key": "grid_heading",
+          "type": "text"
+        },
+        {
+          "caption": "Columns on tablet",
+          "key": "grid_column_amount_md",
+          "options": [
+            {
+              "caption": "1",
+              "value": "1"
+            },
+            {
+              "caption": "2",
+              "value": "2"
+            },
+            {
+              "caption": "3",
+              "value": "3"
+            },
+            {
+              "caption": "4",
+              "value": "4"
+            },
+            {
+              "caption": "5",
+              "value": "5"
+            },
+            {
+              "caption": "6",
+              "value": "6"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Columns on desktop",
+          "key": "grid_column_amount_lg",
+          "options": [
+            {
+              "caption": "1",
+              "value": "1"
+            },
+            {
+              "caption": "2",
+              "value": "2"
+            },
+            {
+              "caption": "3",
+              "value": "3"
+            },
+            {
+              "caption": "4",
+              "value": "4"
+            },
+            {
+              "caption": "5",
+              "value": "5"
+            },
+            {
+              "caption": "6",
+              "value": "6"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Images",
+          "key": "grid_items",
+          "settings": [
+            {
+              "caption": "Image for carousel",
+              "description": "Recommended size up to 500 px wide and jpg format.",
+              "filename": "item.jpg",
+              "key": "image",
+              "max-height": 1024,
+              "max-width": 1300,
+              "type": "asset"
+            },
+            {
+              "caption": "Image alt-text",
+              "key": "image_alt",
+              "type": "text"
+            }
+          ],
+          "type": "struct"
+        },
+        {
+          "caption": "Content",
+          "key": "content",
+          "type": "header"
+        },
+        {
+          "caption": "Page",
+          "default": "Select page",
+          "key": "homepage_page",
+          "type": "page"
+        },
+        {
+          "caption": "Show page",
+          "key": "homepage_page_show",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Banner sections",
+          "description": "",
+          "key": "section_banner_header",
+          "type": "header"
+        },
+        {
+          "caption": "Show banners",
+          "default": false,
+          "key": "section_banner1_show",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Padding on image",
+          "key": "section_banner1_image_padding",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Image banners",
+          "key": "section_banner1",
+          "settings": [
+            {
+              "caption": "Image",
+              "description": "",
+              "filename": "section_banner1.jpg",
+              "key": "link_image",
+              "max-height": 500,
+              "max-width": 1400,
+              "type": "asset"
+            },
+            {
+              "caption": "Image alt",
+              "key": "link_image_alt",
+              "type": "text"
+            },
+            {
+              "caption": "Title",
+              "key": "link_title",
+              "type": "text"
+            },
+            {
               "caption": "Text",
+              "key": "link_text",
               "type": "textarea"
             },
             {
-              "key": "link_url",
               "caption": "Button 1 Link URL",
+              "key": "link_url",
               "type": "text"
             },
             {
-              "key": "link_button_title",
               "caption": "Button 1 text",
+              "key": "link_button_title",
               "type": "text"
             },
             {
-              "key": "link2_url",
               "caption": "Button 2 Link URL",
+              "key": "link2_url",
               "type": "text"
             },
             {
-              "key": "link2_button_title",
               "caption": "Button 2 text",
+              "key": "link2_button_title",
               "type": "text"
             }
-          ]
+          ],
+          "type": "struct"
         },
         {
+          "caption": "Blog",
           "key": "blog",
-          "caption": "Blog",
           "type": "header"
         },
         {
-          "key": "homepage_blog_enabled",
           "caption": "Show blog",
+          "key": "homepage_blog_enabled",
           "type": "checkbox"
         },
         {
-          "key": "homepage_blog",
           "caption": "Blog",
-          "type": "blog",
           "default": "Select blog",
-          "description": "Display posts from blog on homepage"
+          "description": "Display posts from blog on homepage",
+          "key": "homepage_blog",
+          "type": "blog"
         },
         {
-          "key": "slideshow",
           "caption": "Slideshow",
+          "key": "slideshow",
           "type": "header"
         },
         {
-          "key": "show_slideshow",
           "caption": "Show Slideshow",
+          "key": "show_slideshow",
           "type": "checkbox"
         },
         {
-          "key": "slideshow_img_ratio",
           "caption": "Slideshow image ratio",
-          "type": "select",
+          "key": "slideshow_img_ratio",
           "options": [
             {
-              "value": "resize",
-              "caption": "No crop, only resize"
+              "caption": "No crop, only resize",
+              "value": "resize"
             },
             {
-              "value": "video",
-              "caption": "16:9 Video"
+              "caption": "16:9 Video",
+              "value": "video"
             },
             {
-              "value": "landscape",
-              "caption": "3:2 Landscape"
+              "caption": "3:2 Landscape",
+              "value": "landscape"
             },
             {
-              "value": "square",
-              "caption": "1:1 Square"
+              "caption": "1:1 Square",
+              "value": "square"
             },
             {
-              "value": "tall",
-              "caption": "2:3 Tall"
+              "caption": "2:3 Tall",
+              "value": "tall"
             }
-          ]
+          ],
+          "type": "select"
         },
         {
-          "key": "slideshow_slides",
           "caption": "Slide",
-          "type": "struct",
+          "key": "slideshow_slides",
           "settings": [
             {
-              "key": "slide_image",
               "caption": "Image for slide",
-              "type": "asset",
+              "description": "Recommended size 1132x500",
               "filename": "slide.jpg",
-              "max-width": 1300,
+              "key": "slide_image",
               "max-height": 1024,
-              "description": "Recommended size 1132x500"
+              "max-width": 1300,
+              "type": "asset"
             },
             {
-              "key": "slide_image_alt",
               "caption": "Image alt",
+              "key": "slide_image_alt",
               "type": "text"
             }
-          ]
+          ],
+          "type": "struct"
         }
       ]
     },
     {
       "key": "pages",
-      "caption": "Pages",
       "type": "section",
+      "caption": "Pages",
       "settings": [
         {
-          "key": "headings_alignment",
           "caption": "Text alignment",
-          "type": "select",
+          "key": "headings_alignment",
           "options": [
             {
-              "value": "left",
-              "caption": "Left"
+              "caption": "Left",
+              "value": "left"
             },
             {
-              "value": "center",
-              "caption": "Center"
+              "caption": "Center",
+              "value": "center"
             },
             {
-              "value": "right",
-              "caption": "Right"
+              "caption": "Right",
+              "value": "right"
             }
-          ]
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "key": "closed",
+      "type": "section",
+      "caption": "Closed site",
+      "settings": [
+        {
+          "caption": "Daisy UI Theme",
+          "key": "closed-header-color-themes",
+          "type": "header"
+        },
+        {
+          "caption": "Select preset",
+          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
+          "key": "closed-daisy-theme",
+          "options": [
+            {
+              "caption": "Light",
+              "value": "light"
+            },
+            {
+              "caption": "Dark",
+              "value": "dark"
+            },
+            {
+              "caption": "Cupcake",
+              "value": "cupcake"
+            },
+            {
+              "caption": "Bumblebee",
+              "value": "bumblebee"
+            },
+            {
+              "caption": "Emerald",
+              "value": "emerald"
+            },
+            {
+              "caption": "Corporate",
+              "value": "corporate"
+            },
+            {
+              "caption": "Synthwave",
+              "value": "synthwave"
+            },
+            {
+              "caption": "Retro",
+              "value": "retro"
+            },
+            {
+              "caption": "Cyberpunk",
+              "value": "cyberpunk"
+            },
+            {
+              "caption": "Valentine",
+              "value": "valentine"
+            },
+            {
+              "caption": "Halloween",
+              "value": "halloween"
+            },
+            {
+              "caption": "Garden",
+              "value": "garden"
+            },
+            {
+              "caption": "Forest",
+              "value": "forest"
+            },
+            {
+              "caption": "Aqua",
+              "value": "aqua"
+            },
+            {
+              "caption": "Lofi",
+              "value": "lofi"
+            },
+            {
+              "caption": "Pastel",
+              "value": "pastel"
+            },
+            {
+              "caption": "Fantasy",
+              "value": "fantasy"
+            },
+            {
+              "caption": "Wireframe",
+              "value": "wireframe"
+            },
+            {
+              "caption": "Black",
+              "value": "black"
+            },
+            {
+              "caption": "Luxury",
+              "value": "luxury"
+            },
+            {
+              "caption": "Dracula",
+              "value": "dracula"
+            },
+            {
+              "caption": "cmyk",
+              "value": "cmyk"
+            },
+            {
+              "caption": "Autumn",
+              "value": "autumn"
+            },
+            {
+              "caption": "Business",
+              "value": "business"
+            },
+            {
+              "caption": "Acid",
+              "value": "acid"
+            },
+            {
+              "caption": "Lemonade",
+              "value": "lemonade"
+            },
+            {
+              "caption": "Night",
+              "value": "night"
+            },
+            {
+              "caption": "Coffee",
+              "value": "coffee"
+            },
+            {
+              "caption": "Winter",
+              "value": "winter"
+            },
+            {
+              "caption": "Dim",
+              "value": "dim"
+            },
+            {
+              "caption": "Nord",
+              "value": "nord"
+            },
+            {
+              "caption": "Sunset",
+              "value": "sunset"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Dialogue style",
+          "key": "closed_dialog_colors",
+          "options": [
+            {
+              "caption": "Base 100 (default)",
+              "value": "base-100"
+            },
+            {
+              "caption": "Base 200",
+              "value": "base-200"
+            },
+            {
+              "caption": "Base 300",
+              "value": "base-300"
+            },
+            {
+              "caption": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "caption": "Accent",
+              "value": "accent"
+            },
+            {
+              "caption": "Neutral",
+              "value": "neutral"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Background image",
+          "key": "closed_header_bg_image",
+          "type": "header"
+        },
+        {
+          "caption": "Background image",
+          "description": "Format: jpg-file, minimum 1024px x 1024p",
+          "filename": "closed-bg.jpg",
+          "key": "closed_bgimage",
+          "type": "asset"
+        },
+        {
+          "caption": "Message",
+          "key": "closed_header_text",
+          "type": "header"
+        },
+        {
+          "caption": "Title",
+          "key": "closed_title",
+          "type": "text"
+        },
+        {
+          "caption": "Text",
+          "key": "closed_text",
+          "type": "text"
+        },
+        {
+          "caption": "Image",
+          "key": "closed_header_fg_image_header",
+          "type": "header"
+        },
+        {
+          "caption": "Use foreground image",
+          "key": "closed_fgimage_use",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Foreground image",
+          "description": "Format: png-file, minimum 450px wide",
+          "filename": "closed-fg.png",
+          "key": "closed_fgimage",
+          "type": "asset"
+        },
+        {
+          "caption": "Signup",
+          "key": "closed_header_signup",
+          "type": "header"
+        },
+        {
+          "caption": "Message",
+          "key": "closed_signup_text",
+          "type": "text"
+        },
+        {
+          "caption": "Display signup form",
+          "description": "NOTE you need to create a form named signup in admin.",
+          "key": "closed_signup_true",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Use daisyUI markup",
+          "description": "NOTE the form can only contain a email input field",
+          "key": "closed_daisysignup_true",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Social media",
+          "key": "closed_header_social",
+          "type": "header"
+        },
+        {
+          "caption": "Display social media links",
+          "key": "closed_social_true",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Button",
+          "key": "closed_header_button",
+          "type": "header"
+        },
+        {
+          "caption": "Button text",
+          "key": "closed_button_text",
+          "type": "text"
+        },
+        {
+          "caption": "Add link",
+          "key": "closed_button_link",
+          "type": "text"
         }
       ]
     },
     {
       "key": "footer",
-      "caption": "Footer",
       "type": "section",
+      "caption": "Footer",
       "settings": [
         {
-          "key": "footer_about_shop",
           "caption": "About us text",
+          "key": "footer_about_shop",
           "type": "textarea"
         },
         {
-          "key": "footer_image",
           "caption": "Use image in footer",
-          "type": "checkbox",
-          "default": false
+          "default": false,
+          "key": "footer_image",
+          "type": "checkbox"
         },
         {
-          "key": "footer_image_src",
           "caption": "Foreground image",
-          "type": "asset",
+          "description": "Format: png-file, minimum 450px wide",
           "filename": "footer-img.png",
-          "description": "Format: png-file, minimum 450px wide"
+          "key": "footer_image_src",
+          "type": "asset"
         },
         {
-          "key": "footer_social_enable",
           "caption": "Show social media links",
-          "type": "checkbox",
-          "default": false
+          "default": false,
+          "key": "footer_social_enable",
+          "type": "checkbox"
         },
         {
-          "key": "quick_links",
           "caption": "Quick links",
+          "key": "quick_links",
           "type": "header"
         },
         {
-          "key": "footer_quicklinks_enable",
           "caption": "Show links",
-          "type": "checkbox",
-          "default": true
+          "default": true,
+          "key": "footer_quicklinks_enable",
+          "type": "checkbox"
         },
         {
-          "key": "footer_linklists",
           "caption": "Select link lists",
           "description": "Create link-lists under Navigation",
-          "type": "struct",
+          "key": "footer_linklists",
           "settings": [
             {
-              "key": "footer_linklist",
               "caption": "Link list",
-              "type": "linklist",
-              "default": "footer"
+              "default": "footer",
+              "key": "footer_linklist",
+              "type": "linklist"
             }
-          ]
+          ],
+          "type": "struct"
         }
       ]
     }
