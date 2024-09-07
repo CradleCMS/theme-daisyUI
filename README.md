@@ -13,6 +13,7 @@ Tailwind component design from daisyUI made into a Cradle CMS theme.
 * Blog
 * Article
 * 404-not found
+* Search page
 * Closed site
 
 ## Index page components
