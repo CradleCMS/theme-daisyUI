@@ -2,7 +2,7 @@
   "name": "Daisy UI",
   "version": "",
   "developer": "Cradle systems",
-  "description": "Theme built with daisyUI and Tailwind CSS",
+  "description": "",
   "sections": [
     {
       "key": "global",
@@ -368,6 +368,11 @@
           "type": "text"
         },
         {
+          "caption": "Instagram URL",
+          "key": "instagram_url",
+          "type": "text"
+        },
+        {
           "caption": "Twitter URL",
           "key": "twitter_url",
           "type": "text"
@@ -375,6 +380,11 @@
         {
           "caption": "YouTube URL",
           "key": "youtube_url",
+          "type": "text"
+        },
+        {
+          "caption": "LinkedIn URL",
+          "key": "linkedin_url",
           "type": "text"
         }
       ]
