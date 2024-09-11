@@ -1,7 +1,7 @@
 {
   "name": "Daisy UI",
   "version": "",
-  "developer": "Restful Design",
+  "developer": "Cradle systems",
   "description": "",
   "sections": [
     {
@@ -75,7 +75,7 @@
         },
         {
           "caption": "Select preset",
-          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
+          "description": "Go to <a href='https://daisyui.com/docs/themes/' target='_blank'>https://daisyui.com/docs/themes/</a> to learn more",
           "key": "daisy-theme",
           "options": [
             {
@@ -358,7 +358,7 @@
       "settings": [
         {
           "caption": "Social links",
-          "description": "All links must begin with \u003ci\u003ehttp://\u003c/i\u003e or \u003ci\u003ehttps://\u003c/i\u003e",
+          "description": "All links must begin with <i>http://</i> or <i>https://</i>",
           "key": "social_links",
           "type": "header"
         },
@@ -870,7 +870,7 @@
         },
         {
           "caption": "Select preset",
-          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
+          "description": "Go to <a href='https://daisyui.com/docs/themes/' target='_blank'>https://daisyui.com/docs/themes/</a> to learn more",
           "key": "closed-daisy-theme",
           "options": [
             {
@@ -1071,6 +1071,25 @@
           "caption": "Use foreground image",
           "key": "closed_fgimage_use",
           "type": "checkbox"
+        },
+        {
+          "caption": "Size",
+          "key": "closed_fgimage_size",
+          "options": [
+            {
+              "caption": "Small",
+              "value": "150"
+            },
+            {
+              "caption": "Medium",
+              "value": "300"
+            },
+            {
+              "caption": "Maximum",
+              "value": "500"
+            }
+          ],
+          "type": "select"
         },
         {
           "caption": "Foreground image",
