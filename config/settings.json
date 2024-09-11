@@ -2,7 +2,7 @@
   "name": "Daisy UI",
   "version": "",
   "developer": "Cradle systems",
-  "description": "",
+  "description": "Theme built with daisyUI and Tailwind CSS",
   "sections": [
     {
       "key": "global",
