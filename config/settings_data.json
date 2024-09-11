@@ -7,6 +7,7 @@
       "closed-daisy-theme": "light",
       "closed_daisysignup_true": true,
       "closed_dialog_colors": "base-100",
+      "closed_fgimage_size": "150",
       "closed_fgimage_use": false,
       "closed_signup_text": "Keep me notified!",
       "closed_signup_true": false,
