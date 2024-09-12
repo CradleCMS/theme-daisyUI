@@ -2,9 +2,7 @@
 <html data-theme="{{ settings.closed-daisy-theme }}" class="text-base-content">
     <head>
         <meta charset="utf-8" />
-        <title>
-        	{{ site.name }} {% if meta.title != blank and meta.title != site.name %} | {{meta.title}}{% endif %}
-        </title>	
+        <title>{{ site.name }}</title>	
         {% if metaDescription %}
         <meta name="description" content="{{ metaDescription | escape }}" />
         {% endif %}
