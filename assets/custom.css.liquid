@@ -30,3 +30,59 @@ form input[type="submit"] {
     padding: 0.5em;
 }
 {% endunless %}
+
+/* Redactor editor code */
+
+[data-block=layout] {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.wrap-center {
+  text-align: center;
+}
+.wrap-center img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrap-center figcaption {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.float-left {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  max-width: 200px;
+}
+.float-right {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  max-width: 200px;
+}
+
+:root {
+    --rx-outset-md: 28px;
+}
+.outset-right {
+  position: relative;
+  width: calc(100% + var(--rx-outset-md));
+  max-width: calc(100% + var(--rx-outset-md));
+  transform: translateX(var(--rx-outset-md)) translate3d(0, 0, 0);
+  left: calc(var(--rx-outset-md) * -1);
+}
+.outset-left {
+  width: calc(100% + var(--rx-outset-md));
+  max-width: calc(100% + var(--rx-outset-md));
+  transform: translateX(calc(var(--rx-outset-md) * -1)) translate3d(0, 0, 0);
+}
+.outset-both {
+  position: relative;
+  width: calc(100% + var(--rx-outset-md) + var(--rx-outset-md));
+  max-width: calc(100% + var(--rx-outset-md) + var(--rx-outset-md));
+  transform: translateX(-50%) translate3d(0, 0, 0);
+  left: 50%;
+}
