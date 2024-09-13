@@ -1,8 +1,8 @@
 {
-  "name": "Daisy UI",
-  "version": "",
+  "name": "daisyUI",
+  "version": "1.0.0",
   "developer": "Cradle systems",
-  "description": "",
+  "description": "A theme based on TailwindCSS and daisyUI",
   "sections": [
     {
       "key": "global",
