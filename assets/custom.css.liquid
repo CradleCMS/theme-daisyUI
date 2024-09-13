@@ -31,58 +31,56 @@ form input[type="submit"] {
 }
 {% endunless %}
 
-/* Redactor editor code */
+/* RTE styles */
 
-[data-block=layout] {
+.RTE [data-block=layout] {
     display: flex;
     flex-direction: row;
     gap: 24px;
 }
-
-.wrap-center {
+.RTE .wrap-center {
   text-align: center;
 }
-.wrap-center img {
+.RTE .wrap-center img {
   margin-left: auto;
   margin-right: auto;
 }
-.wrap-center figcaption {
+.RTE .wrap-center figcaption {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-.float-left {
+.RTE .float-left {
   float: left;
   margin-right: 1em;
   margin-bottom: 1em;
   max-width: 200px;
 }
-.float-right {
+.RTE .float-right {
   float: right;
   margin-left: 1em;
   margin-bottom: 1em;
   max-width: 200px;
 }
-
-:root {
-    --rx-outset-md: 28px;
+.RTE {
+    --rte-outset-md: 28px;
 }
-.outset-right {
+.RTE .outset-right {
   position: relative;
-  width: calc(100% + var(--rx-outset-md));
-  max-width: calc(100% + var(--rx-outset-md));
-  transform: translateX(var(--rx-outset-md)) translate3d(0, 0, 0);
-  left: calc(var(--rx-outset-md) * -1);
+  width: calc(100% + var(--rte-outset-md));
+  max-width: calc(100% + var(--rte-outset-md));
+  transform: translateX(var(--rte-outset-md)) translate3d(0, 0, 0);
+  left: calc(var(--rte-outset-md) * -1);
 }
-.outset-left {
-  width: calc(100% + var(--rx-outset-md));
-  max-width: calc(100% + var(--rx-outset-md));
-  transform: translateX(calc(var(--rx-outset-md) * -1)) translate3d(0, 0, 0);
+.RTE .outset-left {
+  width: calc(100% + var(--rte-outset-md));
+  max-width: calc(100% + var(--rte-outset-md));
+  transform: translateX(calc(var(--rte-outset-md) * -1)) translate3d(0, 0, 0);
 }
-.outset-both {
+.RTE .outset-both {
   position: relative;
-  width: calc(100% + var(--rx-outset-md) + var(--rx-outset-md));
-  max-width: calc(100% + var(--rx-outset-md) + var(--rx-outset-md));
+  width: calc(100% + var(--rte-outset-md) + var(--rte-outset-md));
+  max-width: calc(100% + var(--rte-outset-md) + var(--rte-outset-md));
   transform: translateX(-50%) translate3d(0, 0, 0);
   left: 50%;
 }
