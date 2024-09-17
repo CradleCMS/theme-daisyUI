@@ -40,6 +40,9 @@
                   {% if settings.closed_text %}
                     <p class="mb-5">{{ settings.closed_text }}</p>
                   {% endif %}
+                  {% if settings.closed_button_link and settings.closed_button_text %}
+                    <a class="btn btn-primary mb-5" href="{{ settings.closed_button_link }}">{{ settings.closed_button_text }}</a>
+                  {% endif %}
               </header>
               {% if settings.closed_signup_true %}
                 {% if settings.closed_daisysignup_true %}
@@ -73,9 +76,6 @@
                         {% form 'signup' %}{% endform %}    
                     </div>
                 {% endif %}
-              {% endif %}
-              {% if settings.closed_button_link and settings.closed_button_text %}
-                <a class="btn btn-primary mb-5" href="{{ settings.closed_button_link }}">{{ settings.closed_button_text }}</a>
               {% endif %}
               {% if settings.closed_social_true %}
                 <div class="grid grid-flow-col gap-4 justify-center mb-5">
