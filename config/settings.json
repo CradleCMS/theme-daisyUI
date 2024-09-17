@@ -364,27 +364,27 @@
         },
         {
           "caption": "Facebook URL",
-          "key": "facebook_url",
+          "key": "social_facebook_url",
           "type": "text"
         },
         {
           "caption": "Instagram URL",
-          "key": "instagram_url",
+          "key": "social_instagram_url",
           "type": "text"
         },
         {
           "caption": "Twitter URL",
-          "key": "twitter_url",
+          "key": "social_twitter_url",
           "type": "text"
         },
         {
           "caption": "YouTube URL",
-          "key": "youtube_url",
+          "key": "social_youtube_url",
           "type": "text"
         },
         {
           "caption": "LinkedIn URL",
-          "key": "linkedin_url",
+          "key": "social_linkedin_url",
           "type": "text"
         }
       ]
