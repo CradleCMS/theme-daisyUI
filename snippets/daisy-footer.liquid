@@ -34,7 +34,7 @@
           <nav>
             <header class="footer-title">{{ navigation[linkList.id].title }}</header> 
             {% for link in navigation[linkList.id].links %}
-            <a class="link link-hover" href="{{ link.url }}">{{ link.title }}</a>
+            <a class="link link-hover" href="{{ link | url }}">{{ link.title }}</a>
             {% endfor %}
           </nav> 
         {% endfor %}
