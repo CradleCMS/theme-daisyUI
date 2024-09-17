@@ -14,7 +14,7 @@ Tailwind component design from daisyUI made into a Cradle CMS theme.
 * Article
 * 404-not found
 * Search page
-* Closed site
+* Closed site template with signup form
 
 ## Index page components
 * Over-the-fold hero section
