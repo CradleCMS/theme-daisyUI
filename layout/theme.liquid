@@ -2,6 +2,7 @@
 <html data-theme="{{ settings.daisy-theme }}">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
         <title>
         	{{ site.name }} {% if meta.title != blank and meta.title != site.name %} | {{meta.title}}{% endif %}
         </title>	
