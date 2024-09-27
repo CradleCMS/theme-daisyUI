@@ -2,6 +2,7 @@
 <html data-theme="{{ settings.closed-daisy-theme }}" class="text-base-content">
     <head>
         <meta charset="utf-8" />
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
         <title>{{ site.name }}</title>	
         {% if metaDescription %}
         <meta name="description" content="{{ metaDescription | escape }}" />
