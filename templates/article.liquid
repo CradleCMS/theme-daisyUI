@@ -15,7 +15,7 @@
     </header>
 	<div class="divider divider-accent"></div>
 	<div class="flex lg:flex-row flex-col justify-between">
-        <article class="prose mx-auto" itemprop="articleBody">
+        <article class="prose mx-auto {{ article.format }}" itemprop="articleBody">
             {{ article.html }}
         </article>
         {% if blog %}
