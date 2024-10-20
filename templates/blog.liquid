@@ -12,6 +12,7 @@
             {% endfor %}    
         </div>
     </header>
+	<div class="{{ article.format }}">{{ article.html }}</div>
 	<div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
 		{% for article in blog.articles %}
 		    {% include 'daisy-blog-card' %}
