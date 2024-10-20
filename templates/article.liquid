@@ -28,8 +28,8 @@
 	<div class="divider divider-accent"></div>
 	{% if blog %}
     <div class="grid grid-cols-2">
-        <p><a class="btn btn-ghost" href="{{ article | url:article.previous }}" {% if article.previous == blank %}disabled{% endif %}>&larr; {{ lang.older_post | def:'Previous'}}</a></p>
-    	<p class="text-right"><a class="btn btn-ghost" href="{{ article | url:article.next }}" {% if article.next == blank %}disabled{% endif %}>{{ lang.newer_post | def:'Next'}} &rarr;</a></p>
+        <p><a class="btn btn-ghost" href="{{ article.previous | url }}" {% if article.previous == empty %}disabled{% endif %}>&larr; Previous</a></p>
+    	<p class="text-right"><a class="btn btn-ghost" href="{{ article.next | url }}" {% if article.next == empty %}disabled{% endif %}>Next &rarr;</a></p>
     </div>
     {% endif %}
 </section>
