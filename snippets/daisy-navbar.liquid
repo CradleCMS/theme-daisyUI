@@ -32,7 +32,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
     {% endif %}
     <a class="text-xl" href="/">
         {% if settings.logo_use_image %}
-            <img src="{{ 'logo.png' | asset_url }}" alt="logo" tabindex="1">
+            <img src="{{ settings.logo_image | asset_img_url:0,30 }}" alt="logo" tabindex="1" class="p-2">
         {% else %}
     		{{ site.name }}
     	{% endif %}

@@ -20,16 +20,20 @@
         {% endif %}
         {% include 'open-graph-tags' %}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {% if settings.favicon_enable %}
-            <link rel="icon" href="{{ 'favicon.ico' | asset_img_url }}" sizes="any">
-            <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon.png' | asset_img_url:'16','16' }}">
-            <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon.png' | asset_img_url:'32','32' }}">
-            <link rel="icon" href="{{ 'icon.svg' | asset_img_url }}" type="image/svg+xml">
-            <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-            <link rel="manifest" href="{{ 'manifest.json' | asset_url }}">
-            <meta name="msapplication-TileColor" content="#da532c">
-            <meta name="theme-color" content="#ffffff">
-        {% endif %}
+        <link rel="icon" href="/favicon.ico">
+        {% unless settings.favicon_image == empty %}
+            <link rel="icon" type="image/png" sizes="16x16" href="{{ settings.favicon_image | asset_img_url:16,16 }}">
+            <link rel="icon" type="image/png" sizes="32x32" href="{{ settings.favicon_image | asset_img_url:32,32 }}">
+        {% endunless %}
+        {% unless settings.favicon_svg == empty %}
+            <link rel="icon" href="{{ 'icon.svg' | asset_url }}" type="image/svg+xml">
+        {% endunless %}
+        {% unless settings.branding-theme-color-light == empty %}
+            <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ settings.branding-theme-color-light }}" />
+        {% endunless %}
+        {% unless settings.branding-theme-color-dark == empty %}
+            <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{{ settings.branding-theme-color-dark }}" />
+        {% endunless %}
 
         {% if settings.css_dev_mode == "development" %}
         <script src="https://cdn.tailwindcss.com"></script>
@@ -44,12 +48,21 @@
     <body id="{{ meta.title | handle }}" class="bg-{{ settings.body_colors }} text-{{ settings.body_colors }}-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
         <div>
             {% include 'daisy-navbar' %}
-            {% if template == "index" and settings.header_otf_section %}
-                {% include 'daisy-centered-hero' %}
-            {% endif %}
-            <div class="container max-w-8xl mx-auto {% unless template == "product" %}mt-20{% endunless %} px-2">
+            {% if template == "index" %}
+                {% if settings.header_otf_section %}
+                  {% include 'daisy-centered-hero' %}
+                {% endif %}
+                {% let indexContent = contentForLayout | strip_newlines | strip %}
+                {% unless indexContent == "" %}
+                  <div class="container max-w-8xl mx-auto {% unless template == "product" %}mt-20{% endunless %} px-2 pb-10">
+                    {{ contentForLayout }}
+                  </div>
+                {% endunless %}
+            {% else %}
+            <div class="container max-w-8xl mx-auto {% unless template == "product" %}mt-20{% endunless %} px-2 pb-10">
                 {{ contentForLayout }}
             </div>
+            {% endif %}
         </div>
         {% include 'daisy-footer' %}
     </body>

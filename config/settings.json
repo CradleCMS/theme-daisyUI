@@ -75,7 +75,7 @@
         },
         {
           "caption": "Select preset",
-          "description": "Go to <a href='https://daisyui.com/docs/themes/' target='_blank'>https://daisyui.com/docs/themes/</a> to learn more",
+          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
           "key": "daisy-theme",
           "options": [
             {
@@ -293,72 +293,13 @@
       ]
     },
     {
-      "key": "logo",
-      "type": "section",
-      "caption": "Logo",
-      "settings": [
-        {
-          "caption": "Logo Options",
-          "key": "logo_options",
-          "type": "header"
-        },
-        {
-          "caption": "Use Custom Logo",
-          "default": false,
-          "key": "logo_use_image",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Custom Logo",
-          "description": "Recommend the optimal width and height for your logo here.",
-          "filename": "logo.png",
-          "key": "logo_image",
-          "max-height": 1200,
-          "max-width": 1200,
-          "type": "asset"
-        },
-        {
-          "caption": "Favicons",
-          "key": "favicon",
-          "type": "header"
-        },
-        {
-          "caption": "Enable custom favicon",
-          "default": false,
-          "key": "favicon_enable",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Favicon png-type",
-          "description": "Format: png-file, minimum 512px x 512p",
-          "filename": "favicon.png",
-          "key": "favicon_image",
-          "type": "asset"
-        },
-        {
-          "caption": "Favicon svg-type",
-          "description": "Format: An SVG-file with light and dark version for modern browsers",
-          "filename": "icon.svg",
-          "key": "favicon_svg",
-          "type": "asset"
-        },
-        {
-          "caption": "Favicon ico-type, for legacy browsers",
-          "description": "A 32px × 32px favicon.ico file used by legacy browsers, ico format is a special format for favicon",
-          "filename": "favicon.ico",
-          "key": "favicon_ico",
-          "type": "asset"
-        }
-      ]
-    },
-    {
       "key": "social_media",
       "type": "section",
       "caption": "Social Media",
       "settings": [
         {
           "caption": "Social links",
-          "description": "All links must begin with <i>http://</i> or <i>https://</i>",
+          "description": "All links must begin with \u003ci\u003ehttp://\u003c/i\u003e or \u003ci\u003ehttps://\u003c/i\u003e",
           "key": "social_links",
           "type": "header"
         },
@@ -402,6 +343,7 @@
         {
           "caption": "Main navigation",
           "default": "Select linklist",
+          "description": "Setup linklists under \u003ca href='/admin/navigation'\u003eNavigation\u003c/a\u003e",
           "key": "main_nav_linklist",
           "type": "linklist"
         },
@@ -428,7 +370,7 @@
       "caption": "Homepage",
       "settings": [
         {
-          "caption": "OTF hero",
+          "caption": "Hero box",
           "description": "Over the fold hero section for index page",
           "key": "header_otf",
           "type": "header"
@@ -465,20 +407,34 @@
         },
         {
           "caption": "Foreground image",
-          "description": "Format: png-file, minimum 450px wide",
-          "filename": "otf-fg.png",
+          "description": "Minimum 450px wide",
           "key": "header_otf_fgimage",
-          "type": "asset"
+          "type": "image"
         },
         {
           "caption": "Background image",
-          "description": "Format: jpg-file, minimum 1024px x 1024p",
-          "filename": "otf.jpg",
+          "description": "Minimum 1024px x 1024px",
           "key": "header_otf_image",
-          "type": "asset"
+          "type": "image"
         },
         {
-          "caption": "Link grid",
+          "caption": "Use page content",
+          "key": "content",
+          "type": "header"
+        },
+        {
+          "caption": "Page",
+          "default": "Select page",
+          "key": "homepage_page",
+          "type": "page"
+        },
+        {
+          "caption": "Show page",
+          "key": "homepage_page_show",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Linkcard grid",
           "description": "Grid for links",
           "key": "link_grid",
           "type": "header"
@@ -556,7 +512,7 @@
           "type": "select"
         },
         {
-          "caption": "Link content",
+          "caption": "Linkcard contents",
           "key": "link_grid_items",
           "settings": [
             {
@@ -665,13 +621,12 @@
           "key": "grid_items",
           "settings": [
             {
-              "caption": "Image for carousel",
-              "description": "Recommended size up to 500 px wide and jpg format.",
-              "filename": "item.jpg",
+              "caption": "Image",
+              "description": "Recommended format: 500 px wide and jpg format.",
               "key": "image",
-              "max-height": 1024,
-              "max-width": 1300,
-              "type": "asset"
+              "maxHeight": 1024,
+              "maxWidth": 1300,
+              "type": "image"
             },
             {
               "caption": "Image alt-text",
@@ -680,22 +635,6 @@
             }
           ],
           "type": "struct"
-        },
-        {
-          "caption": "Content",
-          "key": "content",
-          "type": "header"
-        },
-        {
-          "caption": "Page",
-          "default": "Select page",
-          "key": "homepage_page",
-          "type": "page"
-        },
-        {
-          "caption": "Show page",
-          "key": "homepage_page_show",
-          "type": "checkbox"
         },
         {
           "caption": "Banner sections",
@@ -720,12 +659,10 @@
           "settings": [
             {
               "caption": "Image",
-              "description": "",
-              "filename": "section_banner1.jpg",
               "key": "link_image",
-              "max-height": 500,
-              "max-width": 1400,
-              "type": "asset"
+              "maxHeight": 500,
+              "maxWidth": 1400,
+              "type": "image"
             },
             {
               "caption": "Image alt",
@@ -825,12 +762,11 @@
           "settings": [
             {
               "caption": "Image for slide",
-              "description": "Recommended size 1132x500",
-              "filename": "slide.jpg",
+              "description": "Recommended size 1132px x 500px",
               "key": "slide_image",
-              "max-height": 1024,
-              "max-width": 1300,
-              "type": "asset"
+              "maxHeight": 1024,
+              "maxWidth": 1300,
+              "type": "image"
             },
             {
               "caption": "Image alt",
@@ -880,7 +816,7 @@
         },
         {
           "caption": "Select preset",
-          "description": "Go to <a href='https://daisyui.com/docs/themes/' target='_blank'>https://daisyui.com/docs/themes/</a> to learn more",
+          "description": "Go to \u003ca href='https://daisyui.com/docs/themes/' target='_blank'\u003ehttps://daisyui.com/docs/themes/\u003c/a\u003e to learn more",
           "key": "closed-daisy-theme",
           "options": [
             {
@@ -1052,10 +988,9 @@
         },
         {
           "caption": "Background image",
-          "description": "Format: jpg-file, minimum 1024px x 1024p",
-          "filename": "closed-bg.jpg",
+          "description": "Recommended format: jpg-file, minimum 1024px x 1024p",
           "key": "closed_bgimage",
-          "type": "asset"
+          "type": "image"
         },
         {
           "caption": "Message",
@@ -1104,9 +1039,8 @@
         {
           "caption": "Foreground image",
           "description": "Format: png-file, minimum 450px wide",
-          "filename": "closed-fg.png",
           "key": "closed_fgimage",
-          "type": "asset"
+          "type": "image"
         },
         {
           "caption": "Signup",
@@ -1165,6 +1099,7 @@
         {
           "caption": "About us text",
           "key": "footer_about_shop",
+          "rows": 6,
           "type": "textarea"
         },
         {
@@ -1176,9 +1111,13 @@
         {
           "caption": "Foreground image",
           "description": "Format: png-file, minimum 450px wide",
-          "filename": "footer-img.png",
           "key": "footer_image_src",
-          "type": "asset"
+          "type": "image"
+        },
+        {
+          "caption": "Image alt text",
+          "key": "footer_image_alt",
+          "type": "text"
         },
         {
           "caption": "Show social media links",
@@ -1210,6 +1149,73 @@
             }
           ],
           "type": "struct"
+        }
+      ]
+    },
+    {
+      "key": "branding",
+      "type": "section",
+      "caption": "Branding",
+      "settings": [
+        {
+          "caption": "Logo",
+          "key": "logo_options",
+          "type": "header"
+        },
+        {
+          "caption": "Use Custom Logo",
+          "default": false,
+          "key": "logo_use_image",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Custom Logo",
+          "description": "A logo in png format with max-height 50px and max-width 200px.",
+          "filename": "logo.png",
+          "key": "logo_image",
+          "maxHeight": 50,
+          "maxWidth": 200,
+          "type": "image"
+        },
+        {
+          "caption": "Favicons",
+          "key": "favicon",
+          "type": "header"
+        },
+        {
+          "caption": "Enable custom favicon",
+          "default": false,
+          "key": "favicon_enable",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Favicon png-type",
+          "description": "Format: png-file, minimum 512px x 512p",
+          "filename": "favicon.png",
+          "key": "favicon_image",
+          "type": "image"
+        },
+        {
+          "caption": "Favicon svg-type",
+          "description": "Format: An SVG-file with light and dark version for modern browsers",
+          "key": "favicon_svg",
+          "type": "asset"
+        },
+        {
+          "caption": "Theme colors",
+          "description": "Suggested colors for user agents.",
+          "key": "theme-color",
+          "type": "header"
+        },
+        {
+          "caption": "Theme color (light)",
+          "key": "branding-theme-color-light",
+          "type": "color"
+        },
+        {
+          "caption": "Theme color (dark)",
+          "key": "branding-theme-color-dark",
+          "type": "color"
         }
       ]
     }

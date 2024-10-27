@@ -1,10 +1,10 @@
-<div class="bg-{{ settings.footer_colors }} text-{{ settings.footer_colors }}-content mt-10">
+<div class="bg-{{ settings.footer_colors }} text-{{ settings.footer_colors }}-content">
     <footer class="footer px-2 py-10 max-w-8xl mx-auto container">
       <aside class="max-w-lg">
         {% if settings.footer_image %}
-            <img src="{{ 'footer-img.png' | asset_img_url:'800','0' }}" alt="logo" tabindex="1">
+            <img src="{{ settings.footer_image_src | asset_img_url:'800','0' }}" {% unless settings.footer_image_alt == empty %}alt="{{ settings.footer_image_alt }}"{% endunless %} tabindex="1">
         {% endif %}
-        {% unless settings.footer_about_shop == ""%}
+        {% unless settings.footer_about_shop == empty %}
         <p class="font-bold">
           {{ settings.footer_about_shop }}
         </p> 
@@ -27,6 +27,6 @@
       {% endif %}
     </footer>
     <footer class="footer p-2 pb-4 max-w-8xl mx-auto container">
-        <p class="">Copyright &copy; <script>document.write(new Date().getFullYear())</script> - {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
+        <p class="">Copyright &copy; {{ site.name }} - {{ lang.all_rights_reserved | def:'All rights reserved'}}</p>
     </footer>
 </div>

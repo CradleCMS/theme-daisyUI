@@ -14,7 +14,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{% if page.image.src.size > 0 %}{{site | url}}{{ page | img_url:1200,0 }}{% else %}{{ site | url }}/cover-full{% endif %}" />
 {% else %}
-    <meta property="og:image" content="{{ site | url }}/cover-full" />
+    <meta property="og:image" content="{{ site | url }}/cover-full.png" />
     <meta property="og:type" content="website" />
 {% endif %}
 <meta property="og:title" content="{{ meta.title | escape }}" />
