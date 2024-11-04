@@ -1,4 +1,25 @@
-<section>
-    <h1>{{ meta.h1 }}</h1>
-    <div class="{{ article.format }}">{{ product.html }}</div>
+{% include 'daisy-breadcrumbs' %}
+
+<section class="flex flex-row gap-4">
+    <div class="basis-1/2">
+      <figure>
+          <img src="{{ product.featuredImage | product_img_url:0,700 }}" alt="{{ product.featuredImage.alt }}" />
+      </figure>
+    </div>
+    <div class="basis-1/2">
+        <h1 class="text-5xl mb-2">{{ meta.h1 }}</h1>
+        <p class="text-2xl mb-4">{{ product.selectedVariant.price | money }}</p>
+
+        {% if product.keyFeatures.size > 0 %}
+        <ul class="mb-2">
+            {% for feature in product.keyFeatures %}
+            <li class="checkmark">
+                {{ feature }}
+            </li>
+            {% endfor %}            
+        </ul>
+        {% endif %}
+
+        <div class="{{ product.format }} prose mt-4">{{ product.html }}</div>        
+    </div>
 </section>
