@@ -4,7 +4,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
 
 {% assign main-nav = settings.main_nav_linklist | def: "main-menu" %}
 
-<div class="bg-{{ settings.header_colors }} text-{{ settings.header_colors }}-content shadow fixed top-0 w-[100vw] z-30">
+<div class="bg-{{ settings.header_colors }} text-{{ settings.header_colors }}-content {{ settings.general_shadow }} fixed top-0 w-[100vw] z-30">
 <div class="navbar max-w-8xl mx-auto container">
   <div class="navbar-start">
     {% if navigation[main-nav].links.size > 0 %}
