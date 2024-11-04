@@ -42,6 +42,25 @@
           "type": "select"
         },
         {
+          "caption": "Shadow on menus and cards",
+          "key": "general_shadow",
+          "options": [
+            {
+              "caption": "None",
+              "value": ""
+            },
+            {
+              "caption": "Minmal",
+              "value": "shadow"
+            },
+            {
+              "caption": "Maximum",
+              "value": "shadow-xl"
+            }
+          ],
+          "type": "select"
+        },
+        {
           "caption": "Development",
           "key": "development",
           "type": "header"
