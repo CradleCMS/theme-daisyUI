@@ -1,0 +1,18 @@
+<div class="card shadow-xl bg-base-100">
+  <a href="{{ product | url }}">
+       {% unless product.featuredImage == empty %}
+      <figure>
+          <img src="{{ product.featuredImage | product_img_url:0,500 }}" alt="{{ product.featuredImage.alt }}" />
+      </figure>
+      {% endunless %}
+      <div class="card-body">
+        <h2 class="card-title">
+          {{ product.meta.h1 }}
+        </h2>
+        <p>{{ product.price | money }}</p>
+        <div class="card-actions justify-center">
+          <a class="btn btn-outline btn-primary btn-block" href="{{ product | url }}">Go to product</a>
+        </div>
+      </div>
+  </a>
+</div>
