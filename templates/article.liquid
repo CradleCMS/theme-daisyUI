@@ -18,21 +18,16 @@
         <article class="prose mx-auto {{ article.format }}" itemprop="articleBody">
             {{ article.html }}
         </article>
-        {% if blog %}
     	<aside class="bg-base-200 text-base-content hidden lg:block lg:ml-4 p-4 max-w-md" role="complementary">
     	    {% include 'blog-sidebar' %}
         </aside>
-        {% endif %}
 	</div>
-
 	<div class="divider divider-accent"></div>
     <div class="grid grid-cols-2">
         <p><a class="btn btn-ghost" href="{{ article.previous | url }}" {% if article.previous == empty %}disabled{% endif %}>&larr; Previous</a></p>
     	<p class="text-right"><a class="btn btn-ghost" href="{{ article.next | url }}" {% if article.next == empty %}disabled{% endif %}>Next &rarr;</a></p>
     </div>
 </section>
-{% if blog %}
-    <div class="bg-base-200 text-base-content flex items-start mt-4 px-3 py-2 mx-auto lg:hidden"> 
-        {% include 'blog-sidebar' %}
-    </div>
-{% endif %}
+<div class="bg-base-200 text-base-content flex items-start mt-4 px-3 py-2 mx-auto lg:hidden"> 
+    {% include 'blog-sidebar' %}
+</div>
