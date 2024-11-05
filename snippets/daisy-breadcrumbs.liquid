@@ -20,9 +20,8 @@
                 <li><span>{{ blog.title }}</span></li>
             {% endif %}
         {% elseif template == 'article' %}
-            {% if blog %}
+            {% assign blog = blogs[article.blog] %}
             <li><a href="{{ blog | url }}">{{ blog.title }}</a></li>
-            {% endif %}
             <li><span>{{ article.title }}</span></li>
         {% elseif template contains 'page' %}
             <li><span>{{ page.title }}</span></li>
