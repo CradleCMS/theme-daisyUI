@@ -1,6 +1,6 @@
 {
   "name": "daisyUI",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "developer": "Cradle systems",
   "description": "A theme based on TailwindCSS and daisyUI",
   "sections": [
@@ -79,6 +79,16 @@
             }
           ],
           "type": "select"
+        },
+        {
+          "caption": "Content security policy",
+          "key": "content-security-policy",
+          "type": "header"
+        },
+        {
+          "caption": "Script source self only",
+          "key": "content-security-policy-usage",
+          "type": "checkbox"
         }
       ]
     },
@@ -1182,18 +1192,9 @@
           "type": "header"
         },
         {
-          "caption": "Use Custom Logo",
-          "default": false,
-          "key": "logo_use_image",
-          "type": "checkbox"
-        },
-        {
           "caption": "Custom Logo",
           "description": "A logo in png format with max-height 50px and max-width 200px.",
-          "filename": "logo.png",
           "key": "logo_image",
-          "maxHeight": 50,
-          "maxWidth": 200,
           "type": "image"
         },
         {
@@ -1206,13 +1207,6 @@
           "default": false,
           "key": "favicon_enable",
           "type": "checkbox"
-        },
-        {
-          "caption": "Favicon png-type",
-          "description": "Format: png-file, minimum 512px x 512p",
-          "filename": "favicon.png",
-          "key": "favicon_image",
-          "type": "image"
         },
         {
           "caption": "Favicon svg-type",

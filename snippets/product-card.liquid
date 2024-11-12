@@ -6,12 +6,14 @@
       </figure>
       {% endunless %}
       <div class="card-body">
-        <h2 class="card-title">
-          {{ product.meta.h1 }}
-        </h2>
-        <p>{{ product.price | money }}</p>
+        <div class="flex flex-row">
+            <h2 class="card-title">
+                {{ product.meta.h1 }}
+            </h2>
+            <p class="text-right">{{ product.price | money }}</p>
+        </div>
         <div class="card-actions justify-center">
-          <a class="btn btn-outline btn-primary btn-block" href="{{ product | url }}">Go to product</a>
+          <a class="btn btn-secondary btn-sm" href="{{ product | url }}">Read more</a>
         </div>
       </div>
   </a>
