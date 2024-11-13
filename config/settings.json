@@ -1171,6 +1171,11 @@
           "key": "footer_linklists",
           "settings": [
             {
+              "caption": "Title",
+              "key": "footer_linklist_title",
+              "type": "text"
+            },            
+            {
               "caption": "Link list",
               "default": "footer",
               "key": "footer_linklist",
