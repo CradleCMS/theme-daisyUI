@@ -1,6 +1,12 @@
+ifeq ($(shell command -v podman 2> /dev/null),)
+    CMD=docker
+else
+    CMD=podman
+endif
+
 .PHONY: css
 css:
-	docker build -t daisy .
-	docker run --name builder daisy
-	docker cp builder:/tmp/output.css assets/output.css
-	docker rm builder
+	$(CMD) build -t daisy .
+	$(CMD) run --name builder daisy
+	$(CMD) cp builder:/tmp/output.css assets/output.css
+	$(CMD) rm builder

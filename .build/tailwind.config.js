@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['../layout/*','../templates/*','..snippets/*','../components/*','../assets/*.liquid'],
+  content: ['../layout/*','../templates/*','../snippets/*','../components/*','../assets/*.liquid'],
   plugins: [
     require('@tailwindcss/typography'),
     require('daisyui')
