@@ -1,6 +1,6 @@
 .PHONY: css
 css:
-	podman build --progress=plain -t daisy .
-	podman run --name builder daisy
-	podman cp builder:/tmp/output.css assets/output.css
-	podman rm builder
+	docker build -t daisy .
+	docker run --name builder daisy
+	docker cp builder:/tmp/output.css assets/output.css
+	docker rm builder
