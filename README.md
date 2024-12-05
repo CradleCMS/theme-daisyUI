@@ -28,7 +28,18 @@ Tailwind component design from daisyUI made into a Cradle CMS theme.
 ## Contact page
 
 1. To add a contact form to a page, choose the page template `contact`.
-2. Add a form (forms are under Messages) named `contact`.
+2. Add a form (forms are under Messages) named `contact`. (Forms guide at CradleCMS.com)[https://cradlecms.com/blogs/guides/article/form-functionality#submit]
+
+### Formfields to add 
+
+Please note that there are forms validations done and it is important that the submitted form from the website corresponds to what is specified in admin/in the system.
+
+Required | Name | Type | Value | Attributes | Match
+---|---|---|---|---|---
+Y | name | text | - | - | -
+Y | email | email | - | - | -
+Y | message | textarea | - | - | -
+Y | Submit | submit | Submit | - | -
 
 ## References
 * <https://daisyui.com/> - daisyUI webpage
