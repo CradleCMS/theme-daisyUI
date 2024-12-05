@@ -15,17 +15,17 @@
         <div class="grid grid-cols-1 md:grid-cols-{{ settings.link_grid_column_amount_md }} lg:grid-cols-{{ settings.link_grid_column_amount_lg }} gap-4">
             {% for item in settings.link_grid_items %}
                 <div class="card-body items-center text-center rounded-box shadow-xl bg-base-100 text-base-content">
-                {% if item.link_heading != blank %}
+                {% if item.link_heading %}
                     <h4 class="card-title text-xl mb-4 font-bold justify-center">{{ item.link_heading }}</h4>
                 {% endif %}
-                {% if item.link_description != blank %}
+                {% if item.link_description %}
                     <p class="text-center grow-0 mb-4">{{ item.link_description }}</p>
                 {% endif %}
-                {% unless item.link_url == blank %}
+                {% if item.link_url  %}
                 <div class="card-actions justify-center">
                   <a href="{{ item.link_url }}" class="btn btn-primary" target="_blank">{{ item.link_text }}</a>
                 </div>
-                {% endunless %}
+                {% endif %}
               </div>
             {% endfor %}
         </div>        
