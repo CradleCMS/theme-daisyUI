@@ -41,6 +41,10 @@ Y | email | email | - | - | -
 Y | message | textarea | - | - | -
 Y | Submit | submit | Submit | - | -
 
+## Development
+
+There is a builder included for generating the tailwind CSS file for production. With command `make` in the terminal it will build a new ouput.css file. The builder requires Podman or Docker (and the environment, Colima on Mac for example) to work.
+
 ## References
 * <https://daisyui.com/> - daisyUI webpage
 * <https://tailwindcss.com/> - Tailwind CSS (daisyUI is created ontop of Tailwind)
