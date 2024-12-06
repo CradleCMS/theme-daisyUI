@@ -1,6 +1,6 @@
 {
   "name": "daisyUI",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "developer": "Cradle systems",
   "description": "A theme based on TailwindCSS and daisyUI",
   "sections": [
@@ -408,6 +408,49 @@
           "caption": "Use hero box",
           "key": "header_otf_section",
           "type": "checkbox"
+        },
+        {
+          "caption": "Height of Viewport",
+          "key": "heder_otf_height",
+          "options": [
+            {
+              "caption": "20%",
+              "value": "[20vh]"
+            },
+            {
+              "caption": "30%",
+              "value": "[30vh]"
+            },
+            {
+              "caption": "40%",
+              "value": "[40vh]"
+            },
+            {
+              "caption": "50%",
+              "value": "[50vh]"
+            },
+            {
+              "caption": "60%",
+              "value": "[60vh]"
+            },
+            {
+              "caption": "70%",
+              "value": "[70vh]"
+            },
+            {
+              "caption": "80%",
+              "value": "[80vh]"
+            },
+            {
+              "caption": "90%",
+              "value": "[90vh]"
+            },
+            {
+              "caption": "100%",
+              "value": "screen"
+            }
+          ],
+          "type": "select"
         },
         {
           "caption": "Title",
@@ -1174,7 +1217,7 @@
               "caption": "Title",
               "key": "footer_linklist_title",
               "type": "text"
-            },            
+            },
             {
               "caption": "Link list",
               "default": "footer",
