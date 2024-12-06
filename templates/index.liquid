@@ -3,7 +3,7 @@
     <div class="">
         {% let p = pages[settings.homepage_page.id] %}
         <h2 class="text-3xl font-bold mb-8 text-center">{{ p.meta.h1 }}</h2>
-        <div class="text-xl">
+        <div class="text-xl {{ p.format }}">
             {{ p.html }}
         </div>
     </div>
@@ -52,17 +52,17 @@
                   <img loading="lazy" src="{{ links.link_image | asset_img_url:400,0,'cropped' }}" alt="{{ links.link_image_alt }}"/>
               </figure>
               <div class="lg:w-1/3 md:w-3/5 card-body justify-center">
-                {% if links.link_title != blank %}
+                {% if links.link_title %}
                     <h2 class="card-title text-3xl lg:text-5xl mb-4 font-bold justify-center">{{ links.link_title }}</h2>
                 {% endif %}
-                {% if links.link_text != blank %}
+                {% if links.link_text %}
                     <p class="text-center grow-0 mb-4">{{ links.link_text }}</p>
                 {% endif %}
-                {% unless links.link_url == blank and links.link2_url == blank %}
+                {% if links.link_url or links.link2_url %}
                 <div class="card-actions justify-center">
-                  <a href="{{ links.link_url }}" class="btn btn-primary" target="_blank">{{ links.link_button_title }}</a><a href="{{ links.link2_url }}" class="btn btn-primary" target="_blank">{{ links.link2_button_title }}</a>
+                  {% if links.link_url %}<a href="{{ links.link_url }}" class="btn btn-primary" target="_blank">{{ links.link_button_title }}</a>{% endif %}{% if links.link2_url %}<a href="{{ links.link2_url }}" class="btn btn-primary" target="_blank">{{ links.link2_button_title }}</a>{% endif %}
                 </div>
-                {% endunless %}
+                {% endif %}
               </div>
             </section>
         {% endfor %}
