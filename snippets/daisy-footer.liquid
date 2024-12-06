@@ -15,10 +15,10 @@
         </div>
         {% endif %}
       </aside> 
-	  {% if settings.footer_quicklinks_enable %}
-        {% for linkList in settings.footer_linklists | key:"footer_linklist" %}
+     {% if settings.footer_quicklinks_enable %}
+        {% for linkList in settings.footer_linklists %}
           <nav>
-            <header class="footer-title">{{ navigation[linkList.id].title }}</header> 
+            <header class="footer-title">{{ linkList.footer_linklist_title }}</header> 
             {% for link in navigation[linkList.id].links %}
             <a class="link link-hover" href="{{ link | url }}">{{ link.title }}</a>
             {% endfor %}
