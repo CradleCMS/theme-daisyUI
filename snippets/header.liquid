@@ -31,15 +31,16 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
     </div>
     {% endif %}
     <a class="text-xl" href="/">
-        {% if settings.logo_image.size > 0 %}
-            <img src="{{ settings.logo_image | asset_img_url:0,30 }}" alt="logo" tabindex="0" class="p-2">
+        {% if settings.logo_image %}
+            {% let height = settings.logo_height %}
+            <img src="{{ settings.logo_image | asset_img_url:0,height }}" alt="logo" tabindex="0" class="p-2">
         {% else %}
     		{{ site.name }}
     	{% endif %}
     </a>
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
+  <div class="navbar-center hidden lg:flex">    
+    <ul class="menu menu-horizontal px-1 hidden lg:flex">
         {% for link in navigation[main-nav].links %}
             {% if link.type == 'navigation' and navigation[link.param].links.size > 0 %}
             <li>

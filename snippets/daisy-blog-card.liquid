@@ -6,11 +6,11 @@
   {% endunless %}
   <div class="card-body">
     <div class="text-right">{% if article.tags.size > 0 %}
-            {% for tag in article.tags %}
-                <div class="mr-1 mb-1 badge badge-accent">
-                    <a href="{{blog | url}}?tags={{ tag }}">{{ tag }}</a>
-                </div>
-            {% endfor %}
+        {% for tag in article.tags %}
+            <div class="mr-1 mb-1 badge badge-accent">
+                <a href="{{blog | url}}?tags={{ tag }}">{{ tag }}</a>
+            </div>
+        {% endfor %}
     {% endif %}</div>
     <h2 class="card-title">
       {{ article.title }}

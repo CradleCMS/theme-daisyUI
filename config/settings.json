@@ -1,6 +1,6 @@
 {
   "name": "daisyUI",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "developer": "Cradle systems",
   "description": "A theme based on TailwindCSS and daisyUI",
   "sections": [
@@ -270,24 +270,16 @@
           "key": "body_colors",
           "options": [
             {
-              "caption": "Default",
+              "caption": "Lightest",
+              "value": "base-100"
+            },
+            {
+              "caption": "Darker",
               "value": "base-200"
             },
             {
-              "caption": "Primary",
-              "value": "primary"
-            },
-            {
-              "caption": "Secondary",
-              "value": "secondary"
-            },
-            {
-              "caption": "Accent",
-              "value": "accent"
-            },
-            {
-              "caption": "Neutral",
-              "value": "neutral"
+              "caption": "Darkest",
+              "value": "base-300"
             }
           ],
           "type": "select"
@@ -364,6 +356,29 @@
       "type": "section",
       "caption": "Header",
       "settings": [
+        {
+          "caption": "Logo height",
+          "key": "logo_height",
+          "options": [
+            {
+              "caption": "Small, 20px",
+              "value": "20"
+            },
+            {
+              "caption": "Medium, 30px",
+              "value": "30"
+            },
+            {
+              "caption": "Large, 40px",
+              "value": "40"
+            },
+            {
+              "caption": "Maximum, 50px",
+              "value": "50"
+            }
+          ],
+          "type": "select"
+        },
         {
           "caption": "Menu options",
           "key": "main_nav_options",
@@ -485,7 +500,7 @@
         },
         {
           "caption": "Background image",
-          "description": "Minimum 1024px x 1024px",
+          "description": "Recommendation: minimum 1024px x 1024px",
           "key": "header_otf_image",
           "type": "image"
         },
@@ -870,6 +885,41 @@
             {
               "caption": "Right",
               "value": "right"
+            }
+          ],
+          "type": "select"
+        }
+      ]
+    },
+    {
+      "key": "collections",
+      "type": "section",
+      "caption": "Collections",
+      "settings": [
+        {
+          "caption": "Product image height",
+          "description": "Sets a maximum height on the product card",
+          "key": "col_card_img_height",
+          "options": [
+            {
+              "caption": "None",
+              "value": ""
+            },
+            {
+              "caption": "Small",
+              "value": "max-h-40"
+            },
+            {
+              "caption": "Medium",
+              "value": "max-h-52"
+            },
+            {
+              "caption": "Large",
+              "value": "max-h-60"
+            },
+            {
+              "caption": "XL",
+              "value": "max-h-72"
             }
           ],
           "type": "select"

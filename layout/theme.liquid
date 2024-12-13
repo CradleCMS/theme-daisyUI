@@ -25,9 +25,9 @@
         {% if settings.favicon_enable %}
         <link rel="icon" href="/favicon.ico">
         <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
-        {% unless settings.favicon_svg == empty %}
-            <link rel="icon" href="{{ 'icon.svg' | asset_url }}" type="image/svg+xml">
-        {% endunless %}
+        {% if settings.favicon_svg %}
+            <link rel="icon" href="{{ settings.favicon_svg | asset_img_url }}" type="image/svg+xml">
+        {% endif %}
         {% endif %}
         {% unless settings.branding-theme-color-light == empty %}
             <meta name="theme-color" media="(prefers-color-scheme: light)" content="{{ settings.branding-theme-color-light }}" />
@@ -55,12 +55,12 @@
                 {% endif %}
                 {% let indexContent = contentForLayout | strip_newlines | strip %}
                 {% unless indexContent == "" %}
-                  <div class="container max-w-8xl mx-auto {% unless template == "product" %}mt-20{% endunless %} px-2 pb-10">
+                  <div class="container max-w-8xl mx-auto mt-20 px-2 pb-10">
                     {{ contentForLayout }}
                   </div>
                 {% endunless %}
             {% else %}
-            <div class="container max-w-8xl mx-auto {% unless template == "product" %}mt-20{% endunless %} px-2 pb-10">
+            <div class="container max-w-8xl mx-auto mt-20 px-2 pb-10">
                 {{ contentForLayout }}
             </div>
             {% endif %}

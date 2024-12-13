@@ -1,5 +1,5 @@
 {% if settings.homepage_page_show %}
-<section class="index-page bg-base-100 text-base-content mt-10 rounded-box shadow-md md:w-auto lg:w-auto max-w-[65rem] mx-auto p-4 md:p-8 lg:p-8">
+<section class="index-page bg-base-100 text-base-content mt-10 rounded-box {{ settings.general_shadow }} md:w-auto lg:w-auto max-w-[65rem] mx-auto p-4 md:p-8 lg:p-8">
     <div class="">
         {% let p = pages[settings.homepage_page.id] %}
         <h2 class="text-3xl font-bold mb-8 text-center">{{ p.meta.h1 }}</h2>
@@ -14,7 +14,7 @@
         <h2 class="text-3xl mb-4 font-bold">{{ settings.link_grid_heading }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-{{ settings.link_grid_column_amount_md }} lg:grid-cols-{{ settings.link_grid_column_amount_lg }} gap-4">
             {% for item in settings.link_grid_items %}
-                <div class="card-body items-center text-center rounded-box shadow-xl bg-base-100 text-base-content">
+                <div class="card-body items-center text-center rounded-box {{ settings.general_shadow }} bg-base-100 text-base-content">
                 {% if item.link_heading %}
                     <h4 class="card-title text-xl mb-4 font-bold justify-center">{{ item.link_heading }}</h4>
                 {% endif %}
@@ -47,7 +47,7 @@
     {% if settings.section_banner1.size > 0 %}
         {% for links in settings.section_banner1 %}
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
-            <section class="card bg-base-100 m-w-96 md:w-auto lg:w-auto max-w-[65rem] mx-auto lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} shadow-xl mt-10 mb-2 index-{{ forloop.index }}">
+            <section class="card bg-base-100 m-w-96 md:w-auto lg:w-auto max-w-[65rem] mx-auto lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} {{ settings.general_shadow }} mt-10 mb-2 index-{{ forloop.index }}">
               <figure class="lg:w-2/6 md:w-2/5 {% if settings.section_banner1_image_padding %}p-8{% endif %}">
                   <img loading="lazy" src="{{ links.link_image | asset_img_url:400,0,'cropped' }}" alt="{{ links.link_image_alt }}"/>
               </figure>
