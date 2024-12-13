@@ -4,11 +4,15 @@
     <div class="lg:basis-1/2 flex flex-row gap-2">
       <nav class="basis-1/5 flex flex-col gap-2">
         {% for image in product.images %}
-            <img src="{{ image.src | product_img_url:150,0 }}" alt="{{ image.alt }}">
+            <img class="thumb" src="{{ image.src | product_img_url:150,0 }}" data-large="{{ image.src | product_img_url:600,0 }}" alt="{{ image.alt }}">
         {% endfor %}
       </nav>
       <figure class="basis-4/5">
-          <img src="{{ product.featuredImage | product_img_url:600,0 }}" alt="{{ product.featuredImage.alt }}" />
+          {% if product.images.size > 0 %}
+          <img id="main-image" src="{{ product.images[0] | product_img_url:600,0 }}" alt="{{ product.images[0].alt }}" />
+          {% elseif product.featuredImage %}
+          <img id="main-image" src="{{ product.featuredImage | product_img_url:600,0 }}" alt="{{ product.featuredImage.alt }}" />
+          {% endif %}
       </figure>
     </div>
     <div class="lg:basis-1/2">
@@ -28,3 +32,20 @@
         <div class="{{ product.format }} prose mt-4">{{ product.html }}</div>        
     </div>
 </section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mainImage = document.getElementById('main-image');
+  const thumbnails = document.querySelectorAll('.thumb');
+
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', function() {
+      const largeImageSrc = this.dataset.large;
+      const largeImageAlt = this.alt;
+      mainImage.src = largeImageSrc;
+      mainImage.alt = largeImageAlt;
+    });
+  });
+});
+</script>
