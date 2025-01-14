@@ -39,7 +39,7 @@
                 {% endif %}
                 {% if item.link_url  %}
                 <div class="card-actions justify-center">
-                  <a href="{{ item.link_url }}" class="btn btn-primary" target="_blank">{{ item.link_text }}</a>
+                  <a href="{{ item.link_url }}" class="btn btn-primary">{{ item.link_text }}</a>
                 </div>
                 {% endif %}
               </div>
@@ -76,7 +76,7 @@
                 {% endif %}
                 {% if links.link_url or links.link2_url %}
                 <div class="card-actions justify-center">
-                  {% if links.link_url %}<a href="{{ links.link_url }}" class="btn btn-primary" target="_blank">{{ links.link_button_title }}</a>{% endif %}{% if links.link2_url %}<a href="{{ links.link2_url }}" class="btn btn-primary" target="_blank">{{ links.link2_button_title }}</a>{% endif %}
+                  {% if links.link_url %}<a href="{{ links.link_url }}" class="btn btn-primary">{{ links.link_button_title }}</a>{% endif %}{% if links.link2_url %}<a href="{{ links.link2_url }}" class="btn btn-primary>{{ links.link2_button_title }}</a>{% endif %}
                 </div>
                 {% endif %}
               </div>
