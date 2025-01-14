@@ -1,6 +1,6 @@
 {
   "name": "daisyUI",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "developer": "Cradle systems",
   "description": "A theme based on TailwindCSS and daisyUI",
   "sections": [
@@ -519,6 +519,27 @@
           "caption": "Show page",
           "key": "homepage_page_show",
           "type": "checkbox"
+        },
+        {
+          "caption": "Collection",
+          "key": "hompageCollHeader",
+          "type": "header"
+        },
+        {
+          "caption": "Show section",
+          "key": "hompageCollEnabled",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Section heading",
+          "key": "homepageCollHeading",
+          "type": "text"
+        },
+        {
+          "caption": "Collection",
+          "default": "Select collection",
+          "key": "homepageCollection",
+          "type": "collection"
         },
         {
           "caption": "Linkcard grid",

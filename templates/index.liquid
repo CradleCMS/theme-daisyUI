@@ -9,6 +9,22 @@
     </div>
 </section>
 {% endif %}
+{% if settings.hompageCollEnabled %}
+{% assign collection = collections[settings.homepageCollection.id] %}
+<section>
+    <header class="flex">
+        <h2 class="text-3xl mb-4 font-bold">{{ settings.homepageCollHeading }}</h2>
+        <a href="{{ collection | url }}" class="btn btn-sm ml-2">Go to all books</a>
+    </header>
+    {% unless collection == empty %}
+        <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    	{% for product in collection.products limit:5 %}
+            {% include 'product-card' %}
+    	{% endfor %}
+    	</div>
+    {% endunless %}
+</section>
+{% endif %}
 {% if settings.link_grid_show %}
     <section id="link_grid" class="p-4 pt-16 mb-2 mt-10 items-center text-center">
         <h2 class="text-3xl mb-4 font-bold">{{ settings.link_grid_heading }}</h2>
