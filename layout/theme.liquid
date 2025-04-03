@@ -37,34 +37,36 @@
         {% endunless %}
 
         {% if settings.css_dev_mode == "development" %}
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{{ 'typography.css' | asset_url }}">
-        <link rel="stylesheet" type="text/css" href="{{ 'daisy-full.css' | asset_url }}">
         {% else %}
         <link rel="stylesheet" type="text/css" href="{{ 'output.css' | asset_url }}">
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{{ 'custom.css.liquid' | asset_url }}">
-
     </head>
     <body id="{{ meta.title | handle }}" class="bg-{{ settings.body_colors }} text-{{ settings.body_colors }}-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
+        {{ 'alpine.min.js' | script_tag }}
         <div>
-            {% include 'header' %}
+            {% include 'siteHeader' %}
             {% if template == "index" %}
                 {% if settings.header_otf_section %}
-                  {% include 'daisy-centered-hero' %}
+                  {% include 'indexHero' %}
                 {% endif %}
-                {% let indexContent = contentForLayout | strip_newlines | strip %}
-                {% unless indexContent == "" %}
-                  <div class="container max-w-8xl mx-auto mt-20 px-2 pb-10">
+                {% unless contentForLayout == "" %}
+                  <div class="container max-w-8xl mx-auto px-2 pb-10">
                     {{ contentForLayout }}
                   </div>
                 {% endunless %}
             {% else %}
-            <div class="container max-w-8xl mx-auto mt-20 px-2 pb-10">
+            <div id="main-content" class="container max-w-8xl mx-auto mt-4 px-2 pb-10">
                 {{ contentForLayout }}
             </div>
             {% endif %}
         </div>
-        {% include 'daisy-footer' %}
+        {% include 'siteFooter' %}
+        <!-- small>Host:{{ request.host }} | Origin:{{ request.origin }} | Path:{{ request.path }} | Query:{{ request.query }} | Referer:{{ request.referer }} | Scheme:{{ request.scheme }}</small -->
     </body>
+    {{ 'site.js' | script_tag }}
 </html>
