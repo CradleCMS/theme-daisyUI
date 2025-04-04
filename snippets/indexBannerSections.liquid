@@ -1,17 +1,17 @@
-{% if settings.section_banner1.size > 0 %}
-    {% for links in settings.section_banner1 %}
+{% if settings.section_banner.size > 0 %}
+    {% for links in settings.section_banner %}
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
         <section class="card p-2 md:p-4 lg:p-8 m-w-96 md:w-auto lg:w-auto {{ settings.general_shadow }} justify-center mt-10 mb-20 index-{{ forloop.index }}" style="background-color:{{ links.sectionBannerBgColor }};">
           <div class="card mb-4 {% if links.linkImageFullwidth %}flex-col-reverse{% else %}lg:flex-row{% if thecycle == 'odd' %}-reverse{% endif %} md:flex-row{% if thecycle == 'odd' %}-reverse{% endif %}{% endif %} justify-center items-center">
               {% if links.link_image %}
                   {% if links.linkImageFullwidth %}
-                    {% if links.linkImageURL %}<a class="w-full" href="{{ links.linkImageURL }}">{% endif %}
+                    {% if links.linkImageURL.size > 0 %}<a href="{{ links.linkImageURL }}">{% endif %}
                       <figure class="w-full">
                         <img loading="lazy" class="w-full rounded-box" src="{{ links.link_image | asset_img_url:1600,0,'cropped' }}" alt="{{ links.link_image_alt }}"/>
                       </figure>
                     {% if links.linkImageURL %}</a>{% endif %}
                   {% else %}
-                      {% if links.linkImageURL %}<a href="{{ links.linkImageURL }}">{% endif %}
+                      {% if links.linkImageURL.size > 0 %}<a href="{{ links.linkImageURL }}">{% endif %}
                       <figure class="lg:w-2/6 md:w-2/5{% if settings.section_banner1_image_padding %} p-8{% endif %}">
                         <img loading="lazy" src="{{ links.link_image | asset_img_url:400,0,'cropped' }}" alt="{{ links.link_image_alt }}"/>
                       </figure>

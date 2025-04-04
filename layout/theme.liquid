@@ -46,7 +46,7 @@
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{{ 'custom.css.liquid' | asset_url }}">
     </head>
-    <body id="{{ meta.title | handle }}" class="bg-{{ settings.body_colors }} text-{{ settings.body_colors }}-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
+    <body id="{{ meta.title | handle }}" class="bg-{{ settings.body_colors | def: "base-100" }} text-{{ settings.body_colors | def: "base" }}-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
         {{ 'alpine.min.js' | script_tag }}
         <div>
             {% include 'siteHeader' %}
@@ -66,7 +66,6 @@
             {% endif %}
         </div>
         {% include 'siteFooter' %}
-        <!-- small>Host:{{ request.host }} | Origin:{{ request.origin }} | Path:{{ request.path }} | Query:{{ request.query }} | Referer:{{ request.referer }} | Scheme:{{ request.scheme }}</small -->
     </body>
     {{ 'site.js' | script_tag }}
 </html>

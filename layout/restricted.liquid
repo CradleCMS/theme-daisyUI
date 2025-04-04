@@ -27,7 +27,7 @@
             <meta name="theme-color" content="#ffffff">
         {% endif %}
         <link rel="stylesheet" type="text/css" href="{{ 'output.css' | asset_url }}">
-        <link rel="stylesheet" type="text/css" href="{{ 'custom.css' | asset_url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'custom.css.liquid' | asset_url }}">
     </head>
     <body id="{{ meta.title | handle }}" class="text-base-content flex flex-col justify-between min-h-[100vh] {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | split: ' ' | first | handle }}">
         <div class="hero min-h-screen" style="background-image: url({{ settings.closed_bgimage | asset_img_url:'1024','0' }});">
@@ -64,11 +64,9 @@
                                         <span>Thank you for the message, we will contact you shortly!</span>
                                     </div>
                                 {% else %}
-                                <div class="form-control">
-                                    <label class="{% if form.errors contains 'email' %} input-error{% endif %} flex items-center gap-2">
-                                      <input type="email" name="email" class="grow  input input-bordered" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="Email" autocorrect="off" autocapitalize="off" required />
-                                    </label>
-                                </div>
+                                <label class="input input-primary">
+                                  <input type="email" name="email" placeholder="Email" autocorrect="off" autocapitalize="off" required />
+                                </label>
                                 <button type="submit" class="btn btn-primary">Send</button>
                                 {% endif %}
                             </div>

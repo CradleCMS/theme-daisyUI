@@ -4,18 +4,16 @@
 
 {% form 'search' %}
     <div class="join">
-        <input class="join-item input input-bordered input-primary" type="search" onfocus="this.select();" name="q" value="{{ search.terms }}" autocomplete="off" placeholder="{{ searchTitle }}" />
-        <select  class="join-item select select-bordered select-primary" name="include" value="{{search.include}}">
+        <label class="join-item input input-primary"><input type="search" onfocus="this.select();" name="q" value="{{ search.terms }}" autocomplete="off" placeholder="{{ searchTitle }}" /></label>
+        <select  class="join-item select select-primary w-24" name="include" value="{{search.include}}">
             <option disabled selected>Filter</option>
             <option value="pages,articles" {% if search.include == 'pages,articles,products' %}selected{% endif %}>All</option>
-            <option value="products" {% if search.include == 'products' %}selected{% endif %}>Products</option>
             <option value="articles" {% if search.include == 'articles' %}selected{% endif %}>Articles</option>
-            <option value="pages" {% if search.include == 'pages' %}selected{% endif %}>Pages</option>
         </select>
-        <input type="hidden" name="filter" value="title">
-        <input type="hidden" name="sorting" value="published-desc">
-        <input class="join-item btn btn-primary" type="submit" value="{{ 'Search' }}">
+        <input class="join-item btn btn-primary w-24" type="submit" value="{{ 'Search' }}">
     </div>
+    <input type="hidden" name="filter" value="title">
+    <input type="hidden" name="sorting" value="published-desc">
 {% endform %}
     	
 {% if search %}

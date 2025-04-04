@@ -243,12 +243,16 @@
           "key": "header_colors",
           "options": [
             {
-              "caption": "Default",
+              "caption": "Lightest",
               "value": "base-100"
             },
             {
-              "caption": "Primary",
-              "value": "primary"
+              "caption": "Darker",
+              "value": "base-200"
+            },
+            {
+              "caption": "Darkest",
+              "value": "base-300"
             },
             {
               "caption": "Secondary",
@@ -289,12 +293,16 @@
           "key": "footer_colors",
           "options": [
             {
-              "caption": "Default",
+              "caption": "Lightest",
+              "value": "base-100"
+            },
+            {
+              "caption": "Darker",
               "value": "base-200"
             },
             {
-              "caption": "Primary",
-              "value": "primary"
+              "caption": "Darkest",
+              "value": "base-300"
             },
             {
               "caption": "Secondary",
@@ -380,16 +388,16 @@
           "type": "select"
         },
         {
-          "caption": "Menu options",
-          "key": "main_nav_options",
-          "type": "header"
-        },
-        {
           "caption": "Main navigation",
           "default": "Select linklist",
           "description": "Setup linklists under \u003ca href='/admin/navigation'\u003eNavigation\u003c/a\u003e",
-          "key": "main_nav_linklist",
+          "key": "headerLinklist",
           "type": "linklist"
+        },
+        {
+          "caption": "Show search button",
+          "key": "headShowSearch",
+          "type": "checkbox"
         },
         {
           "caption": "Header button",
@@ -673,6 +681,88 @@
           "type": "struct"
         },
         {
+          "caption": "Banner sections",
+          "description": "",
+          "key": "section_banner_header",
+          "type": "header"
+        },
+        {
+          "caption": "Show banners",
+          "default": false,
+          "key": "section_banner_show",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Padding on image",
+          "key": "section_banner_image_padding",
+          "type": "checkbox"
+        },
+        {
+          "caption": "Banners",
+          "key": "section_banner",
+          "settings": [
+            {
+              "caption": "Background color",
+              "key": "sectionBannerBgColor",
+              "type": "color"
+            },
+            {
+              "caption": "Image",
+              "key": "link_image",
+              "maxHeight": 500,
+              "maxWidth": 1400,
+              "type": "image"
+            },
+            {
+              "caption": "Image alt",
+              "key": "link_image_alt",
+              "type": "text"
+            },
+            {
+              "caption": "Image URL",
+              "key": "linkImageURL",
+              "type": "text"
+            },
+            {
+              "caption": "Fullwidth image",
+              "description": "The image will be placed beneath the content.",
+              "key": "linkImageFullwidth",
+              "type": "checkbox"
+            },
+            {
+              "caption": "Title",
+              "key": "link_title",
+              "type": "text"
+            },
+            {
+              "caption": "Text",
+              "key": "link_text",
+              "type": "textarea"
+            },
+            {
+              "caption": "Button 1 Link URL",
+              "key": "link_url",
+              "type": "text"
+            },
+            {
+              "caption": "Button 1 text",
+              "key": "link_button_title",
+              "type": "text"
+            },
+            {
+              "caption": "Button 2 Link URL",
+              "key": "link2_url",
+              "type": "text"
+            },
+            {
+              "caption": "Button 2 text",
+              "key": "link2_button_title",
+              "type": "text"
+            }
+          ],
+          "type": "struct"
+        },
+        {
           "caption": "Image grid",
           "description": "Grid for images, showing multiple at the same time",
           "key": "grid",
@@ -771,119 +861,6 @@
           "type": "struct"
         },
         {
-          "caption": "Banner sections",
-          "description": "",
-          "key": "section_banner_header",
-          "type": "header"
-        },
-        {
-          "caption": "Show banners",
-          "default": false,
-          "key": "section_banner1_show",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Padding on image",
-          "key": "section_banner1_image_padding",
-          "type": "checkbox"
-        },
-        {
-          "caption": "Number of products",
-          "key": "sectionBannerProductAmount",
-          "options": [
-            {
-              "caption": "1",
-              "value": "1"
-            },
-            {
-              "caption": "2",
-              "value": "2"
-            },
-            {
-              "caption": "3",
-              "value": "3"
-            },
-            {
-              "caption": "4",
-              "value": "4"
-            },
-            {
-              "caption": "5",
-              "value": "5"
-            },
-            {
-              "caption": "6",
-              "value": "6"
-            }
-          ],
-          "type": "select"
-        },
-        {
-          "caption": "Banners",
-          "key": "section_banner1",
-          "settings": [
-            {
-              "caption": "Background color",
-              "key": "sectionBannerBgColor",
-              "type": "color"
-            },
-            {
-              "caption": "Image",
-              "key": "link_image",
-              "maxHeight": 500,
-              "maxWidth": 1400,
-              "type": "image"
-            },
-            {
-              "caption": "Image alt",
-              "key": "link_image_alt",
-              "type": "text"
-            },
-            {
-              "caption": "Image URL",
-              "key": "linkImageURL",
-              "type": "text"
-            },
-            {
-              "caption": "Fullwidth image",
-              "description": "The image will be placed beneath the content.",
-              "key": "linkImageFullwidth",
-              "type": "checkbox"
-            },
-            {
-              "caption": "Title",
-              "key": "link_title",
-              "type": "text"
-            },
-            {
-              "caption": "Text",
-              "key": "link_text",
-              "type": "textarea"
-            },
-            {
-              "caption": "Button 1 Link URL",
-              "key": "link_url",
-              "type": "text"
-            },
-            {
-              "caption": "Button 1 text",
-              "key": "link_button_title",
-              "type": "text"
-            },
-            {
-              "caption": "Button 2 Link URL",
-              "key": "link2_url",
-              "type": "text"
-            },
-            {
-              "caption": "Button 2 text",
-              "key": "link2_button_title",
-              "type": "text"
-            }
-          ],
-          "type": "struct"
-        },
-        {
           "caption": "Blog",
           "key": "blog",
           "type": "header"
@@ -952,6 +929,16 @@
             }
           ],
           "type": "select"
+        },
+        {
+          "caption": "Contact page",
+          "key": "contactPage",
+          "type": "header"
+        },
+        {
+          "caption": "Use Daisy form",
+          "key": "contactDaisy",
+          "type": "checkbox"
         }
       ]
     },
@@ -1283,24 +1270,24 @@
         },
         {
           "caption": "Show links",
-          "default": true,
+          "default": false,
           "key": "footer_quicklinks_enable",
           "type": "checkbox"
         },
         {
           "caption": "Select link lists",
           "description": "Create link-lists under Navigation",
-          "key": "footer_linklists",
+          "key": "footerLinklists",
           "settings": [
             {
               "caption": "Title",
-              "key": "footer_linklist_title",
+              "key": "title",
               "type": "text"
             },
             {
               "caption": "Link list",
               "default": "footer",
-              "key": "footer_linklist",
+              "key": "linkList",
               "type": "linklist"
             }
           ],
@@ -1313,6 +1300,7 @@
         },
         {
           "caption": "Show button",
+          "default": false,
           "key": "footerButtonEnabled",
           "type": "checkbox"
         },

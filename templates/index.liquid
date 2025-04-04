@@ -22,13 +22,16 @@
                 {% endif %}
                 {% if item.link_url  %}
                 <div class="card-actions justify-center">
-                  <a href="{{ item.link_url }}" class="btn btn-primary">{{ item.link_text }}</a>
+                  <a href="{{ item.link_url }}" class="btn btn-secondary btn-sm">{{ item.link_text }}</a>
                 </div>
                 {% endif %}
               </div>
             {% endfor %}
         </div>        
     </section>
+{% endif %}
+{% if settings.section_banner_show %}
+    {% include 'indexBannerSections' %}
 {% endif %}
 {% if settings.grid_show %}
     <section class="p-4 mb-2 mt-10 text-center">
@@ -41,9 +44,6 @@
             {% endfor %}
         </div>        
     </section>
-{% endif %}
-{% if settings.section_banner1_show %}
-    {% include 'indexBannerSections' %}
 {% endif %}
 {% if settings.homepage_blog_enabled %}
     {% assign blog = blogs[settings.homepage_blog.id] %}

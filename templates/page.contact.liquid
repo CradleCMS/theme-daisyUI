@@ -2,7 +2,14 @@
     <h1>{{ meta.h1 }}</h1>
     <div>
         <div class="{{ article.format }}">{{ page.html }}</div>
-        {% include 'contact-form' %}
+        {% if settings.contactDaisy %}
+            {% include 'daisyForm' %}
+        {% else %}
+        <div class="card shrink-0 w-full max-w-m {{ settings.general_shadow }}">
+            <div class="card-body">
+            {% form 'contact' %}{% endform %}
+            </div>
+        </div>
+        {% endif %}
     </div>
 </section>
-
