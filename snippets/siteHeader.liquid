@@ -21,7 +21,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
                     <p class="uppercase">{{ link.title }}</p>
                     <ul class="p-2">
                         {% for childlink in navigation[link.handle].links %}
-                            <li><a href="{{ childlink.url }}">{{ childlink.title }}</a></li>
+                            <li><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>           
@@ -50,7 +50,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
                         <summary>{{ link.title }}</summary>
                           <ul class="p-2 mt-4 bg-base-200 text-base-content w-60 absolute shadow">
                             {% for childlink in navigation[link.param].links %}
-                                <li class="font-semibold text-base child"><a href="{{ childlink.url }}">{{ childlink.title }}</a></li>
+                                <li class="font-semibold text-base child"><a href="{{ childlink | url }}">{{ childlink.title }}</a></li>
                             {% endfor %}
                           </ul>
                     </details>
