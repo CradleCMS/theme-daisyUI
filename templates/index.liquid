@@ -10,19 +10,19 @@
 {% endif %}
 {% if settings.link_grid_show %}
     <section id="link_grid" class="p-4 pt-16 mb-2 mt-10 items-center text-center">
-        <h2 class="text-3xl mb-4 font-bold">{{ settings.link_grid_heading }}</h2>
+        <h2 class="text-3xl mb-4 font-bold">{{ settings.link_grid_heading | t }}</h2>
         <div class="grid grid-cols-1 md:grid-cols-{{ settings.link_grid_column_amount_md }} lg:grid-cols-{{ settings.link_grid_column_amount_lg }} gap-4">
             {% for item in settings.link_grid_items %}
                 <div class="card-body items-center text-center rounded-box {{ settings.general_shadow }} bg-base-100 text-base-content">
                 {% if item.link_heading %}
-                    <h4 class="card-title text-xl mb-4 font-bold justify-center">{{ item.link_heading }}</h4>
+                    <h4 class="card-title text-xl mb-4 font-bold justify-center">{{ item.link_heading | t }}</h4>
                 {% endif %}
                 {% if item.link_description %}
-                    <p class="text-center grow-0 mb-4">{{ item.link_description }}</p>
+                    <p class="text-center grow-0 mb-4">{{ item.link_description | t }}</p>
                 {% endif %}
                 {% if item.link_url  %}
                 <div class="card-actions justify-center">
-                  <a href="{{ item.link_url }}" class="btn btn-secondary btn-sm">{{ item.link_text }}</a>
+                  <a href="{{ item.link_url }}" class="btn btn-secondary btn-sm">{{ item.link_text | t }}</a>
                 </div>
                 {% endif %}
               </div>
@@ -35,11 +35,11 @@
 {% endif %}
 {% if settings.grid_show %}
     <section class="p-4 mb-2 mt-10 text-center">
-        <h2 class="text-3xl mb-4 font-bold">{{ settings.grid_heading }}</h2>
+        <h2 class="text-3xl mb-4 font-bold">{{ settings.grid_heading | t }}</h2>
         <div class="grid grid-cols-{{ settings.grid_column_amount_md }} lg:grid-cols-{{ settings.grid_column_amount_lg }} gap-4">
             {% for item in settings.grid_items %}
                 <div class="card-body p-2 justify-self-center bg-base-100 text-base-content rounded-box" id="item{{ forloop.index0 }}">
-                    <img src="{{ item.image | asset_img_url:800,0 }}" alt="{{ item.image_alt }}"/>
+                    <img src="{{ item.image | asset_img_url:800,0 }}" alt="{{ item.image_alt | t }}"/>
                 </div>
             {% endfor %}
         </div>        
