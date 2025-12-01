@@ -1,4 +1,4 @@
 .DS_Store
 .vscode
-settings.json
-/config/settings.json
+settings_data.json
+/config/settings_data.json
