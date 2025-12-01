@@ -1,11 +1,11 @@
 {
   "name": "daisyUI",
-  "version": "1.1.0",
-  "developer": "Cradle systems",
-  "description": "A theme based on TailwindCSS and daisyUI",
-  "source": "",
-  "homepage": "",
-  "support": "",
+  "version": "1.2.0",
+  "developer": "CradleCMS",
+  "description": "CMS theme based on tailwindcss, daisyUI and Alpine.js.",
+  "source": "https://github.com/CradleCMS/theme-daisyUI/",
+  "homepage": "https://cradlecms.com",
+  "support": "",  
   "sections": [
     {
       "key": "global",
