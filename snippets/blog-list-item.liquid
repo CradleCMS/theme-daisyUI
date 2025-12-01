@@ -5,5 +5,5 @@
 {% endfor %}
 </div>
 <div class="text-right">
-    <a class="btn btn-sm" href="{{ blog.handle }}">{{ lang.browse | def: 'Browse'}} {{ blog.title }} &rsaquo;</a>
+    <a class="btn btn-sm" href="{{ blog.handle }}">{{ 'Browse' | t:'default' }} {{ blog.title }} &rsaquo;</a>
 </div>

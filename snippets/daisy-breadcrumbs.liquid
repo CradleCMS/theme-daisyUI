@@ -24,10 +24,6 @@
         <li><span>{{ article.title }}</span></li>
     {% elseif template contains 'page' %}
         <li><span>{{ page.title }}</span></li>
-    {% elseif template contains 'customers' %}
-        {% if template contains 'account' %}
-            <li><span>{{ lang.my_account | def:'My Account' }}</span></li>
-        {% endif %}
     {% else %}
         <li><span>{{ meta_title }}</span></li>
     {% endif %}

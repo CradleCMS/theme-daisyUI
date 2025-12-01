@@ -23,7 +23,7 @@
 			<p class="mt-4">{{ article.content | strip_html | truncatewords: 100 }}</p>
 		{% endunless %}
     <div class="card-actions justify-end">
-      <a class="btn bg-primary text-primary-content" href="{{ article | url }}">{{ lang.read_more | def:'Read' }}</a>
+      <a class="btn bg-primary text-primary-content" href="{{ article | url }}">{{ 'Read' | t:'blog' }}</a>
     </div>
   </div>
 </div>

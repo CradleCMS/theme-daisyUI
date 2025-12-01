@@ -1,14 +1,14 @@
 <div class="card shrink-0 w-full max-w-m {{ settings.general_shadow }}">
     {% form 'contact' class:'card-body' %}
-        <h3 class="text-center">Say hallo!</h3>
+        <h3 class="text-center">{{ 'Say hallo!' | t:'default' }}</h3>
         {% if form.errors %}
             <div class="alert alert-error">
-                <span>Sorry, looks like something went wrong, please try again.</span>
+                <span>{{ 'Sorry, looks like something went wrong, please try again.' | t:'default' }}</span>
             </div>
         {% endif %}
         {% if form.success %}
             <div class="alert alert-success">
-                <span>Thank you for the message, we will contact you shortly!</span>
+                <span>{{ 'Thank you for the message, we will contact you shortly!' | t:'default' }}</span>
             </div>
         {% else %}
         <input type="text" name="name" class="grow" placeholder="Name" value="{{form.name}}" required/>
