@@ -6,7 +6,7 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
 
 <div class="bg-{{ settings.header_colors | def: "base-200" }} text-{{ settings.header_colors }}-content {{ settings.general_shadow }} sticky top-0 w-[100vw] z-30">
     <a class="skip-link bg-primary text-primary-content link z-10 w-full p-4 text-center" href='#main-content'>{{ 'Skip to content' | t:'default' }}</a>
-    {% if settings.headerTopEnabled %}<div class="bg-primary text-primary-content p-2 text-center">{%if settings.headerTopURL %}<a href="{{ settings.headerTopURL }}">{% endif %}<p class="max-w-8xl mx-auto">{{ settings.headerTopText | t:'default' }}</p>{%if settings.headerTopURL %}</a>{% endif %}</div>{% endif %}
+    {% if settings.headerTopEnabled %}<div class="bg-primary text-primary-content p-2 text-center">{% if settings.headerTopURL %}<a href="{{ settings.headerTopURL }}">{% endif %}<p class="max-w-8xl mx-auto">{{ settings.headerTopText | t:'default' }}</p>{%if settings.headerTopURL %}</a>{% endif %}</div>{% endif %}
     <div class="navbar max-w-8xl mx-auto container">
       <div class="navbar-start">
         {% if navigation[mainNav].links.size > 0 %}
