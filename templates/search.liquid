@@ -21,25 +21,18 @@
     {% if search.totalCount == 0 %}
 	<h4>{{ 'Your search for "%s" did not yield any results.' | t | insert:search.terms }}</h4>
     {% else %}
-    <h4 class="mb-4">{{ 'Found %s ' | insert:search.totalCount }}{{ search.totalCount | pluralize:'item','items'}}</h4>
-    {% endif %}
-
-	{% if search.products %}
-	<h4>Products ({{search.products.size}})</h4>
-	{% for product in search.products limit:12 %}
-	    <a href="{{ product | url }}">{{product.title}}</a>
-    {% endfor %}
+    <h4 class="mb-4">{{ 'Found %s' | t | insert:search.totalCount }}&nbsp;{{ search.totalCount | pluralize:('item' | t),('items' | t )}}</h4>
     {% endif %}
 	
 	{% if search.pages %}
-	<h4>Pages ({{search.pages.size}})</h4>
+	<h4>{{ 'Pages' | t }} ({{search.pages.size}})</h4>
 	{% for page in search.pages limit:12 %}
 	    <a href="{{ page | url }}">{{page.title}}</a>
     {% endfor %}
     {% endif %}
     
 	{% if search.articles %}
-    <h4>Articles ({{search.articles.size}})</h4>
+    <h4>{{ 'Articles' | t }} ({{search.articles.size}})</h4>
 	{% for article in search.articles limit:12 %}
 	    <a href="{{ article | url }}">{{ article.title }}</a>
     {% endfor %}
