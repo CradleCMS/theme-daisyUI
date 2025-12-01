@@ -3,6 +3,9 @@
   "version": "1.1.0",
   "developer": "Cradle systems",
   "description": "A theme based on TailwindCSS and daisyUI",
+  "source": "",
+  "homepage": "",
+  "support": "",
   "sections": [
     {
       "key": "global",
@@ -366,7 +369,7 @@
       "settings": [
         {
           "caption": "Logo height",
-          "key": "logo_height",
+          "key": "logoHeight",
           "options": [
             {
               "caption": "Small, 20px",

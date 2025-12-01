@@ -24,6 +24,10 @@
   margin-left: 5px;
   vertical-align: top;
 }
+.logo {
+    height: {{ settings.logoHeight | def:40 }}px;    
+    max-width: 100%;
+}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -145,27 +149,36 @@ form label {
   width: 100%;
   height: 100%;
 }
-/* daisyUI form design  */
-form label {
+.cradle label {
+    display:block;
+    font-size: 0.8em;
+    text-align: left;
+    padding: 0 0.5em
     white-space: nowrap;
-    color: color-mix(in oklab,currentColor 60%,transparent);
+    color: color-mix(in oklab,currentColor 100%,transparent);
     align-items: center;
     gap: .375rem;
 }
-
-input[type="text"],
-input[type="tel"],
-input[type="date"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="time"],
-input[type="url"],
-input[type="week"]
+.cradle input,
+.cradle textarea,
+.cradle select {
+    width: clamp(10rem, 30rem, 100%);
+    margin-bottom: 0.5rem;
+    border: var(--border) solid #0000;
+    border-color: color-mix(in oklab, var(--color-base-content) 20%, #0000);
+}
+.cradle input[type="text"],
+.cradle input[type="tel"],
+.cradle input[type="date"],
+.cradle input[type="datetime-local"],
+.cradle input[type="email"],
+.cradle input[type="month"],
+.cradle input[type="number"],
+.cradle input[type="time"],
+.cradle input[type="url"],
+.cradle input[type="week"]
 {
     cursor: text;
-    border: var(--border) solid #0000;
     position: relative;
     display: inline-flex;
     flex-shrink: 1;
@@ -176,7 +189,6 @@ input[type="week"]
     padding-inline: calc(0.25rem * 3);
     vertical-align: middle;
     white-space: nowrap;
-    width: clamp(3rem, 20rem, 100%);
     height: var(--size);
     font-size: 0.875rem;
     touch-action: manipulation;
@@ -184,13 +196,12 @@ input[type="week"]
     border-start-end-radius: var(--join-se, var(--radius-field));
     border-end-start-radius: var(--join-es, var(--radius-field));
     border-end-end-radius: var(--join-ee, var(--radius-field));
-    border-color: var(--input-color);
     box-shadow: 0 1px var(--input-color) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;    
     --size: calc(var(--size-field, 0.25rem) * 10);
     align-self: center;
 }
-input[type="submit"],
-input[type="reset"]{
+.cradle input[type="submit"],
+.cradle input[type="reset"]{
     margin: 0 auto;
     margin-top: 1em;
     margin-bottom: 0.5em; 
@@ -232,17 +243,16 @@ input[type="reset"]{
     --size: calc(var(--size-field, 0.25rem) * 10);
     --btn-p: 1rem;
     --btn-border: var(--btn-bg);  
-    width: clamp(3rem, 20rem, 100%);
     display: inline-block;
 }
-input[type="checkbox"] {
+.cradle input[type="checkbox"] {
     &:checked, &[aria-checked="true"] {
       &::before { 
         clip-path: polygon(20% 100%, 20% 80%, 50% 80%, 50% 0%, 70% 0%, 70% 100%);
         opacity: 100%;  
     }}   
 }
-input[type="checkbox"] { 
+.cradle input[type="checkbox"] { 
   &::before {
       --tw-content: "";
       content: var(--tw-content);
@@ -260,13 +270,13 @@ input[type="checkbox"] {
       line-height: 0.75;
     }    
 }
-input[type="checkbox"]  {
+.cradle input[type="checkbox"]  {
     &:checked, &[aria-checked="true"] {
       background-color: var(--input-color, #0000);
       box-shadow: 0 0 #0000 inset, 0 8px 0 -4px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset, 0 1px oklch(0% 0 0 / calc(var(--depth) * 0.1));
     }
 }
-input[type="checkbox"]{
+.cradle input[type="checkbox"]{
     padding: 0.25rem;
     --size: calc(var(--size-selector, 0.25rem) * 6);
     position: relative;
@@ -288,7 +298,7 @@ input[type="checkbox"]{
     border: var(--border) solid var(--input-color, color-mix(in oklab, var(--color-base-content) 20%, #0000));
     border: var(--border) solid var(--input-color, var(--color-base-content));    
 }
-input[type="radio"]{
+.cradle input[type="radio"]{
     position: relative;
     display: inline-block;
     flex-shrink: 0;
@@ -304,7 +314,7 @@ input[type="radio"]{
     height: var(--size);
     color: var(--input-color, currentColor);
 }
-input[type="radio"] {
+.cradle input[type="radio"] {
     &::before {
       display: block;
       width: 100%;
@@ -316,7 +326,7 @@ input[type="radio"] {
       background-image: none, var(--fx-noise);
     }
   }
-input[type="radio"] {
+.cradle input[type="radio"] {
     &:checked, &[aria-checked="true"] {
       &::before {
         background-color: currentColor;
@@ -324,7 +334,7 @@ input[type="radio"] {
       }
     }
 }
-input[type="range"] {
+.cradle input[type="range"] {
     &::-moz-range-track {
       background-color: var(--range-bg);
       border-radius: var(--radius-selector);
@@ -332,7 +342,7 @@ input[type="range"] {
       height: calc(var(--range-thumb-size)*.5);
     }
 }
-input[type="range"] {
+.cradle input[type="range"] {
     &::-moz-range-thumb {
       box-sizing: border-box;
       border-radius: calc(var(--radius-selector) + min(var(--range-p),var(--radius-selector-max)));
@@ -346,7 +356,7 @@ input[type="range"] {
       top: 50%;
     }
 }
-input[type="range"] {
+.cradle input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     --range-thumb: var(--color-base-100);
@@ -365,8 +375,7 @@ input[type="range"] {
     border: none;
     overflow: hidden;
 }
-textarea {
-    border: var(--border) solid #0000;
+.cradle textarea {
     min-height: calc(0.25rem * 20);
     flex-shrink: 1;
     appearance: none;
@@ -374,17 +383,14 @@ textarea {
     background-color: var(--color-base-100);
     padding-block: calc(0.25rem * 2);
     vertical-align: middle;
-    width: clamp(3rem, 20rem, 100%);
     padding-inline-start: 0.75rem;
     padding-inline-end: 0.75rem;
     font-size: 0.875rem;
     touch-action: manipulation;
-    border-color: var(--input-color);
     box-shadow: 0 1px var(--input-color) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;    
     align-self: center;
 }
-select {
-    border: var(--border) solid #0000;
+.cradle select {
     position: relative;
     display: inline-flex;
     flex-shrink: 1;
@@ -395,7 +401,6 @@ select {
     padding-inline-start: calc(0.25rem * 4);
     padding-inline-end: calc(0.25rem * 7);
     vertical-align: middle;
-    width: clamp(3rem, 20rem, 100%);
     height: var(--size);
     font-size: 0.875rem;
     touch-action: manipulation;
@@ -410,7 +415,5 @@ select {
     text-overflow: ellipsis;
     box-shadow: 0 1px var(--input-color) inset, 0 -1px oklch(100% 0 0 / calc(var(--depth) * 0.1)) inset;
     --size: calc(var(--size-field, 0.25rem) * 10);
-    border-color: var(--input-color);
-    --input-color: var(--color-base-content);
 }
 /**/

@@ -35,7 +35,7 @@
       "heder_otf_height": "[70vh]",
       "link_grid_items": [],
       "link_grid_show": false,
-      "logo_height": "30",
+      "logoHeight": "40",
       "pageWidth": " max-w-[120ch]",
       "section_banner": [],
       "section_banner_show": false
