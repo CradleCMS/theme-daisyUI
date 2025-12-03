@@ -55,22 +55,48 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
         </ul>
       </div>
       <div class="navbar-end gap-4 max-[550px]:w-full max-[550px]:place-content-end w-auto">
-        {% if settings.headShowSearch %}
-        <a class="btn btn-ghost btn-circle btn-sm" href="/search">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </a>
-        {% endif %}
+        <div class="p-2 pt-0 md:hidden">
+        <div class="max-w-8xl mx-auto container">
+            {% assign mode = settings.searchMode | default: 'searchInput' %}
+                {% if mode == 'searchInput' %}
+                  <div class="search-input">
+                    <a-search>    
+                        <label class="input input-sm input-ghost px-2 focus-within:outline-none w-full">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 opacity-50"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z">
+                                </path>
+                          </svg>    
+                            <input type="search" name="search" placeholder="{{ 'Search' | t:'search' }}" class="text-sm" />
+                        </label>
+                    </a-search>
+                  </div>
+                {% else %}
+                    <a class="btn btn-ghost btn-circle btn-sm" href="/search">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </a>
+                {% endif %} 
+        </div>
+    </div>
         {% if site.langs.size > 1 %}
         <a-lang>
             <select name="lang" class="select bg-transparent w-24 btn-sm" value="{{lang}}">

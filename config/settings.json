@@ -5,7 +5,7 @@
   "description": "CMS theme based on tailwindcss, daisyUI and Alpine.js.",
   "source": "https://github.com/CradleCMS/theme-daisyUI/",
   "homepage": "https://cradlecms.com",
-  "support": "",  
+  "support": "",
   "sections": [
     {
       "key": "global",
@@ -386,6 +386,21 @@
             {
               "caption": "Maximum, 50px",
               "value": "50"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "caption": "Search Mode",
+          "key": "searchMode",
+          "options": [
+            {
+              "caption": "Search input",
+              "value": "searchInput"
+            },
+            {
+              "caption": "Search page",
+              "value": "searchPage"
             }
           ],
           "type": "select"
