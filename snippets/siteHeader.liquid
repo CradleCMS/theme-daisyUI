@@ -32,9 +32,16 @@ responsive (dropdown menu on small screen, center menu on large screen) modified
           </ul>
         </div>
         {% endif %}
-        <a href="/">
-            <img src="/logo.png" height="{{ settings.logoHeight | def:40 }}" alt="{{ site.name }}" tabindex="0" class="p-2 logo">
-        </a>
+        {% if settings.useLogoEnabled %}
+            <a href="/">
+                <img src="/logo.png" height="{{ settings.logoHeight | def:40 }}" alt="{{ site.name }}" tabindex="0" class="p-2 logo">
+            </a>
+        {% else %}
+            <a href="/">
+                <h1>{{site.name}}</h1>
+            </a>
+        {% endif %}
+        
         <ul class="menu menu-horizontal px-1 hidden lg:flex">
             {% for link in navigation[mainNav].links %}
                 {% if link.type == 'navigation' and navigation[link.param].links.size > 0 %}
