@@ -368,6 +368,12 @@
       "caption": "Header",
       "settings": [
         {
+          "caption": "Use Logo",
+          "default": false,
+          "key": "useLogoEnabled",
+          "type": "checkbox"
+        },
+        {
           "caption": "Logo height",
           "key": "logoHeight",
           "options": [
