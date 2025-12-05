@@ -24,9 +24,9 @@ searchCSS.replaceSync(`
     padding: 0;
     max-height: 24em;
     background: var(--color-base-100);
-    border: var(--border, 1px) solid var(--color-base-300);
+    border: var(--border) solid var(--color-base-300);
     border-top: none;
-    border-radius: 0 0 var(--radius-selector, 6px) var(--radius-selector, 6px);
+    border-radius: 0 0 var(--radius-selector) var(--radius-selector);
     overflow-y: auto;
     z-index: 1000;
     text-align: right;
@@ -53,8 +53,8 @@ searchCSS.replaceSync(`
 }
 .asearch .item:hover,
 .asearch .item.focused {
-    background: var(--color-base-200, #f3f4f6);
-    outline: 1px solid var(--color-base-300, #ddd);
+    background: var(--color-base-200);
+    outline: 1px solid var(--color-base-300);
 }
 .asearch .item img {
     width: 2.25em;
@@ -77,12 +77,9 @@ searchCSS.replaceSync(`
     text-align: left;
     margin: 0.15em 0 0;
 }
-.asearch .focused {
-background-color: #f1f1f1 !important;
-}
 .asearch .no-results {
     padding: 0.5em;
-    color: var(--color-muted, #666);
+    color: var(--color-muted);
     text-align: left;
     font-size: 0.9em;
 }
