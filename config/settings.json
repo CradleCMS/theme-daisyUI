@@ -407,6 +407,10 @@
             {
               "caption": "Search page",
               "value": "searchPage"
+            },
+            {
+              "caption": "Hide search",
+              "value": "hidden"
             }
           ],
           "type": "select"
