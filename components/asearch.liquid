@@ -90,14 +90,14 @@ class AutoSearch extends HTMLElement {
     	handle      : "",                   // search handle
     	delay       : 250,         	        // search delay in ms
         chars       : 3,                    // input threshold
-        include     : ["articles","pages"],
-        filter      : ["title","image","lang","featured_image","meta.description"],
+        include     : ["products","articles","pages"],
+        filter      : ["title","image","lang","currency", "featured_image","meta.description", "price", "compare_at_price"],
         limit       : 10,
         truncate    : 100,
         lang        : '',
         currency    : '',
     }
-    #q = {
+    #q = {                                  // saerch query
         query: "",
         include: [],
         filter: [],
@@ -119,11 +119,11 @@ class AutoSearch extends HTMLElement {
     connectedCallback() {
         this.classList.add("asearch-wrapper");
 
-        // Create shadow root and attach styles/result container there to isolate CSS
+        // Create shadow root
         this.#shadow = this.attachShadow({ mode: "open" });
-
-        // prefer adoptedStyleSheets when available (isolated), else fallback to <style>
-        if (this.#shadow.adoptedStyleSheets !== undefined) {
+        
+        // Add styles to shadow DOM
+        if (this.#shadow.adoptedStyleSheets) {
             this.#shadow.adoptedStyleSheets = [searchCSS];
         } else {
             const style = document.createElement("style");
@@ -131,11 +131,11 @@ class AutoSearch extends HTMLElement {
             this.#shadow.appendChild(style);
         }
 
-        // ensure light DOM (input) is rendered inside the shadow by providing a slot
+        // Create slot for light DOM content (input field)
         const slot = document.createElement('slot');
         this.#shadow.appendChild(slot);
 
-        // apply configuration through attributes
+        // Apply configuration through attributes
         let intVal = 0;
         for(const [i,a] of Object.entries(Array.from(this.attributes))) {
             if(this.options.hasOwnProperty(a.name)) {
@@ -162,9 +162,12 @@ class AutoSearch extends HTMLElement {
             }
         }
 
-        // input remains in light DOM; query it from host
+        // Input is in light DOM, query it
         this.#target = this.querySelector("input");
-        if(!this.#target) return;
+        if(!this.#target) {
+            console.error("AutoSearch: No input element found");
+            return;
+        }
 
         this.#target.addEventListener("input",  ev => { this.#input(ev) });
         this.#target.addEventListener("keydown", ev => { this.#keyDown(ev) });
@@ -192,7 +195,7 @@ class AutoSearch extends HTMLElement {
         this.#q.lang = this.options.lang;
         this.#q.currency = this.options.currency;
 
-        // setup result listing element - create result listing element inside shadow
+        // Setup result listing element inside shadow
         let el = document.createElement("div");
         el.className = "asearch";
         el.setAttribute("role", "listbox");
@@ -207,7 +210,7 @@ class AutoSearch extends HTMLElement {
 
         if(this.#visible) {
             el.classList.add("show");
-            // close on outside click (use capture on document)
+            // Close on outside click
             document.addEventListener('click', this.boundClose = this.boundClose || ((ev) => this.outsideClose(ev)));
         } else {
             el.classList.remove("show");
@@ -216,8 +219,8 @@ class AutoSearch extends HTMLElement {
     }
 
     outsideClose(ev) {
-        // if click outside host and shadow root
-        if (!this.contains(ev.target) && !(this.#shadow && this.#shadow.contains(ev.target))) {
+        // Check if click is outside the component
+        if (!this.contains(ev.target)) {
             this.toggle(false);
         }
     }
@@ -230,19 +233,16 @@ class AutoSearch extends HTMLElement {
             this.toggle(true);
         } else {
             this.toggle(false);
+            this.#el.innerHTML = "";
         }
-
     }
 
     performSearch(query){
-
-        // search deferal timer
         if(this.#timer) {
             clearTimeout(this.#timer);
             this.#timer = null;
         }
 
-        // search requests
         this.#timer = setTimeout(() => {
             this.search(query);
         }, this.options.delay);
@@ -251,6 +251,7 @@ class AutoSearch extends HTMLElement {
     search(query){
         let self = this;
         this.#q.query = query;
+        
         return fetch(this.options.source, {
             method: "POST",
             body: JSON.stringify(this.#q),
@@ -260,18 +261,21 @@ class AutoSearch extends HTMLElement {
                 "Accept": "application/json",
             },
         }).then(res => {
-            if(!res.ok) throw res;
+            if(!res.ok) {
+                console.error("Search request failed:", res.status);
+                throw res;
+            }
             return res.json();
         }).then(res => {
+            console.log("Search response:", res); // Debug log
             let data = {};
             for(const k of this.#q.include) {
                 data[k] = res[k];
             }
-            self.results(data, query)
+            self.results(data, query);
         }).catch(err => {
-            console.error(JSON.stringify(err));
+            console.error("Search error:", err);
         });
-
     }
 
     results(data, key){
@@ -283,8 +287,8 @@ class AutoSearch extends HTMLElement {
             if(Array.isArray(v)) {
                 for(var i = 0, l = v.length; i < l; i++){
                     if(typeof v[i] === 'object'){
-                        content+= this.format(v[i], t, count);
-                        // store minimal item meta for navigation
+                        content+= this.format(v[i], t);
+                        // Store minimal item meta for navigation
                         this.#items.push({type: t, item: v[i]});
                         count++;
                     }
@@ -293,7 +297,6 @@ class AutoSearch extends HTMLElement {
         }
 
         if(!content) {
-            // show no-results feedback
             content = `<div class="no-results" role="status" aria-live="polite">${this.options.notfound}</div>`;
             this.#items = [];
             this.#selectedIndex = -1;
@@ -301,32 +304,31 @@ class AutoSearch extends HTMLElement {
 
         this.#el.innerHTML = content;
 
-        // wire mouse interactions for items
+        // Wire mouse interactions for items
         const nodes = Array.from(this.#el.querySelectorAll('.item'));
+        this.#itemsNodes = nodes;
+        
         nodes.forEach((n, idx) => {
             n.setAttribute('data-index', idx);
             n.addEventListener('mouseover', () => this.#setSelection(idx));
-            n.addEventListener('click', (ev) => {
-                const a = n.querySelector('a');
-                if(a && a.href) {
-                    // let normal navigation happen
-                    return;
-                }
-                ev.preventDefault();
-            });
         });
 
-        // reset selection
+        // Reset selection
         this.#selectedIndex = -1;
-        this.#itemsNodes = nodes;
     }
 
-    format(item, t, index){
+    format(item, t){
         let h = "";
         let title = item.title || "";
+
+        let price = (item.price && parseFloat(item.price)) || 0;
+        let compareAtPrice = (item.compareAtPrice && parseFloat(item.compareAtPrice)) || 0;
+        let onSale = compareAtPrice > price;
+
         let src = "";
-        if(item.featuredImage && item.featuredImage.src) src = item.featuredImage.src
-        else if(item.image && item.image.src) src = item.image.src;
+        if(item.featuredImage?.src) src = item.featuredImage.src;
+        else if(item.featured_image?.src) src = item.featured_image.src;
+        else if(item.image?.src) src = item.image.src;
 
         h+= `<div class="item" role="option" aria-selected="false">`;
         h+= `<a href="${item.url || '#'}" ${!item.url ? 'aria-disabled="true"':''}>`;
@@ -336,14 +338,53 @@ class AutoSearch extends HTMLElement {
             if(d !== -1) {
                 src = src.slice(0,d) + "_50_50" + src.slice(d);
             }
-            h+= `<img src="/media/${t.slice(0,-1)}/${item.id}/${src}" alt="${item.id}">`;
+            h+= `<img src="/media/${t.slice(0,-1)}/${item.id}/${src}" alt="${title}">`;
         }
 
-        h += `<div><h4>${title}</h4>`;
-        if(item.meta && item.meta.description) h+= `<p>${item.meta.description}</p>`;
-        h += `</div></a></div>`;
+        h += `<div><h4>${title}`;
+
+        if(t === "products") {
+            h += "<p>";
+            if(onSale && compareAtPrice) {
+                let cp = this.money(item, compareAtPrice);  
+                h+= `<i>${cp}</i>`;                                
+            }
+            if(price) {
+                let pp = this.money(item, price);
+                h+= `<strong class="${(onSale ? 'sale' : '')}">${pp}</strong>`;
+            }
+            h += "</p>";
+        }
+
+        h += "</h4>";
+
+        if(item.meta && item.meta.description) {
+            h+= `<p>${item.meta.description}</p>`;
+        }
+
+        h += "</div></a></div>";
 
         return h;
+    }
+
+    money(item, value) {
+        const currency = this.currency(item.lang, item.currency);
+        return currency.format(value / 1000);
+    }
+
+    currency(l, c) {
+        if(this.#currency) return this.#currency;
+        l = l || this.#q.lang;
+        c = c || this.#q.currency;
+        
+        let conf = {
+            style: 'currency',
+            currency: c,
+            currencyDisplay: "narrowSymbol"
+        };
+        
+        this.#currency = new Intl.NumberFormat(l, conf);
+        return this.#currency;
     }
 
     #setSelection(idx) {
@@ -351,7 +392,7 @@ class AutoSearch extends HTMLElement {
         if(idx < 0) idx = 0;
         if(idx >= this.#itemsNodes.length) idx = this.#itemsNodes.length - 1;
 
-        // remove previous
+        // Remove previous selection
         if(this.#selectedIndex >= 0 && this.#itemsNodes[this.#selectedIndex]) {
             this.#itemsNodes[this.#selectedIndex].classList.remove('focused');
             this.#itemsNodes[this.#selectedIndex].setAttribute('aria-selected', 'false');
@@ -363,7 +404,6 @@ class AutoSearch extends HTMLElement {
         if(node) {
             node.classList.add('focused');
             node.setAttribute('aria-selected', 'true');
-            // ensure visible in scroll
             node.scrollIntoView({block: "nearest"});
         }
     }
@@ -404,20 +444,6 @@ class AutoSearch extends HTMLElement {
                 this.toggle(false);
                 break;
         }
-    }
-
-    #currencyFormatter(l,c) {
-        if(this.#currency) return this.#currency;
-        l = l || this.#q.lang;
-        c = c || this.#q.currency;
-        let conf = {
-            code: c,
-            style: 'currency',
-            currency: c,
-            currencyDisplay: "narrowSymbol"
-        };
-        this.#currency = new Intl.NumberFormat(l,conf);
-        return this.#currency;
     }
 }
 
