@@ -81,6 +81,21 @@ searchCSS.replaceSync(`
     text-align: left;
     font-size: 0.9em;
 }
+.asearch > * .sale {
+    color:red;
+}
+.asearch > * i {
+    font-size: 0.8em;
+    color: grey;
+    text-decoration: line-through;
+    text-align: right;
+}
+.asearch > * strong {
+    font-size: 0.8em;
+    color: grey;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
 `)
 
 class AutoSearch extends HTMLElement {
@@ -90,14 +105,14 @@ class AutoSearch extends HTMLElement {
     	handle      : "",                   // search handle
     	delay       : 250,         	        // search delay in ms
         chars       : 3,                    // input threshold
-        include     : ["products","articles","pages"],
-        filter      : ["title","image","lang","currency", "featured_image","meta.description", "price", "compare_at_price"],
+        include     : ["products", "articles", "pages"],
+        filter      : ["title", "image", "lang", "currency", "featured_image", "meta.description", "price", "compare_at_price"],
         limit       : 10,
         truncate    : 100,
         lang        : '',
         currency    : '',
     }
-    #q = {                                  // saerch query
+    #q = {                                  // search query
         query: "",
         include: [],
         filter: [],
@@ -210,8 +225,13 @@ class AutoSearch extends HTMLElement {
 
         if(this.#visible) {
             el.classList.add("show");
+
             // Close on outside click
-            document.addEventListener('click', this.boundClose = this.boundClose || ((ev) => this.outsideClose(ev)));
+            if(typeof this.boundClose !== "function") {
+                this.boundClose = (ev) => this.outsideClose(ev);
+            }
+
+            document.addEventListener("click", this.boundClose)
         } else {
             el.classList.remove("show");
             document.removeEventListener('click', this.boundClose);
@@ -261,13 +281,10 @@ class AutoSearch extends HTMLElement {
                 "Accept": "application/json",
             },
         }).then(res => {
-            if(!res.ok) {
-                console.error("Search request failed:", res.status);
-                throw res;
-            }
+            if(!res.ok) throw new Error(`Search request failed: ${res.status} ${res.statusText}`);
+            
             return res.json();
         }).then(res => {
-            console.log("Search response:", res); // Debug log
             let data = {};
             for(const k of this.#q.include) {
                 data[k] = res[k];
@@ -335,7 +352,7 @@ class AutoSearch extends HTMLElement {
 
         if(src) {
             let d = src.lastIndexOf('.');
-            if(d !== -1) {
+            if(d > 0) {
                 src = src.slice(0,d) + "_50_50" + src.slice(d);
             }
             h+= `<img src="/media/${t.slice(0,-1)}/${item.id}/${src}" alt="${title}">`;
