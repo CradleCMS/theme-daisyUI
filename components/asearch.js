@@ -1,7 +1,7 @@
 <script>
 /* asearch.js
- * CradleCMS auto complete search component
- * version 1.0.1
+ * CradleCMS AutoSearch component
+ * version 1.1.0
  */
 const searchCSS = new CSSStyleSheet()
 
@@ -105,9 +105,9 @@ searchCSS.replaceSync(`
 class AutoSearch extends HTMLElement {
     options = {
         source      : "/search",            // search endpoint
-    	notfound	: "",                   // not found message
-    	handle      : "",                   // search handle
-    	delay       : 250,         	        // search delay in ms
+        notfound	: "",                   // not found message
+        handle      : "",                   // search handle
+        delay       : 250,                  // search delay in ms
         chars       : 3,                    // input threshold
         include     : ["products", "articles", "pages"],
         filter      : ["title", "image", "lang", "currency", "featured_image", "meta.description", "price", "compare_at_price"],
@@ -138,10 +138,10 @@ class AutoSearch extends HTMLElement {
     connectedCallback() {
         this.classList.add("asearch-wrapper");
 
-        // Create shadow root
+        // create shadow root
         this.#shadow = this.attachShadow({ mode: "open" });
         
-        // Add styles to shadow DOM
+        // add styles to shadow DOM
         if (this.#shadow.adoptedStyleSheets) {
             this.#shadow.adoptedStyleSheets = [searchCSS];
         } else {
@@ -150,11 +150,12 @@ class AutoSearch extends HTMLElement {
             this.#shadow.appendChild(style);
         }
 
-        // Create slot for light DOM content (input field)
+
+        // create slot for light DOM content (input field)
         const slot = document.createElement('slot');
         this.#shadow.appendChild(slot);
 
-        // Apply configuration through attributes
+        // apply configuration through attributes
         let intVal = 0;
         for(const [i,a] of Object.entries(Array.from(this.attributes))) {
             if(this.options.hasOwnProperty(a.name)) {
@@ -162,7 +163,7 @@ class AutoSearch extends HTMLElement {
                     case "include":
                     case "filter":
                         if(a.value) {
-                            this.options[a.name] = a.value.split(",");
+                            this.options[a.name] = a.value.split(",").map(m => m.trim());
                         }
                         break;
                     case "delay":
@@ -181,15 +182,15 @@ class AutoSearch extends HTMLElement {
             }
         }
 
-        // Input is in light DOM, query it
+        // input is in light DOM, query it
         this.#target = this.querySelector("input");
         if(!this.#target) {
             console.error("AutoSearch: No input element found");
             return;
         }
 
-        this.#target.addEventListener("input",  ev => { this.#input(ev) });
-        this.#target.addEventListener("keydown", ev => { this.#keyDown(ev) });
+        this.#target.addEventListener("input", ev => this.#input(ev));
+        this.#target.addEventListener("keydown", ev => this.#keyDown(ev));
 
         let include = this.querySelector('[name="include"]');
         if(include) {
@@ -214,27 +215,28 @@ class AutoSearch extends HTMLElement {
         this.#q.lang = this.options.lang;
         this.#q.currency = this.options.currency;
 
-        // Setup result listing element inside shadow
+        // setup result listing element inside shadow
         let el = document.createElement("div");
         el.className = "asearch";
         el.setAttribute("role", "listbox");
-        el.style.top = (this.#target.getBoundingClientRect().height) + "px";
+        el.style.top = this.#target.getBoundingClientRect().height + "px";
         this.#shadow.appendChild(el);
         this.#el = el;
     }
 
     toggle(state) {
-        this.#visible = state === undefined ? !this.#visible : state;
+        state = state != undefined ? state : !this.#visible;
+        this.#visible = state;
         let el = this.#el;
 
         if(this.#visible) {
             el.classList.add("show");
 
-            // Close on outside click
+            // close on outside click handler
             if(typeof this.boundClose !== "function") {
-                this.boundClose = (ev) => this.outsideClose(ev);
+                this.boundClose = ev => this.outsideClose(ev);
             }
-
+            
             document.addEventListener("click", this.boundClose)
         } else {
             el.classList.remove("show");
@@ -243,7 +245,7 @@ class AutoSearch extends HTMLElement {
     }
 
     outsideClose(ev) {
-        // Check if click is outside the component
+        // check if click is outside the component
         if (!this.contains(ev.target)) {
             this.toggle(false);
         }
@@ -309,14 +311,14 @@ class AutoSearch extends HTMLElement {
                 for(var i = 0, l = v.length; i < l; i++){
                     if(typeof v[i] === 'object'){
                         content+= this.format(v[i], t);
-                        // Store minimal item meta for navigation
+                        // store minimal item meta for navigation
                         this.#items.push({type: t, item: v[i]});
                         count++;
                     }
                 }
             }
         }
-        // no matches, show notfound message if it's defined
+
         if(!content && this.options.notfound) {
             content = `<div class="no-results" role="status" aria-live="polite">${this.options.notfound}</div>`;
             this.#items = [];
@@ -325,16 +327,15 @@ class AutoSearch extends HTMLElement {
 
         this.#el.innerHTML = content;
 
-        // Wire mouse interactions for items
+        // mouse navigation for items
         const nodes = Array.from(this.#el.querySelectorAll('.item'));
         this.#itemsNodes = nodes;
         
         nodes.forEach((n, idx) => {
-            n.setAttribute('data-index', idx);
-            n.addEventListener('mouseover', () => this.#setSelection(idx));
+            n.addEventListener('pointerover', () => this.#setSelection(idx));
         });
 
-        // Reset selection
+        // reset selection
         this.#selectedIndex = -1;
     }
 
@@ -363,7 +364,6 @@ class AutoSearch extends HTMLElement {
         }
 
         h += `<div><h4>${title}`;
-
         if(t === "products") {
             h += "<p>";
             if(onSale && compareAtPrice) {
@@ -376,13 +376,11 @@ class AutoSearch extends HTMLElement {
             }
             h += "</p>";
         }
-
         h += "</h4>";
 
         if(item.meta && item.meta.description) {
             h+= `<p>${item.meta.description}</p>`;
         }
-
         h += "</div></a></div>";
 
         return h;
@@ -405,15 +403,16 @@ class AutoSearch extends HTMLElement {
         };
         
         this.#currency = new Intl.NumberFormat(l, conf);
+        
         return this.#currency;
     }
 
     #setSelection(idx) {
-        if(!this.#itemsNodes || this.#itemsNodes.length === 0) return;
+        if(!this.#itemsNodes?.length) return;
         if(idx < 0) idx = 0;
         if(idx >= this.#itemsNodes.length) idx = this.#itemsNodes.length - 1;
 
-        // Remove previous selection
+        // remove previous selection
         if(this.#selectedIndex >= 0 && this.#itemsNodes[this.#selectedIndex]) {
             this.#itemsNodes[this.#selectedIndex].classList.remove('focused');
             this.#itemsNodes[this.#selectedIndex].setAttribute('aria-selected', 'false');
@@ -443,18 +442,19 @@ class AutoSearch extends HTMLElement {
         switch(ev.key) {
             case "ArrowDown":
                 ev.preventDefault();
-                if(!this.#itemsNodes || this.#itemsNodes.length === 0) return;
-                if(this.#selectedIndex === -1) this.#setSelection(0);
+                if(!this.#itemsNodes?.length) return;
+                if(this.#selectedIndex < 0) this.#setSelection(0);
                 else this.#setSelection(this.#selectedIndex + 1);
                 break;
             case "ArrowUp":
                 ev.preventDefault();
-                if(!this.#itemsNodes || this.#itemsNodes.length === 0) return;
-                if(this.#selectedIndex === -1) this.#setSelection(this.#itemsNodes.length - 1);
+                if(!this.#itemsNodes?.length) return;
+                if(this.#selectedIndex < 0) this.#setSelection(this.#itemsNodes.length - 1);
                 else this.#setSelection(this.#selectedIndex - 1);
                 break;
             case "Enter":
-                if(this.#selectedIndex >= 0 && this.#itemsNodes && this.#itemsNodes[this.#selectedIndex]) {
+                if(this.#selectedIndex < 0) return;
+                if(this.#itemsNodes && this.#itemsNodes[this.#selectedIndex]) {
                     const a = this.#itemsNodes[this.#selectedIndex].querySelector('a');
                     if(a && a.href && a.getAttribute('aria-disabled') !== 'true') {
                         window.location.href = a.href;
